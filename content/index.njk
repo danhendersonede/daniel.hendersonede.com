@@ -6,21 +6,29 @@ eleventyNavigation:
 numberOfLatestPostsToShow: 3
 ---
 
-<hgroup>
-	<h1>Daniel<br/> Henderson-Ede</h1>
-	<p>Design Systems and Accessibility Designer<p>
-</hgroup>
+<section id="intro">
+	<hgroup>
+		<h1>Daniel<br/> Henderson-Ede</h1>
+		<p>Design Systems and Accessibility Designer at <span style="color: #cc0000">CVS Health</span>.</p>
+	</hgroup>
+	<div style="position: relative">
+		<img class="card" src="img/profile.JPG" />
+		<a class="card-link" href="/about">About me ></a>
+	</div>
+</section>
 
-<section>
+<section id="recents" class="card" style="position: relative">
 	{% set postsCount = collections.posts | length %}
 	<h2>Recent Posts</h2>
 
 	{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 	{% set postslistCounter = postsCount %}
-	{% include "postslist.njk" %}
+	{% include "postsList.njk" %}
 
-	{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-	{% if morePosts > 0 %}
-	<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
-	{% endif %}
+	<a class="card-link" href="/posts">All posts ></a>
+</section>
+
+<section id="resources" class="card" style="position: relative">
+	<h2>Resources coming soon!</h2>
+	<p style="font-weight: 500">I have some exciting things in the works, make sure to <a href="https://www.linkedin.com/in/danhendersonede/">follow me on LinkedIn</a> to get the latest updates.</p>
 </section>
