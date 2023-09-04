@@ -339,3 +339,24 @@ section {
 #resources {
 	background-color: #9fcbd4;
 }
+
+/* About values */
+#values .card-group {
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+#values .card-group .card:nth-child(1) {
+	background-color: #f8e18e;
+}
+
+#values .card-group .card:nth-child(2) {
+	background-color: #f3db88;
+}
+
+#values .card-group .card:nth-child(3) {
+	background-color: #f3d66e;
+}
+
+#values .card-group .card:nth-child(4) {
+	background-color: #f2d054;
+}
