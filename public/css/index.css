@@ -59,11 +59,15 @@ body {
 html {
 	overflow-y: scroll;
 }
-body {
+header,
+main,
+footer > div {
 	max-width: 55rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 1rem;
 }
 
-/* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
@@ -101,9 +105,6 @@ a[href]:focus-visible {
 	transition: text-underline-offset 250ms ease-out;
 }
 
-main {
-	padding: 1rem;
-}
 main :first-child {
 	margin-top: 0;
 }
@@ -219,7 +220,7 @@ header a[href]:visited {
 }
 .postlist-item {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	align-items: baseline;
 	box-shadow: none;
 	border-radius: 16px;
@@ -337,7 +338,7 @@ section {
 
 /* Resources */
 #resources {
-	background-color: #9fcbd4;
+	background-color: #90dbf4;
 }
 
 /* About values */
@@ -345,18 +346,35 @@ section {
 	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 }
 
-#values .card-group .card:nth-child(1) {
-	background-color: #f8e18e;
-}
-
-#values .card-group .card:nth-child(2) {
-	background-color: #f3db88;
+#values .card-group .card:nth-child(4) {
+	background-color: #ffba78;
 }
 
 #values .card-group .card:nth-child(3) {
-	background-color: #f3d66e;
+	background-color: #ffcc84;
 }
 
-#values .card-group .card:nth-child(4) {
-	background-color: #f2d054;
+#values .card-group .card:nth-child(2) {
+	background-color: #ffd991;
+}
+
+#values .card-group .card:nth-child(1) {
+	background-color: #ffe69e;
+}
+
+/* Posts */
+#posts .card-group {
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+html:has(#posts),
+body:has(#posts) {
+	background-color: #e1d0ea;
+}
+
+/* Footer */
+footer {
+	margin-top: 2rem;
+	background-color: #fff;
+	padding: 2rem 4em 4rem 4em;
 }

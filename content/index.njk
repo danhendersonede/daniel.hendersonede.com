@@ -23,7 +23,7 @@ numberOfLatestPostsToShow: 3
 
 	{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 	{% set postslistCounter = postsCount %}
-	{% include "postsList.njk" %}
+	{% include "recentPosts.njk" %}
 
 	<a class="card-link" href="/posts">All posts ></a>
 </section>
