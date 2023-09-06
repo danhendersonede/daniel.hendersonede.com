@@ -93,6 +93,7 @@ li {
 a[href] {
 	color: var(--text-color-link);
 	text-underline-offset: 0.25rem;
+	border-radius: var(--border-radius-small);
 }
 a[href]:visited {
 	color: var(--text-color-link-visited);
@@ -198,6 +199,11 @@ header a[href]:visited {
 
 ul.card-group {
 	display: flex;
+	flex-wrap: wrap;
+}
+
+ul.card-group .card {
+	flex-basis: 16rem;
 }
 
 .card {
@@ -375,8 +381,13 @@ section:not(:last-of-type) {
 	background-color: #e1d0ea;
 }
 
+*:focus-visible {
+	outline: solid 4px #000000;
+	outline-offset: 4px;
+}
+
 #recents .card:focus-within {
-	border: solid 2px black;
+	outline: solid 4px #000000;
 }
 
 #recents .card a:focus {
@@ -427,7 +438,8 @@ body:has(#posts) {
 footer {
 	margin-top: 2rem;
 	background-color: #fff;
-	padding: 2rem 4em 4rem 4em;
+	padding-top: 2rem;
+	padding-bottom: 4rem;
 }
 
 footer > div {
