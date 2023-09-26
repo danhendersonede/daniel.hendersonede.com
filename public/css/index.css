@@ -35,7 +35,7 @@
 	--text-color: var(--color-gray-90);
 	--text-color-link: var(--color-gray-90);
 	--text-color-link-active: #00596b;
-	--text-color-link-visited: #b70066;
+	--text-color-link-visited: #b00162;
 }
 
 /* dark mode */
@@ -386,6 +386,11 @@ section:not(:last-of-type) {
 
 #recents > div h2 {
 	flex-grow: 1;
+}
+
+#recents h2 + a {
+	align-self: flex-start;
+	margin-top: 6px;
 }
 
 #recents .card {
