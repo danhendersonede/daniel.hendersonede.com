@@ -6,4 +6,31 @@ eleventyNavigation:
 numberOfLatestPostsToShow: 3
 ---
 
-<h1>Coming Soon.</h1>
+<section id="intro">
+	<hgroup>
+		<h1>Daniel<br/> Henderson-Ede</h1>
+		<p>Design Systems and Accessibility Designer at <span style="color: #cc0000">CVS Health</span>.</p>
+	</hgroup>
+	<div style="position: relative">
+		<img class="card" src="img/profile.JPG" alt="A smiling while male with short, red hair, standing in the center of the image, wearing a dark blue jumper." />
+		<a class="card-link" href="/about">About me ></a>
+	</div>
+</section>
+
+<section id="recents" class="card">
+	{% set postsCount = collections.posts | length %}
+	<div>
+		<h2>Recent Posts</h2>
+		<a href="/posts">Posts ></a>
+	</div>
+
+	{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+	{% set postslistCounter = postsCount %}
+	{% include "recentPosts.njk" %}
+
+</section>
+
+<section id="resources" class="card">
+	<h2>Resources coming soon!</h2>
+	<p style="font-weight: 500">I have some exciting things in the works, make sure to <a href="https://www.linkedin.com/in/danhendersonede/">follow me on LinkedIn</a> to get the latest updates.</p>
+</section>

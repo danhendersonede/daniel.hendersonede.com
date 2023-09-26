@@ -9,9 +9,12 @@
 		{#- Atom and JSON feeds included by default #}
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
+		<meta name="generator" content="{{ eleventy.generator }}">
+		
 
 		{#-
 		CSS bundles are provided via the `eleventy-plugin-bundle` plugin:
@@ -34,13 +37,39 @@
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 	</head>
 	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+			<nav>
+				<ul class="nav">
+				{%- for entry in collections.all | eleventyNavigation %}
+					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+				{%- endfor %}
+				</ul>
+			</nav>
+		</header>
 
 		<main id="skip">
 			{{ content | safe }}
 		</main>
 
-		<footer></footer>
-
-		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
+		<footer>
+			<div>
+				<div>
+					<h2>Contact me:</h2>
+					<ul>
+						<li><a href="mailto:daniel@hendersonede.com">Email</a></li>
+						<li><a href="https://www.linkedin.com/in/danhendersonede/">LinkedIn</a></li>
+						<li><a href="https://www.figma.com/@danhendersonede">Figma</a></li>
+						<li><a href="https://github.com/danhendersonede">GitHub</a></li>
+						{# <li><a href="#">Online hangout</a></li> #}
+					</ul>
+				</div>
+				{# <div>
+					<h2>Web rings:</h2>
+				</div> #}
+			</div>
+		</footer>
 	</body>
 </html>
