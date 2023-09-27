@@ -10,7 +10,7 @@ If you are reading this in 2023, sorry there's not much else on my site right no
 
 ## Why a new site?
 
-These last three years at CVS Health, I've made so much progress in creating accessible design systems and innovating upon accessibility annotations.
+In these last three years at CVS Health, I've made so much progress in creating accessible design systems and innovating upon accessibility annotations.
 
 I want to share all that fun knowledge and learnings so it can help you and the people who use your stuff.
 
