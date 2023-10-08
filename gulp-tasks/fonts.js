@@ -7,7 +7,7 @@ const fonts = async () => {
 	const instance = new GetGoogleFonts({
 		outputDir: "./_dist/fonts",
 		cssFile: "./fonts.css",
-		path: "./fonts/",
+		path: "/fonts/",
 	});
 
 	// Grabs fonts and CSS from google and puts in the dist folder
