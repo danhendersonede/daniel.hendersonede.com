@@ -1,3 +1,4 @@
 _site/
+_dist/
 node_modules/
 package-lock.json

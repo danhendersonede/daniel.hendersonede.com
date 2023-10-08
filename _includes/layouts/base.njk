@@ -9,12 +9,8 @@
 		{#- Atom and JSON feeds included by default #}
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 		<meta name="generator" content="{{ eleventy.generator }}">
-		
 
 		{#-
 		CSS bundles are provided via the `eleventy-plugin-bundle` plugin:
@@ -27,6 +23,7 @@
 		{#- Add an arbitrary string to the bundle #}
 		{%- css %}* { box-sizing: border-box; }{% endcss %}
 		{#- Add the contents of a file to the bundle #}
+		{%- css %}{% include "_dist/fonts/fonts.css" %}{% endcss %}
 		{%- css %}{% include "public/css/index.css" %}{% endcss %}
 		{#- Or add from node_modules #}
 		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
@@ -39,39 +36,12 @@
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
-		<header>
-			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
-				<ul class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				{%- endfor %}
-				</ul>
-			</nav>
-		</header>
+		{% include "partials/header.njk" %}
 
 		<main id="skip">
 			{{ content | safe }}
 		</main>
 
-		<footer>
-			<div>
-				<div>
-					<h2>Contact me:</h2>
-					<ul>
-						<li><a href="mailto:daniel@hendersonede.com">Email</a></li>
-						<li><a href="https://www.linkedin.com/in/danhendersonede/">LinkedIn</a></li>
-						<li><a href="https://www.figma.com/@danhendersonede">Figma</a></li>
-						<li><a href="https://github.com/danhendersonede">GitHub</a></li>
-						{# <li><a href="#">Online hangout</a></li> #}
-					</ul>
-					<br />
-					<a href="/accessibility-statement">Accessibility Statement</a>
-				</div>
-				{# <div>
-					<h2>Web rings:</h2>
-				</div> #}
-			</div>
-		</footer>
+		{% include "partials/footer.njk" %}
 	</body>
 </html>
