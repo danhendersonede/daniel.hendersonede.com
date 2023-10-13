@@ -8,20 +8,22 @@ numberOfLatestPostsToShow: 3
 
 <section id="intro">
 	<hgroup>
-		<h1>Daniel<br/> Henderson-Ede</h1>
-		<p>Design Systems and Accessibility Designer at <span style="color: #cc0000">CVS Health</span>.</p>
+		<h1>Daniel Henderson-Ede</h1>
+		<p>Exploring the wonderful intersections of accessibility within <br /> design systems.</p>
 	</hgroup>
 	<div style="position: relative">
-		<img class="card" src="img/profile.JPG" alt="A smiling white male with short, red hair, standing in the center of the image, wearing a dark blue jumper." />
-		<a class="card-link" href="/about">About me ></a>
+		{# <img class="card" src="img/profile.JPG" alt="A smiling white male with short, red hair, standing in the center of the image, wearing a dark blue jumper." />
+		<a class="card-link" href="/about">About me ></a> #}
 	</div>
 </section>
+
+{% include "partials/alert.njk" %}
 
 <section id="recents" class="card">
 	{% set postsCount = collections.posts | length %}
 	<div>
 		<h2>Recent Posts</h2>
-		<a href="/posts">Posts ></a>
+		<a href="/posts">All Posts ></a>
 	</div>
 
 	{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
