@@ -62,7 +62,7 @@ html {
 	overflow-y: scroll;
 }
 .container {
-	max-width: 55rem;
+	max-width: 75rem;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0 1rem 2rem 1rem;
@@ -318,6 +318,10 @@ h1 {
 	}
 }
 
+p {
+	max-width: 70ch;
+}
+
 hgroup {
 	padding-top: 4rem;
 }
@@ -419,7 +423,7 @@ section:not(:last-of-type) {
 
 /* About values */
 #values .card-group {
-	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
 }
 
 #values .card-group .card:nth-child(4) {
