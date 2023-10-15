@@ -1,0 +1,14 @@
+<header>
+    {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+    <div class="container">
+        <a href="/"><img src="/img/logo.svg" alt="Home" /></a>
+        <button id="menu-button" onclick>Menu</button>
+        <nav>
+            <ul class="nav">
+            {%- for entry in collections.all | eleventyNavigation %}
+                <li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+            {%- endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

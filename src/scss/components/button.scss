@@ -1,0 +1,9 @@
+button {
+	background-color: transparent;
+	border: solid 3px var(--primary-action);
+	box-shadow: none;
+	padding: 0.5em 0.75em;
+	font-size: 1.1em;
+	border-radius: var(--border-radius-small);
+	font-weight: 600;
+}

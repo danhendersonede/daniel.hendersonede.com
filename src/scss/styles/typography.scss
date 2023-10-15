@@ -1,0 +1,13 @@
+@import "/_dist/fonts/fonts.css";
+
+:root {
+	--font-family: Manrope, -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+* {
+	font-family: var(--font-family);
+}

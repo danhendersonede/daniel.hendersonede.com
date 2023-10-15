@@ -96,6 +96,8 @@ module.exports = function (eleventyConfig) {
 		});
 	});
 
+	eleventyConfig.setUseGitIgnore(false);
+
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line
@@ -117,7 +119,7 @@ module.exports = function (eleventyConfig) {
 
 		// These are all optional:
 		dir: {
-			input: "content", // default: "."
+			input: "src/content", // default: "."
 			includes: "../_includes", // default: "_includes"
 			data: "../_data", // default: "_data"
 			output: "_site",

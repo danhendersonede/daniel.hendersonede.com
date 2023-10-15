@@ -5,7 +5,8 @@
 	"scripts": {
 		"build": "npx gulp && npx @11ty/eleventy",
 		"build-ghpages": "npx gulp && npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
-		"start": "npx gulp && npx @11ty/eleventy --serve --quiet",
+		"start": "npx gulp && concurrently \"npx gulp watch\" \"npx eleventy --serve\"",
+		"production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy",
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
@@ -43,7 +44,11 @@
 		"netlify-plugin-no-more-404": "^0.0.15"
 	},
 	"dependencies": {
+		"concurrently": "^8.2.1",
 		"get-google-fonts": "^1.2.2",
-		"gulp": "^4.0.2"
+		"gulp": "^4.0.2",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-sass": "^5.1.0",
+		"sass": "^1.69.3"
 	}
 }
