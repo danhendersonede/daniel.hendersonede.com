@@ -1,0 +1,76 @@
+
+/* Card */
+.card-group {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+	gap: 1rem;
+}
+
+ul.card-group {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul.card-group .card {
+	flex-basis: 16rem;
+}
+
+.card {
+	padding: 1rem 1.5em 1.5rem 1.5em;
+	border-radius: 0 var(--container-border-radius) 0
+		var(--container-border-radius);
+	background-color: var(--container-background-color);
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (min-width: 768px) {
+	.card .card {
+		padding: 2rem 2.5em 2.5rem 2.5em;
+	}
+}
+
+a.card-link {
+	top: 10px;
+	position: absolute;
+	background-color: var(--background-color);
+	padding: 1rem;
+	right: 11px;
+	border-radius: var(--border-radius-medium);
+	border: var(--primary-action) 2px solid;
+}
+
+
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.postlist-item {
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	border-left: var(--primary-action) 6px solid;
+	/* border-radius: 16px; */
+}
+
+.card.postlist-item {
+	flex-grow: 1;
+}
+
+.postlist-date {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+.postlist-item p:first-of-type {
+	flex-grow: 1;
+}

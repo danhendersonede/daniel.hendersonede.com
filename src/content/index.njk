@@ -3,33 +3,27 @@ layout: layouts/home.njk
 numberOfLatestPostsToShow: 3
 ---
 
-<section id="intro">
+<section>
 	<hgroup>
 		<h1>Daniel Henderson-Ede</h1>
 		<p>Exploring the wonderful intersections of accessibility within <br /> design systems.</p>
 	</hgroup>
-	<div style="position: relative">
-		{# <img class="card" src="img/profile.JPG" alt="A smiling white male with short, red hair, standing in the center of the image, wearing a dark blue jumper." />
-		<a class="card-link" href="/about">About me ></a> #}
-	</div>
+	<div></div>
+	{% include "partials/alert.njk" %}
 </section>
 
-{% include "partials/alert.njk" %}
-
-<section id="recents" class="card">
+<section id="recents">
 	{% set postsCount = collections.posts | length %}
-	<div>
-		<h2>Recent Posts</h2>
-		<a href="/posts">All Posts ></a>
-	</div>
+	<h2>Recent Posts</h2>
 
 	{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 	{% set postslistCounter = postsCount %}
 	{% include "partials/recentPosts.njk" %}
+	<a href="/posts" class="primary">All Posts</a>
 
 </section>
 
-<section id="resources" class="card">
+<section id="resources">
 	<h2>Resources coming soon!</h2>
 	<p style="font-weight: 500">I have some exciting things in the works, make sure to <a href="https://www.linkedin.com/in/danhendersonede/">follow me on LinkedIn</a> to get the latest updates.</p>
 </section>

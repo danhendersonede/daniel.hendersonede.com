@@ -22,10 +22,14 @@ header {
         padding: 2em 1em;
         border-radius: 100px;
         margin: 0;
-        display: none;
         list-style: none;
 
-        
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
+
         a[href] {
             color: var(--nav-color-link);
             font-size: 1.2rem;
@@ -43,7 +47,7 @@ header {
         }
     
         header nav {
-            display: block;
+            display: flex;
         }
     }
 }

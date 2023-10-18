@@ -17,3 +17,8 @@
 
 	--syntax-tab-size: 2;
 }
+
+*:focus-visible {
+	outline: solid 4px #000000;
+	outline-offset: 4px;
+}
