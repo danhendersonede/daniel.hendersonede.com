@@ -2,52 +2,101 @@ header {
     background-color: var(--container-background-color);
     margin-bottom: 3rem;
 
+    &.header__smallviewport {
+        background-color: #ffffff;
+
+        .container {
+            flex-direction: column;
+            align-items: flex-start;
+
+            nav { 
+                margin-left: 0;
+
+                ul {
+                    display: block;
+                    flex-direction: column;
+
+                    li {
+                        line-height: 2;
+
+                        a {
+                            font-size: 2rem;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+
     .container {
         display: flex;
         align-items: center;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        gap: 2rem;
-    }
-
-    img {
-        height: 3.5em;
-    }
-
-    nav {
-        display: flex;
-        gap: 1em 0.5em;
-        flex-wrap: wrap;
-        align-items: center;
         padding: 2em 1em;
-        border-radius: 100px;
-        margin: 0;
-        list-style: none;
+        column-gap: 2rem;
+        row-gap: 1rem;
 
-        ul {
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
+        body.no-js & {
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-        a[href] {
-            color: var(--nav-color-link);
-            font-size: 1.2rem;
-            font-weight: 500;
+        img {
+            height: 3.5em;
         }
 
-        a[href][aria-current="page"] {
-            text-decoration: underline;
-        }
-    }
+        nav {
+            gap: 1em 0.5em;
+            flex-wrap: wrap;
+            align-items: center;
+            border-radius: 100px;
+            margin: 0;
+            margin-left: auto;
+            list-style: none;
 
-    @media only screen and (min-width: 768px) {
-        #menu-button {
-            display: none;
+            body.no-js & {
+                margin-left: 0;
+            }
+
+            #menu-button {
+                body.no-js & {
+                    display: none;
+                }
+            }
+
+            ul {
+                flex-direction: row;
+                gap: 2rem;
+                display: none;
+
+                body.no-js & {
+                    display: block;
+                }
+            }
+
+            a[href] {
+                color: var(--nav-color-link);
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+
+            a[href][aria-current="page"] {
+                text-decoration: underline;
+            }
         }
-    
-        header nav {
-            display: flex;
+
+        @media only screen and (min-width: 768px) {
+        
+            nav {
+                margin-left: 0;
+
+                #menu-button {
+                    display: none;
+                }
+
+                ul {
+                    display: flex;
+                }
+            }
         }
     }
 }
