@@ -1,5 +1,5 @@
 ---
-title: Sorry it's a little empty here
+pageTitle: Sorry it's a little empty here
 description: We have to start somewhere, thanks for being one of the first visitors here.
 date: 2023-09-25
 tags: posts
