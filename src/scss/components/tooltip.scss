@@ -1,0 +1,16 @@
+.tooltip {
+    padding: 0;
+    border-radius: var(--border-radius-extra-small);
+    border: none;
+    align-items: center;
+    text-decoration: #00529f underline wavy;
+    text-underline-offset: 12px;
+    display: flex;
+        
+    &::after {
+        content: url(/img/info.svg);
+        margin-left: 0.25rem;
+        margin-top: 0.75rem;
+        transform: scale(.75);
+      }
+}

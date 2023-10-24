@@ -2,8 +2,9 @@ button {
 	background-color: transparent;
 	border: solid 3px var(--primary-action);
 	box-shadow: none;
-	padding: 0.5em 0.75em;
-	font-size: 1.1em;
-	border-radius: var(--border-radius-small);
+	padding: 0.35em 0.75em;
+	font-size: 1.1rem;
+	border-radius: 50px;
 	font-weight: 600;
+	cursor: pointer;
 }

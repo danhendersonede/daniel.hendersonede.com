@@ -1,29 +1,29 @@
 ---
 layout: layouts/home.njk
-numberOfLatestPostsToShow: 3
 ---
 
-<section>
-	<hgroup>
-		<h1>Daniel Henderson-Ede</h1>
-		<p>Exploring the wonderful intersections of accessibility within <br /> design systems.</p>
-	</hgroup>
-	<div></div>
-	{% include "partials/alert.njk" %}
+<section id="index">
+	<h1 class="visually-hidden">Daniel Henderson-Ede</h1>
+	<div id="headline">
+		<button id="headline__button">Explore</button>
+		<span>the</span>
+		<span class="tag info">wonderful</span>
+		<a href="#">intersections of accessibility</a>
+		<select aria-label="select example">
+			<option>within</option>
+			<option>across</option>
+			<option>inside</option>
+		</select>
+		<button class="tooltip">design systems</button>
+	</div>
 </section>
 
-<section id="recents">
-	{% set postsCount = collections.posts | length %}
-	<h2>Recent Posts</h2>
+{% include "partials/alert.njk" %}
 
-	{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-	{% set postslistCounter = postsCount %}
-	{% include "partials/recentPosts.njk" %}
-	<a href="/posts" class="primary">All Posts</a>
+{% include "partials/recentPosts.njk" %}
 
-</section>
-
-<section id="resources">
+<section class="recents container">
 	<h2>Resources coming soon!</h2>
+	<hr aria-hidden="true" />
 	<p style="font-weight: 500">I have some exciting things in the works, make sure to <a href="https://www.linkedin.com/in/danhendersonede/">follow me on LinkedIn</a> to get the latest updates.</p>
 </section>
