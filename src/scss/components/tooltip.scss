@@ -2,15 +2,24 @@
     padding: 0;
     border-radius: var(--border-radius-extra-small);
     border: none;
-    align-items: center;
     text-decoration: #00529f underline wavy;
     text-underline-offset: 12px;
+    text-decoration-thickness: 3px;
     display: flex;
+    align-items: flex-start;
+    background-color: transparent;
+
         
     &::after {
         content: url(/img/info.svg);
         margin-left: 0.25rem;
-        margin-top: 0.75rem;
+        margin-top: 0.05rem;
         transform: scale(.75);
       }
+
+    &:hover {
+      background-color: transparent;
+      color: #000;
+      text-decoration-thickness: 2.5px
+    }
 }

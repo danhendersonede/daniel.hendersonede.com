@@ -1,5 +1,4 @@
 select {
-    @extend button;
     padding: 0.5rem 1rem;
     border-color: #000000;
     padding-right: 2rem;
@@ -10,4 +9,6 @@ select {
     background-repeat: no-repeat, repeat;
     background-position: right .7em top 55%, 0 0;
     background-size: .65em auto, 100%;
+    border-radius: 50px;
+	border: solid 3px #000;
 }
