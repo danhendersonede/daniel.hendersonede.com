@@ -19,7 +19,7 @@
 
 	[plugins.inputs]
 		wcagLevel = "WCAG2AAA"
-		ignoreElements = ['iframe', '#headline > select']
+		ignoreElements = ['iframe', '#headline > h1 > select']
 
 [[plugins]]
 	package = "@netlify/plugin-sitemap"
