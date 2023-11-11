@@ -1,0 +1,35 @@
+dialog {
+    border-radius: var(--border-radius-medium);
+    border: none;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.1);
+    padding: 2.5rem 3em;
+    font-size: 1.1rem;
+    max-width: 50rem;
+
+    h2 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        img {
+            margin-left: 0.25rem;
+            margin-top: 0.05rem;
+            transform: scale(.75);
+        }
+    }
+
+    button {
+        margin-top: 1rem;
+    }
+}
+
+blockquote {
+    margin-bottom: 1rem;
+    border-left: 6px solid var(--primary-action);
+    padding-left: 1rem;
+
+    cite {
+        margin-top: 1rem;
+        display: block;
+    }
+}

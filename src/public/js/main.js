@@ -17,3 +17,15 @@ menuButton.addEventListener("click", (e) => {
 		}
 	}, 0);
 });
+
+const tooltip = document.getElementById("tooltipDesignSystems");
+
+tooltip.addEventListener("click", (e) => {
+	document.getElementById("modal").showModal();
+});
+
+const modelClose = document.getElementById("modalClose");
+
+modelClose.addEventListener("click", (e) => {
+	document.getElementById("modal").close();
+});

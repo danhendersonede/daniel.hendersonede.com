@@ -11,4 +11,12 @@ select {
     background-size: .65em auto, 100%;
     border-radius: 50px;
 	border: solid 3px #000;
+
+    &:disabled {
+		border-style: dashed;
+		background-color: var(--color-gray-50);
+		border-color: var(--color-gray-90);
+		color: #000;
+        opacity: 1;
+    }
 }

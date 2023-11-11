@@ -17,7 +17,7 @@
         transform: scale(.75);
       }
 
-    &:hover {
+    &:hover:enabled {
       background-color: transparent;
       color: #000;
       text-decoration-thickness: 2.5px

@@ -6,16 +6,16 @@ pageTitle: Home
 <section id="index">
 	<div id="headline">		
 		<h1>
-			<button id="headline__button">Explore</button>
+			<button disabled id="headline__button">Explore</button>
 			<span>the</span>
 			<span class="tag info">wonderful</span>
 			<a href="#">intersections of accessibility</a>
-			<select aria-label="select example">
+			<select aria-label="select example" value="within">
 				<option>within</option>
 				<option>across</option>
 				<option>inside</option>
 			</select>
-			<button class="tooltip">design systems</button>
+			<button id="tooltipDesignSystems" class="tooltip">design systems</button>
 		</h1>
 	</div>
 </section>
@@ -29,3 +29,17 @@ pageTitle: Home
 	<hr aria-hidden="true" />
 	<p style="font-weight: 500">I have some exciting things in the works, make sure to <a href="https://www.linkedin.com/in/danhendersonede/">follow me on LinkedIn</a> to get the latest updates.</p>
 </section>
+
+<dialog id="modal">
+	<h2><img src="/img/info.svg" alt="Info: " />Design systems</h2>
+	<hr aria-hidden="true" />
+	<blockquote>
+		A collection of reusable components, guided by clear standards, that can be assembled together to build any number of applications.
+
+		<cite>Marco Suarez, <a href="https://www.designbetter.co/design-systems-handbook">Design System Handbook</a></cite>
+	</blockquote>
+
+	<p>If you are interesting in learning more, I recommend a short read: <a href="https://danmall.com/posts/what-is-a-design-system/" target="_blank">What is a Design System by Dan Mall</a>.</p>
+
+	<button id="modalClose">Close tooltip</button>
+</dialog>

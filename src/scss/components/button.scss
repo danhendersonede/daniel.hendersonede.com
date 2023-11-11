@@ -8,8 +8,15 @@ button {
 	font-weight: 600;
 	color: var(--text-color);
 
-	&:hover {
+	&:hover:enabled {
 		background-color: var(--primary-action);
 		color: var(--text-color-inverse);
+	}
+
+	&:disabled {
+		border-style: dashed;
+		background-color: var(--color-gray-50);
+		border-color: var(--color-gray-90);
+		color: #000;
 	}
 }
