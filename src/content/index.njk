@@ -25,10 +25,27 @@ pageTitle: Home
 {% include "partials/recentPosts.njk" %}
 
 <section class="recents container">
-	<h2>Resources coming soon!</h2>
+	<h2>Resources</h2>
 	<hr aria-hidden="true" />
-	<p style="font-weight: 500">I have some exciting things in the works, make sure to <a href="https://www.linkedin.com/in/danhendersonede/">follow me on LinkedIn</a> to get the latest updates.</p>
+	<div class="card-group postlist">
+		<div class="postlist-item">
+			<img src="/img/resources/web-annotations-kit.png" alt="Figma file cover of the CVS Health Web Accessibility Annotation Kit. To the side of the text is a mosaic of different annotation stamps. The subtitle reads, “Communicating design intent to create experiences anyone can use." />
+			<br />
+			<a href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit" class="postlist-link">Web Accessibility Annotation Kit for Figma</a>
+			<p>Accessibility annotations help capture design intent that cannot be conveyed through visual design alone.</p>
+			<p>I led the creation of this annotations kit for CVS Health as it <a href="https://medium.com/cvs-health-tech-blog/behind-the-scenes-of-creating-a-new-web-accessibility-annotation-kit-1834815544d3">became one of their top Figma libraries</a>, with 150,000+ annotations made across 1,100+ design files.</p>
+		</div>
+		<div class="postlist-item">
+			<img src="/img/resources/advent-of-annotations-2023.png" alt="Figma file cover of the Advent of Annotations 2023. 24 daily annotation challenges. The cover includes two christmas trees with ornaments made from the CVS Health Web Accessibility Annotations Kit." />
+			<br />
+			<a href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit" class="postlist-link">Advent of Annotations 2023 🎄</a>
+			<p>Practice your Web accessibility skills by annotating a real design from a different organization each day. Use an accessibility annotations tool of your choice (or experiment with different ones) to practice your Web annotation skills.</p>
+			<p>This resource is aimed at all skill levels, with difficulty increasing over time.</p>
+		</div>
+	</div>
 </section>
+
+{# <p style="font-weight: 500">I have some exciting things in the works, make sure to <a href="https://www.linkedin.com/in/danhendersonede/">follow me on LinkedIn</a> to get the latest updates.</p> #}
 
 <dialog id="modal">
 	<h2><img src="/img/info.svg" role="img" alt="Info: " />What are design systems?</h2>
