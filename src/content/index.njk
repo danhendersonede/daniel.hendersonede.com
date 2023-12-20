@@ -6,6 +6,9 @@ eleventyNavigation:
   order: 1
 ---
 
+{% set latestPost = collections.posts | last %}
+{% set featuredPost = collections.posts | random %}
+
 <section id="intro">
 	<div>
 		<h1>Hey there, I’m Daniel (he/him)</h1>
@@ -14,11 +17,11 @@ eleventyNavigation:
 	<div>
 		<div>
 			<strong>Latest article</strong>
-			<a href="#">Building Accessible Design Systems – axe-con 2022</a>
+			<a href="{{ latestPost.url }}">{{ latestPost.data.pageTitle }}</a>
 		</div>
 		<div>
 			<strong>Featured resource</strong>
-			<a href="#">Advent of Annotations 2023</a>
+			<a href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit">Advent of Annotations 2023 🎄</a>
 		</div>
 	</div>
 </section>
