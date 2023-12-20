@@ -1,14 +1,14 @@
 <header id="header">
     {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
     <div class="container">
-        <div>
-            <a id="logo" href="/">
-                <img src="/img/profile-tiny.jpg" alt="" />
-                Daniel Henderson-Ede
-            </a>
+        <div class="top">
+            <span id="logo">
+                <img src="/img/profile-tiny.jpg" alt="" />Daniel<br /> Henderson-Ede
+            </span>
+            <button id="menu-button--close" aria-label="Close"><img role="img" src="/img/close.svg" /></button>
         </div>
         <nav id="nav" aria-label="Main Navigation">
-            <button id="menu-button" onclick>Menu</button>
+            <button id="menu-button--open">Menu</button>
             <ul class="nav">
             {%- for entry in collections.all | eleventyNavigation %}
                 <li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>

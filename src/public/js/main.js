@@ -1,31 +1,31 @@
 document.body.className = document.body.className.replace("no-js", "js");
 
-const menuButton = document.getElementById("menu-button");
+const menuButtonOpen = document.getElementById("menu-button--open");
+const menuButtonClose = document.getElementById("menu-button--close");
+const header = document.getElementById("header");
 
-menuButton.addEventListener("click", (e) => {
-	menuButton.style.display = "none";
-
-	const header = document.getElementById("header");
+menuButtonOpen.addEventListener("click", (e) => {
+	menuButtonOpen.style.display = "none";
+	menuButtonClose.style.display = "block";
 
 	header.classList.add("header__smallviewport");
 
-	const firstNavLink = header.querySelector(".nav-item a");
-
 	setTimeout(() => {
-		if (firstNavLink) {
-			firstNavLink.focus();
+		if (menuButtonClose) {
+			menuButtonClose.focus();
 		}
 	}, 0);
 });
 
-const tooltip = document.getElementById("tooltipDesignSystems");
+menuButtonClose.addEventListener("click", (e) => {
+	menuButtonOpen.style.display = "block";
+	menuButtonClose.style.display = "none";
 
-tooltip.addEventListener("click", (e) => {
-	document.getElementById("modal").showModal();
-});
+	header.classList.remove("header__smallviewport");
 
-const modelClose = document.getElementById("modalClose");
-
-modelClose.addEventListener("click", (e) => {
-	document.getElementById("modal").close();
+	setTimeout(() => {
+		if (menuButtonOpen) {
+			menuButtonOpen.focus();
+		}
+	}, 0);
 });

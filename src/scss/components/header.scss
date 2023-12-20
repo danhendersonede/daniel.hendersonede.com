@@ -2,6 +2,17 @@ header {
     background-color: var(--background-color);
     margin-bottom: 2rem;
 
+    .top {
+        display: flex;
+        
+        #menu-button--close {
+            display: none;
+            border: none;
+            border-radius: 100px;
+            padding: 4px 10px;
+        }
+    }
+
     &.header__smallviewport {
         background-color: #ffffff;
 
@@ -9,8 +20,18 @@ header {
             flex-direction: column;
             align-items: flex-start;
 
+            .top {
+                width: 100%;
+
+                span {
+                    flex-grow: 1;
+                }
+            }
+
             nav { 
-                margin-left: 0;
+                text-align: right;
+                margin-left: auto;
+                margin-right: 16px;
 
                 ul {
                     display: block;
@@ -30,9 +51,9 @@ header {
 
     .container {
         display: flex;
-        flex-direction: column;
         padding: 1.5em 1em;
-        column-gap: 2rem;
+        align-items: center;
+        column-gap: 4rem;
         row-gap: 1rem;
 
         body.no-js & {
@@ -40,23 +61,13 @@ header {
             align-items: flex-start;
         }
 
-        a#logo {
+        #logo {
             font-size: 1.3rem;
-            font-weight: 600;
+            font-weight: 400;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-
-            &:visited {
-                color: var(--text-color-link);
-            }
-
-            &:hover,
-            &:active,
-            &:focus-visible {
-                text-decoration: underline;
-            }
 
             img {
                 height: 3.5rem;
@@ -78,7 +89,7 @@ header {
                 margin-left: 0;
             }
 
-            #menu-button {
+            #menu-button--open {
                 body.no-js & {
                     display: none;
                 }
@@ -97,11 +108,13 @@ header {
             a[href] {
                 color: var(--nav-color-link);
                 font-size: 1.2rem;
-                font-weight: 500;
+                font-weight: 600;
             }
 
             a[href][aria-current="page"] {
-                text-decoration: underline;
+                text-decoration-thickness: 3px;
+                text-decoration-style: dotted;
+                color: var(--primary-action);
             }
         }
 
@@ -110,7 +123,7 @@ header {
             nav {
                 margin-left: 0;
 
-                #menu-button {
+                #menu-button--open {
                     display: none;
                 }
 

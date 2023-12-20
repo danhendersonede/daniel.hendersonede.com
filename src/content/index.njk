@@ -1,6 +1,9 @@
 ---
 layout: layouts/home.njk
 pageTitle: Home
+eleventyNavigation:
+  key: Home
+  order: 1
 ---
 
 <section id="intro">
@@ -26,36 +29,20 @@ pageTitle: Home
 		<div class="card">
 			<img src="/img/resources/web-annotations-kit.png" alt="Figma file cover of the CVS Health Web Accessibility Annotation Kit. To the side of the text is a mosaic of different annotation stamps. The subtitle reads, “Communicating design intent to create experiences anyone can use." />
 			<div>
-				<a href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit" class="postlist-link">Web Accessibility Annotation Kit for Figma</a>
-				<p>Accessibility annotations help capture design intent that cannot be conveyed through visual design alone.</p>
+				<a href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit" class="postlist-link">Web Accessibility Annotation Kit</a>
 				<p>I led the creation of this annotations kit for CVS Health as it <a href="https://medium.com/cvs-health-tech-blog/behind-the-scenes-of-creating-a-new-web-accessibility-annotation-kit-1834815544d3">became one of their top Figma libraries</a>, with 150,000+ annotations made across 1,100+ design files.</p>
+				<ul class="tags"><li class="tag">Figma</li><li class="tag">Library</li></ol>
 			</div>
 		</div>
 		<div class="card">
 			<img src="/img/resources/advent-of-annotations-2023.png" alt="Figma file cover of the Advent of Annotations 2023. 24 daily annotation challenges. The cover includes two christmas trees with ornaments made from the CVS Health Web Accessibility Annotations Kit." />
 			<div>
 				<a href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit" class="postlist-link">Advent of Annotations 2023 🎄</a>
-				<p>Practice your Web accessibility skills by annotating a real design from a different organization each day. Use an accessibility annotations tool of your choice (or experiment with different ones) to practice your Web annotation skills.</p>
-				<p>This resource is aimed at all skill levels, with difficulty increasing over time.</p>
+				<p>Practice your Web accessibility skills by annotating a real design from a different organization each day.</p>
+				<ul class="tags"><li class="tag">Figma</li></ol>
 			</div>
 		</div>
 	</div>
 </section>
 
 {% include "partials/recentPosts.njk" %}
-
-{# <p style="font-weight: 500">I have some exciting things in the works, make sure to <a href="https://www.linkedin.com/in/danhendersonede/">follow me on LinkedIn</a> to get the latest updates.</p> #}
-
-<dialog id="modal">
-	<h2><img src="/img/info.svg" role="img" alt="Info: " />What are design systems?</h2>
-	<hr aria-hidden="true" />
-	<blockquote>
-		“A design system reduces design debt, accelerates the design process, and builds bridges between teams working in concert to bring products to life.”
-
-		<cite>Marco Suarez, <a href="https://www.designbetter.co/design-systems-handbook">Design System Handbook</a></cite>
-	</blockquote>
-
-	<p>If you are interesting in learning more, I recommend a short read: <a href="https://danmall.com/posts/what-is-a-design-system/" target="_blank">What is a Design System by Dan Mall</a>.</p>
-
-	<button id="modalClose"><img role="img" src="/img/close.svg" /><span>Close</span></button>
-</dialog>

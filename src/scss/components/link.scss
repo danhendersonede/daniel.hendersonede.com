@@ -12,18 +12,20 @@ a[href].primary {
 
 a[href] {
 	color: var(--text-color-link);
-	text-underline-offset: 0.25rem;
+	text-underline-offset: 0.4rem;
 	border-radius: var(--border-radius-extra-small);
-}
-a[href]:visited {
-	color: var(--text-color-link-visited);
-}
-a[href]:hover,
-a[href]:active,
-a[href]:focus-visible {
-	color: var(--text-color-link-active);
-	text-underline-offset: 0.15rem;
-	transition: text-underline-offset 250ms ease-out;
+	
+	&:visited {
+		color: var(--text-color-link-visited);
+	}
+	
+	&:hover,
+	&:active,
+	&:focus-visible {
+		color: var(--text-color-link-active);
+		text-underline-offset: 0.25rem;
+		transition: text-underline-offset 250ms ease-out;
+	}
 }
 
 .header-anchor {
