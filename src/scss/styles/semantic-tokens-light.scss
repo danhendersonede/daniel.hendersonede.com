@@ -1,5 +1,5 @@
 :root {
-	--background-color: var(--color-gray-20);
+	--background-color: var(--color-gray-0);
 
 	--container-border-radius: var(--border-radius-large);
 	--container-background-color: var(--color-gray-0);
@@ -12,4 +12,12 @@
 
 	--primary-action: var(--color-blue-90);
 	--primary-action-active: var(--color-blue-70);
+
+	--tile-border-style: solid var(--color-gray-100);
+	--tile-border-width: var(--border-width) var(--border-width) calc(var(--border-width) * 2) var(--border-width)
+}
+
+*:focus-visible {
+	outline: solid var(--border-width) var(--color-gray-100);
+	outline-offset: var(--border-width);
 }

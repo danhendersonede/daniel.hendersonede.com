@@ -1,7 +1,8 @@
 :root {
 	--color-gray-0: #fefefe;
 	--color-gray-10: #f7f7f7;
-	--color-gray-20: #f0f5ff;
+	--color-gray-20: #eeeeee;
+	--color-gray-30: #cecece;
 	--color-gray-50: #c0c0c0;
 	--color-gray-90: #333333;
 	--color-gray-100: #000000;
@@ -15,10 +16,11 @@
 	--border-radius-small: 8px;
 	--border-radius-extra-small: 2px;
 
-	--syntax-tab-size: 2;
-}
+	--border-width: 3px;
 
-*:focus-visible {
-	outline: solid 4px #000000;
-	outline-offset: 4px;
+	--syntax-tab-size: 2;
+
+	--font-display-large: 2.25rem;
+	--font-display-medium: 1.5rem;
+	--font-display-small: 1.5rem;
 }

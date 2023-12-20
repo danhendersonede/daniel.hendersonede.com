@@ -3,8 +3,7 @@
 .card-group {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-	column-gap: 2rem;
-	row-gap: 2rem;
+	gap: 1rem;
 }
 
 ul.card-group {
@@ -17,9 +16,27 @@ ul.card-group .card {
 }
 
 .card {
-	padding: 1rem 1.5em 1.5rem 1.5em;
 	background-color: var(--container-background-color);
 	border-radius: var(--border-radius-medium);
+	overflow: hidden;
+	border: var(--tile-border-style);
+	border-width: var(--tile-border-width);
+	padding: 1rem 1.5em 1.5rem 1.5em;
+
+	&:has(img) {
+		padding: 0;
+	}
+
+	div {
+		padding: 1rem 1.5em 1.5rem 1.5em;
+		display: flex;
+    	flex-direction: column;
+		text-wrap: pretty;
+
+		> a:first-child {
+			font-size: var(--font-display-small);
+		}
+	}
 }
 
 @media only screen and (min-width: 768px) {

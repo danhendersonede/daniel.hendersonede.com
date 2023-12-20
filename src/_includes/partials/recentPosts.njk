@@ -2,12 +2,11 @@
 {% set postslist = collections.posts | head(-1 * 3) %}
 {% set postslistCounter = postsCount %}
 
-<section class="recents container">
+<section class="recents highlights">
 	<h2>Recent Posts</h2>
-	<hr aria-hidden="true" />
-	<div reversed class="card-group postlist">
+	<div reversed class="card-group">
 	{% for post in postslist | reverse %}
-		<div class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+		<div class="card postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
 			<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
 			<a href="{{ post.url }}" class="postlist-link">{% if post.data.pageTitle %}{{ post.data.pageTitle }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
 			<p>{{ post.data.description }}</p>

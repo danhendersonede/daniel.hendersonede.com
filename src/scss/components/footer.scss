@@ -1,11 +1,12 @@
 footer {
 	margin-top: 2rem;
-	background-color: #fff;
+	background-color: #fef4d3;
 	padding-top: 2rem;
 	padding-bottom: 4rem;
 	display: flex;
 	flex-direction: column;
 	row-gap: 2rem;
+	border-top: wavy 6px #000;
 }
 
 footer > .container {
