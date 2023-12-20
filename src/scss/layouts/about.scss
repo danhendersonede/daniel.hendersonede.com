@@ -1,17 +1,17 @@
 #about {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 1rem;
-    column-gap: 4rem;
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 1rem;
+	column-gap: 4rem;
 
-    div:last-child {
-        flex-basis: 15rem;
-        flex-grow: 1;
-    }
+	div:last-child {
+		flex-basis: 15rem;
+		flex-grow: 1;
+	}
 }
 
 #values {
-    .card-group {
-        margin-top: 1.5rem;
-    }
+	.card-group {
+		margin-top: 1.5rem;
+	}
 }

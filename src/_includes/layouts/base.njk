@@ -1,33 +1,48 @@
 {% set assetHash = global.random() %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ metadata.language }}">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>{{eleventyNavigation.key or pageTitle}} - {{ title or metadata.title }}</title>
-		<meta name="description" content="{{ description or metadata.description }}">
+    <title>
+      {{eleventyNavigation.key or pageTitle}} - {{ title or metadata.title }}
+    </title>
+    <meta
+      name="description"
+      content="{{ description or metadata.description }}"
+    />
 
-		{#- Atom and JSON feeds included by default #}
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+    {#- Atom and JSON feeds included by default #}
+    <link
+      rel="alternate"
+      href="/feed/feed.xml"
+      type="application/atom+xml"
+      title="{{ metadata.title }}"
+    />
+    <link
+      rel="alternate"
+      href="/feed/feed.json"
+      type="application/json"
+      title="{{ metadata.title }}"
+    />
 
-		<meta name="generator" content="{{ eleventy.generator }}">
+    <meta name="generator" content="{{ eleventy.generator }}" />
 
-		<style>{% include "css/critical.css" %}</style>
+    <style>
+      {% include "css/critical.css" %}
+    </style>
 
-		<script src="/js/main.js" defer></script>
-	</head>
-	<body class="no-js">
-		<a href="#skip" class="visually-hidden">Skip to main content</a>
+    <script src="/js/main.js" defer></script>
+  </head>
+  <body class="no-js">
+    <a href="#skip" class="visually-hidden">Skip to main content</a>
 
-		{% include "partials/header.njk" %}
+    {% include "partials/header.njk" %}
 
-		<main id="skip" class="container">
-			{{ content | safe }}
-		</main>
+    <main id="skip" class="container">{{ content | safe }}</main>
 
-		{% include "partials/footer.njk" %}
-	</body>
+    {% include "partials/footer.njk" %}
+  </body>
 </html>

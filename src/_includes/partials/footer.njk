@@ -1,28 +1,58 @@
 {% include "partials/contact.njk" %}
 
 <footer>
-    <div class="container">
-        <div class="card">
-            <hr aria-hidden="true" />
-            <div>
-                <nav class="a11y-webring-club" aria-labelledby="a11y-webring-club">
-                <h2 id="a11y-webring-club" class="font-display-medium">a11y-webring.club</h2>
-                    <p>This site is a member of the <a rel="external" href="https://a11y-webring.club/">a11y-webring.club</a>.</p>
-                    <ul>
-                        <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/prev">Previous website</a></li>
-                        <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/random">Random website</a></li>
-                        <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/next">Next website</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <nav aria-label="Footer nav">
-            <ul>
-                {%- for entry in collections.all | eleventyNavigation %}
-                    <li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-                {%- endfor %}
-                <li><a href="/accessibility-statement">Accessibility Statement</a></li>
-            </ul>
+  <div class="container">
+    <div class="card">
+      <hr aria-hidden="true" />
+      <div>
+        <nav class="a11y-webring-club" aria-labelledby="a11y-webring-club">
+          <h2 id="a11y-webring-club" class="font-display-medium">
+            a11y-webring.club
+          </h2>
+          <p>
+            This site is a member of the
+            <a rel="external" href="https://a11y-webring.club/"
+              >a11y-webring.club</a
+            >.
+          </p>
+          <ul>
+            <li>
+              <a
+                rel="external"
+                referrerpolicy="strict-origin"
+                href="https://a11y-webring.club/prev"
+                >Previous website</a
+              >
+            </li>
+            <li>
+              <a
+                rel="external"
+                referrerpolicy="strict-origin"
+                href="https://a11y-webring.club/random"
+                >Random website</a
+              >
+            </li>
+            <li>
+              <a
+                rel="external"
+                referrerpolicy="strict-origin"
+                href="https://a11y-webring.club/next"
+                >Next website</a
+              >
+            </li>
+          </ul>
         </nav>
+      </div>
     </div>
+    <nav aria-label="Footer nav">
+      <ul>
+        {%- for entry in collections.all | eleventyNavigation %}
+        <li class="nav-item">
+          <a href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+        </li>
+        {%- endfor %}
+        <li><a href="/accessibility-statement">Accessibility Statement</a></li>
+      </ul>
+    </nav>
+  </div>
 </footer>

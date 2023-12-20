@@ -14,11 +14,11 @@ a[href] {
 	color: var(--text-color-link);
 	text-underline-offset: 0.4rem;
 	border-radius: var(--border-radius-extra-small);
-	
+
 	&:visited {
 		color: var(--text-color-link-visited);
 	}
-	
+
 	&:hover,
 	&:active,
 	&:focus-visible {

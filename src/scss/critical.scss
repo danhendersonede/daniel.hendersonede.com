@@ -1,25 +1,25 @@
-@import 'styles/reset';
-@import 'utils/critical-utils.scss';
-@import 'styles/core-tokens';
-@import 'styles/semantic-tokens-light';
+@import "styles/reset";
+@import "utils/critical-utils.scss";
+@import "styles/core-tokens";
+@import "styles/semantic-tokens-light";
 
-@import 'styles/typography';
-@import 'styles/background';
+@import "styles/typography";
+@import "styles/background";
 
-@import 'layouts/index';
-@import 'layouts/about';
+@import "layouts/index";
+@import "layouts/about";
 
-@import 'partials/contact';
+@import "partials/contact";
 
-@import 'components/header';
-@import 'components/button';
-@import 'components/link';
-@import 'components/tag';
-@import 'components/select';
-@import 'components/tooltip';
-@import 'components/alert';
-@import 'components/modal';
-@import 'components/card';
-@import 'components/tags';
-@import 'components/video-embed';
-@import 'components/footer';
+@import "components/header";
+@import "components/button";
+@import "components/link";
+@import "components/tag";
+@import "components/select";
+@import "components/tooltip";
+@import "components/alert";
+@import "components/modal";
+@import "components/card";
+@import "components/tags";
+@import "components/video-embed";
+@import "components/footer";

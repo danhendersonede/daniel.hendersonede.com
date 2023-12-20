@@ -14,7 +14,8 @@
 	--primary-action-active: var(--color-blue-70);
 
 	--tile-border-style: solid var(--color-gray-100);
-	--tile-border-width: var(--border-width) var(--border-width) calc(var(--border-width) * 2) var(--border-width)
+	--tile-border-width: var(--border-width) var(--border-width)
+		calc(var(--border-width) * 2) var(--border-width);
 }
 
 *:focus-visible {

@@ -4,9 +4,9 @@ eleventyNavigation:
   key: Posts
   order: 2
 ---
+
 <h1>{{eleventyNavigation.key}}</h1>
 
 <div id="posts">
-{% set postslist = collections.posts %}
-{% include "partials/allPosts.njk" %}
+  {% set postslist = collections.posts %} {% include "partials/allPosts.njk" %}
 </div>
