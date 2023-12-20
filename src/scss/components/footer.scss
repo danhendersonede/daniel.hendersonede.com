@@ -26,6 +26,10 @@ footer {
 			div {
 				padding-top: 0;
 
+				ul {
+					row-gap: 2rem;
+				}
+
 				li a {
 					padding: 8px 12px;
 					border: solid 3px #000;

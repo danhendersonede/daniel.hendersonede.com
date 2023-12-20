@@ -1,21 +1,21 @@
+{% include "partials/contact.njk" %}
+
 <footer>
     <div class="container">
         <div class="card">
             <hr aria-hidden="true" />
             <div>
-                <h2 id="contact-me" class="font-display-medium">Contact me</h2>
-                <ul aria-labelledby="contact-me">
-                    <li><a href="mailto:daniel@hendersonede.com">Email</a></li>
-                    <li><a href="https://www.linkedin.com/in/danhendersonede/">LinkedIn</a></li>
-                    {# <li><a href="https://www.figma.com/@danhendersonede">Figma</a></li>
-                    <li><a href="https://github.com/danhendersonede">GitHub</a></li> #}
-                    <li><a href="https://calendly.com/danhendersonede/chat">Schedule a Zoom chat</a></li>
-                </ul>
+                <nav class="a11y-webring-club" aria-labelledby="a11y-webring-club">
+                <h2 id="a11y-webring-club" class="font-display-medium">a11y-webring.club</h2>
+                    <p>This site is a member of the <a rel="external" href="https://a11y-webring.club/">a11y-webring.club</a>.</p>
+                    <ul>
+                        <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/prev">Previous website</a></li>
+                        <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/random">Random website</a></li>
+                        <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/next">Next website</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        {# <div>
-            <h2>Web rings:</h2>
-        </div> #}
         <nav aria-label="Footer nav">
             <ul>
                 {%- for entry in collections.all | eleventyNavigation %}

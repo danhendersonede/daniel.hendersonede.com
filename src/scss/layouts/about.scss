@@ -8,14 +8,6 @@
         flex-basis: 15rem;
         flex-grow: 1;
     }
-
-    img {
-        background-color: var(--container-background-color);
-        border-radius: var(--border-radius-medium);
-        overflow: hidden;
-        border: var(--tile-border-style);
-        border-width: var(--tile-border-width);
-    }
 }
 
 #values {
