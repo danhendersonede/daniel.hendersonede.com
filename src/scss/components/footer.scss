@@ -1,28 +1,47 @@
 footer {
 	margin-top: 2rem;
 	background-color: #fef4d3;
-	padding-top: 2rem;
-	padding-bottom: 4rem;
-	display: flex;
-	flex-direction: column;
-	row-gap: 2rem;
+	padding: 2rem 0;
 	border-top: wavy 6px #000;
-}
+	
+	& > .container {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		row-gap: 2rem;
+		column-gap: 4rem;
+		padding-bottom: 0;
+		width: 100%;
 
-footer > .container {
-	display: flex;
-	flex-wrap: wrap;
-	row-gap: 2rem;
-	column-gap: 4rem;
-	padding-bottom: 0;
-	width: 100%;
-}
+		.card {
+			background-color: #bcefff;
+			padding: 0;
 
-footer ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
+			hr {
+				border: 3px solid #000000;
+				width: 100%;
+				margin: 1.5rem 0 0 0;
+			}
+
+			div {
+				padding-top: 0;
+
+				li a {
+					padding: 8px 12px;
+					border: solid 3px #000;
+					border-radius: 8px;
+					background-color: #fff;
+				}
+			}
+		}
+	}
+
+	ul {
+		list-style: none;
+		padding: 0.5rem 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
 }

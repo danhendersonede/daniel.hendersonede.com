@@ -1,26 +1,28 @@
 <footer>
     <div class="container">
-        <div>
-            <h2 id="contact-me">Contact me</h2>
-            <ul aria-labelledby="contact-me">
-                <li><a href="mailto:daniel@hendersonede.com">Email</a></li>
-                <li><a href="https://www.linkedin.com/in/danhendersonede/">LinkedIn</a></li>
-                <li><a href="https://www.figma.com/@danhendersonede">Figma</a></li>
-                <li><a href="https://github.com/danhendersonede">GitHub</a></li>
-                {# <li><a href="#">Online hangout</a></li> #}
-            </ul>
-            <br />
+        <div class="card">
+            <hr aria-hidden="true" />
+            <div>
+                <h2 id="contact-me" class="font-display-medium">Contact me</h2>
+                <ul aria-labelledby="contact-me">
+                    <li><a href="mailto:daniel@hendersonede.com">Email</a></li>
+                    <li><a href="https://www.linkedin.com/in/danhendersonede/">LinkedIn</a></li>
+                    {# <li><a href="https://www.figma.com/@danhendersonede">Figma</a></li>
+                    <li><a href="https://github.com/danhendersonede">GitHub</a></li> #}
+                    <li><a href="https://calendly.com/danhendersonede/chat">Schedule a Zoom chat</a></li>
+                </ul>
+            </div>
         </div>
         {# <div>
             <h2>Web rings:</h2>
         </div> #}
+        <nav aria-label="Footer nav">
+            <ul>
+                {%- for entry in collections.all | eleventyNavigation %}
+                    <li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+                {%- endfor %}
+                <li><a href="/accessibility-statement">Accessibility Statement</a></li>
+            </ul>
+        </nav>
     </div>
-   <nav aria-label="footer nav" class="container">
-        <ul>
-            <li><a href="/accessibility-statement">Accessibility Statement</a></li>
-            <li><a href="/posts">Posts</a></li>
-            <li><a href="/talks">Talks</a></li>
-            <li><a href="/about">About Me</a></li>
-        </ul>
-    </nav>
 </footer>
