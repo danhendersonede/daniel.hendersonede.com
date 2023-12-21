@@ -13,5 +13,9 @@
 #values {
 	.card-group {
 		margin-top: 1.5rem;
+
+		.card {
+			background-color: var(--color-gray-10);
+		}
 	}
 }
