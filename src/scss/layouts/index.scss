@@ -7,6 +7,12 @@
 		border-radius: var(--border-radius-medium);
 	}
 
+	img {
+		transition: rotate;
+		transition-property: transform;
+		transition-duration: 250ms;
+	}
+
 	> div:first-child {
 		background-color: #fffcc7;
 		padding: 30px;
@@ -51,6 +57,14 @@
 						top: -140px;
 						max-width: initial;
 					}
+
+					&:has(a:hover),
+					&:has(a:focus),
+					&:has(a:active) {
+						img {
+							transform: scale(0.35) rotate(-1deg);
+						}
+					}
 				}
 			}
 
@@ -72,9 +86,17 @@
 					img {
 						position: absolute;
 						transform: scale(0.35);
-						left: -1930px;
+						left: -1924px;
 						bottom: -130px;
 						max-width: initial;
+					}
+
+					&:has(a:hover),
+					&:has(a:focus),
+					&:has(a:active) {
+						img {
+							transform: scale(0.35) rotate(-1deg);
+						}
 					}
 				}
 			}
