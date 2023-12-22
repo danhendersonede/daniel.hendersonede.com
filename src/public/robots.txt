@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://daniel.hendersonede.com/sitemap.xml
-Sitemap: https://www.daniel.hendersonede.com/sitemap.xml
