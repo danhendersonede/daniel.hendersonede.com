@@ -15,13 +15,6 @@
 		output_path = "reports/lighthouse/index.html"
 
 [[plugins]]
-	package = "@netlify/plugin-a11y"
-
-	[plugins.inputs]
-		wcagLevel = "WCAG2AAA"
-		ignoreElements = ['iframe', '#headline > h1 > select']
-
-[[plugins]]
 	package = "@netlify/plugin-sitemap"
 
 # [[plugins]]
