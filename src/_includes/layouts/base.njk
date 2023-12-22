@@ -43,12 +43,14 @@
     <script src="/js/main.js" defer></script>
   </head>
   <body class="no-js">
-    <a href="#skip" class="visually-hidden">Skip to main content</a>
+    <div style="overflow-x: hidden">
+      <a href="#skip" class="visually-hidden">Skip to main content</a>
 
-    {% include "partials/header.njk" %}
+      {% include "partials/header.njk" %}
 
-    <main id="skip" class="container">{{ content | safe }}</main>
+      <main id="skip" class="container">{{ content | safe }}</main>
 
-    {% include "partials/footer.njk" %}
+      {% include "partials/footer.njk" %}
+    </div>
   </body>
 </html>

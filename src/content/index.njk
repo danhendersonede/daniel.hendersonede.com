@@ -6,8 +6,8 @@ eleventyNavigation:
   order: 1
 ---
 
-{% set latestPost = collections.posts | last %} {% set featuredPost =
-collections.posts | random %}
+{% set latestPost = collections.posts | last %}
+{% set featuredPost = collections.posts | random %}
 
 <section id="intro">
   <div>
@@ -17,11 +17,12 @@ collections.posts | random %}
     </p>
   </div>
   <div>
-    <div>
+    <div class="card">
+      <img src="/img/theme/arrow-left-down.svg" role="img" alt=""/>
       <strong>Latest article</strong>
       <a href="{{ latestPost.url }}">{{ latestPost.data.pageTitle }}</a>
     </div>
-    <div>
+    <div class="card">
       <strong>Featured resource</strong>
       <a
         href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit"
@@ -38,7 +39,7 @@ collections.posts | random %}
       <img
         src="/img/resources/web-annotations-kit.png"
         alt="Figma file cover of the CVS Health Web Accessibility Annotation Kit. To the side of the text is a mosaic of different annotation stamps. The subtitle reads, “Communicating design intent to create experiences anyone can use."
-      />
+/>
       <div>
         <a
           href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit"
@@ -62,7 +63,7 @@ collections.posts | random %}
       <img
         src="/img/resources/advent-of-annotations-2023.png"
         alt="Figma file cover of the Advent of Annotations 2023. 24 daily annotation challenges. The cover includes two christmas trees with ornaments made from the CVS Health Web Accessibility Annotations Kit."
-      />
+/>
       <div>
         <a
           href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit"

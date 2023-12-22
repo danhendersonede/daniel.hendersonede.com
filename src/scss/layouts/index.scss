@@ -25,19 +25,26 @@
 		gap: 1rem;
 
 		div {
+			position: relative;
+			overflow: visible;
+
 			&:first-child {
 				background-color: #fef4d3;
 				flex-grow: 1;
 				padding: 30px;
-				border: var(--tile-border-style);
-				border-width: var(--tile-border-width);
+
+				img {
+					position: absolute;
+					transform: scale(0.35);
+					right: -1000px;
+					top: -120px;
+					max-width: initial;
+				}
 			}
 
 			&:last-child {
 				background-color: #d7d3fe;
 				padding: 30px;
-				border: var(--tile-border-style);
-				border-width: var(--tile-border-width);
 			}
 
 			strong {
