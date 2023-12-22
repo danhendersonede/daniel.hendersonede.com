@@ -8,7 +8,7 @@
 	}
 
 	> div:first-child {
-		background-color: #bcefff;
+		background-color: #fffcc7;
 		padding: 30px;
 		border: var(--tile-border-style);
 		border-width: var(--tile-border-width);
@@ -29,22 +29,44 @@
 			overflow: visible;
 
 			&:first-child {
-				background-color: #fef4d3;
+				background-color: #4da394;
 				flex-grow: 1;
-				padding: 30px;
+				padding: 20px;
+
+				> div {
+					background-color: #fffcc8;
+					transform: rotate(1.5deg);
+					border: black solid 3px;
+
+					strong,
+					a {
+						transform: rotate(-1.5deg);
+					}
+				}
 
 				img {
 					position: absolute;
 					transform: scale(0.35);
 					right: -1000px;
-					top: -120px;
+					top: -125px;
 					max-width: initial;
 				}
 			}
 
 			&:last-child {
-				background-color: #d7d3fe;
-				padding: 30px;
+				background-color: #ef9a48;
+				padding: 20px;
+
+				> div {
+					background-color: #fffcc8;
+					transform: rotate(-1.5deg);
+					border: black solid 3px;
+
+					strong,
+					a {
+						transform: rotate(1.5deg);
+					}
+				}
 			}
 
 			strong {

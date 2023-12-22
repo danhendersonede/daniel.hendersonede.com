@@ -18,16 +18,20 @@ eleventyNavigation:
   </div>
   <div>
     <div class="card">
-      <img src="/img/theme/arrow-left-down.svg" role="img" alt=""/>
-      <strong>Latest article</strong>
-      <a href="{{ latestPost.url }}">{{ latestPost.data.pageTitle }}</a>
+      <div>
+        <img src="/img/theme/arrow-left-down.svg" role="img" alt=""/>
+        <strong>Latest article</strong>
+        <a href="{{ latestPost.url }}">{{ latestPost.data.pageTitle }}</a>
+      </div>
     </div>
     <div class="card">
-      <strong>Featured resource</strong>
-      <a
+      <div>
+        <strong>Featured resource</strong>
+        <a
         href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit"
         >Advent of Annotations 2023 🎄</a
       >
+      </div>
     </div>
   </div>
 </section>
