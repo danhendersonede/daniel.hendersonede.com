@@ -37,10 +37,10 @@
 			&:first-child {
 				background-color: #4da394;
 				flex-grow: 1;
-				padding: 20px;
+				padding: 0;
 
 				> div {
-					background-color: #fffcc8;
+					background-color: #ffd9b4;
 					transform: rotate(1.5deg);
 					border: black solid 3px;
 					border-radius: var(--border-radius-small);
@@ -62,10 +62,10 @@
 
 			&:last-child {
 				background-color: #ef9a48;
-				padding: 20px;
+				padding: 0;
 
 				> div {
-					background-color: #fffcc8;
+					background-color: #97e7da;
 					transform: rotate(-1.5deg);
 					border: black solid 3px;
 					border-radius: var(--border-radius-small);
