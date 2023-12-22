@@ -37,11 +37,12 @@
 					background-color: #fffcc8;
 					transform: rotate(1.5deg);
 					border: black solid 3px;
+					border-radius: var(--border-radius-small);
 
-					strong,
-					a {
-						transform: rotate(-1.5deg);
-					}
+					// strong,
+					// a {
+					// 	transform: rotate(-1.5deg);
+					// }
 
 					img {
 						position: absolute;
@@ -61,11 +62,12 @@
 					background-color: #fffcc8;
 					transform: rotate(-1.5deg);
 					border: black solid 3px;
+					border-radius: var(--border-radius-small);
 
-					strong,
-					a {
-						transform: rotate(1.5deg);
-					}
+					// strong,
+					// a {
+					// 	transform: rotate(1.5deg);
+					// }
 
 					img {
 						position: absolute;
