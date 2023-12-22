@@ -1,5 +1,11 @@
 html,
 body {
 	color: var(--text-color);
-	background-color: var(--background-color);
+	// background-color: var(--background-color);
+	background: rgb(239, 236, 250);
+	background: radial-gradient(
+		circle,
+		rgb(238 237 239) 19%,
+		rgb(249 240 255) 100%
+	);
 }

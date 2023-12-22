@@ -1,6 +1,6 @@
 footer {
 	margin-top: 2rem;
-	background-color: #fef4d3;
+	background-color: #fff;
 	padding: 2rem 0;
 	border-top: wavy 6px #000;
 
@@ -14,7 +14,7 @@ footer {
 		width: 100%;
 
 		.card {
-			background-color: #d7d3fe;
+			background: radial-gradient(circle, #eeedef 19%, #f9f0ff 100%);
 			padding: 0;
 
 			hr {
@@ -31,10 +31,9 @@ footer {
 				}
 
 				li a {
-					padding: 8px 12px;
-					border: solid 3px #000;
+					padding: 0;
 					border-radius: 8px;
-					background-color: #fff;
+					font-weight: 600;
 				}
 			}
 		}

@@ -1,20 +1,23 @@
 #intro {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-	gap: 1rem;
+	gap: 2rem;
 
 	div {
 		border-radius: var(--border-radius-medium);
 	}
 
 	> div:first-child {
-		background-color: #bcefff;
-		padding: 30px;
-		border: var(--tile-border-style);
-		border-width: var(--tile-border-width);
+		background-color: transparent;
+		padding: 0;
+		border: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-size: var(--font-display-large);
 
 		h1 {
-			font-size: var(--font-display-small);
+			font-size: var(--font-display-medium);
 			margin: 0;
 		}
 	}
@@ -25,19 +28,16 @@
 		gap: 1rem;
 
 		div {
+			box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.05);
+			background-color: #ffd8d0;
+
 			&:first-child {
-				background-color: #fef4d3;
 				flex-grow: 1;
 				padding: 30px;
-				border: var(--tile-border-style);
-				border-width: var(--tile-border-width);
 			}
 
 			&:last-child {
-				background-color: #d7d3fe;
 				padding: 30px;
-				border: var(--tile-border-style);
-				border-width: var(--tile-border-width);
 			}
 
 			strong {
@@ -54,6 +54,6 @@
 
 @media only screen and (min-width: 768px) {
 	body #intro > div:first-child {
-		padding: 60px;
+		padding: 0;
 	}
 }

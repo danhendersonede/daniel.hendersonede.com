@@ -1,12 +1,12 @@
 button {
-	background-color: #fff;
+	background-color: var(--primary-action);
 	border: solid 3px var(--primary-action);
 	box-shadow: none;
 	padding: 4px 12px;
 	font-size: 1.1rem;
 	border-radius: 50px;
 	font-weight: 600;
-	color: var(--text-color);
+	color: var(--text-color-inverse);
 	gap: 4px;
 	display: flex;
 	justify-content: center;
