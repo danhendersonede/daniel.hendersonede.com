@@ -34,7 +34,7 @@ ul.card-group .card {
 		&:hover,
 		&:has(a:focus) {
 			box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.1);
-			transform: scale3d(1.01, 1.01, 1.01);
+			transform: scale(1.01);
 		}
 
 		p a {
@@ -42,6 +42,7 @@ ul.card-group .card {
 			padding: 0.5rem 0.5rem 0.5rem 0;
 		}
 
+		// Credit to Heydon Pickering's https://inclusive-components.design/cards/
 		& > a:first-of-type::after {
 			content: "";
 			position: absolute;
@@ -89,34 +90,34 @@ a.card-link {
 	border: var(--primary-action) 2px solid;
 }
 
-/* Posts list */
-.postlist {
+/* Articles list */
+.articlelist {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
-.postlist-item {
+.articlelist-item {
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
 }
 
-.card.postlist-item {
+.card.articlelist-item {
 	flex-grow: 1;
 }
 
-.postlist-date {
+.articlelist-date {
 	font-size: 0.8125em; /* 13px /16 */
 	color: var(--color-gray-90);
 }
-.postlist-date {
+.articlelist-date {
 	word-spacing: -0.5px;
 }
-.postlist-link {
+.articlelist-link {
 	font-size: 1.1875em; /* 19px /16 */
 	font-weight: 700;
 	margin-bottom: 0.5rem;
 }
-.postlist-item p:first-of-type {
+.articlelist-item p:first-of-type {
 	flex-grow: 1;
 }

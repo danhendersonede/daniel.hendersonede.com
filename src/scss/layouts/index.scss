@@ -33,20 +33,16 @@
 
 			&:first-child {
 				background-color: #4da394;
+				border-color: #4da394;
 				flex-grow: 1;
-				padding: 0;
 
 				> div {
-					background-color: #ffd9b4;
+					background-color: var(--accent-1);
 					transform: rotate(1.5deg);
 					border: black solid 3px;
 					border-radius: var(--border-radius-small);
 					padding: 20px;
-
-					// strong,
-					// a {
-					// 	transform: rotate(-1.5deg);
-					// }
+					margin: -2px;
 
 					img {
 						position: absolute;
@@ -60,19 +56,15 @@
 
 			&:last-child {
 				background-color: #ef9a48;
-				padding: 0;
+				border-color: #ef9a48;
 
 				> div {
-					background-color: #97e7da;
+					background-color: var(--accent-2);
 					transform: rotate(-1.5deg);
 					border: black solid 3px;
 					border-radius: var(--border-radius-small);
 					padding: 20px;
-
-					// strong,
-					// a {
-					// 	transform: rotate(1.5deg);
-					// }
+					margin: -2px;
 
 					img {
 						position: absolute;
@@ -96,20 +88,8 @@
 	}
 }
 
-@media only screen and (min-width: 768px) {
-	body #intro > div:first-child {
-		padding: 60px;
-	}
-}
-
 @media (prefers-reduced-motion: no-preference) {
-	body #intro div.card {
-		&:has(a:hover),
-		&:has(a:focus),
-		&:has(a:active) {
-			img {
-				transform: scale(0.35) rotate(-1deg);
-			}
-		}
+	body #intro div.card.interactive:hover img {
+		transform: scale(0.35) rotate(-1deg);
 	}
 }

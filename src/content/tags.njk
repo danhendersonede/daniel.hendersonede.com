@@ -5,8 +5,8 @@ pagination:
   alias: tag
   filter:
     - all
-    - post
-    - posts
+    - article
+    - articles
     - tagList
   addAllPagesToCollections: true
 layout: layouts/home.njk
@@ -17,7 +17,7 @@ permalink: /tags/{{ tag | slugify }}/
 
 <h1>Tagged “{{ tag }}”</h1>
 
-{% set postslist = collections[ tag ] %} {% include "partials/recentPosts.njk"
-%}
+{% set articleslist = collections[tag] %}
+{% include "partials/recentArticles.njk" %}
 
 <p>See <a href="/tags/">all tags</a>.</p>

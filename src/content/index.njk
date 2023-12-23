@@ -6,84 +6,84 @@ eleventyNavigation:
   order: 1
 ---
 
-{% set latestPost = collections.posts | last %}
-{% set featuredPost = collections.posts | random %}
+{% set latestArticle = collections.articles | last %}
+{% set featuredArticle = collections.articles | random %}
 
 <section id="intro">
-  <div>
-    <h1>
+	<div>
+		<h1>
       Explore the wonderful world of accessibility within design systems
     </h1>
-  </div>
-  <div>
-    <div class="card interactive">
-      <div>
-        <img src="/img/theme/arrow-left-down.svg" role="img" alt=""/>
-        <strong>Latest article</strong>
-        <a href="{{ latestPost.url }}">{{ latestPost.data.pageTitle }}</a>
-      </div>
-    </div>
-    <div class="card interactive">
-      <div>
-        <img src="/img/theme/arrow-right-up.svg" role="img" alt=""/>
-        <strong>Featured resource</strong>
-        <a
+	</div>
+	<div>
+		<div class="card interactive">
+			<div>
+				<img src="/img/theme/arrow-left-down.svg" role="img" alt=""/>
+				<strong>Latest article</strong>
+				<a href="{{ latestArticle.url }}">{{ latestArticle.data.pageTitle }}</a>
+			</div>
+		</div>
+		<div class="card interactive">
+			<div>
+				<img src="/img/theme/arrow-right-up.svg" role="img" alt=""/>
+				<strong>Featured resource</strong>
+				<a
         href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit"
         >Advent of Annotations 2023 🎄</a
       >
-      </div>
-    </div>
-  </div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <section class="recents highlights">
-  <h2>Resources</h2>
-  <div class="card-group">
-    <div class="card interactive">
-      <img
+	<h2>Resources</h2>
+	<div class="card-group">
+		<div class="card interactive">
+			<img
         src="/img/resources/web-annotations-kit.png"
         alt="Figma file cover of the CVS Health Web Accessibility Annotation Kit. To the side of the text is a mosaic of different annotation stamps. The subtitle reads, “Communicating design intent to create experiences anyone can use."
 />
-      <div>
-        <a
+			<div>
+				<a
           href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit"
-          class="postlist-link"
+          class="articlelist-link"
           >Web Accessibility Annotation Kit</a
         >
-        <p>
+				<p>
           I led the creation of this annotations kit for CVS Health as it
           <a
             href="https://medium.com/cvs-health-tech-blog/behind-the-scenes-of-creating-a-new-web-accessibility-annotation-kit-1834815544d3"
             >became one of their top Figma libraries</a
           >, with 150,000+ annotations made across 1,100+ design files.
         </p>
-        <ul class="tags">
-          <li class="tag">Figma</li>
-          <li class="tag">Library</li>
-        </ul>
-      </div>
-    </div>
-    <div class="card interactive">
-      <img
+				<ul class="tags">
+					<li class="tag">Figma</li>
+					<li class="tag">Library</li>
+				</ul>
+			</div>
+		</div>
+		<div class="card interactive">
+			<img
         src="/img/resources/advent-of-annotations-2023.png"
         alt="Figma file cover of the Advent of Annotations 2023. 24 daily annotation challenges. The cover includes two christmas trees with ornaments made from the CVS Health Web Accessibility Annotations Kit."
 />
-      <div>
-        <a
+			<div>
+				<a
           href="https://www.figma.com/community/file/1311421011482282592/web-accessibility-annotation-kit"
-          class="postlist-link"
+          class="articlelist-link"
           >Advent of Annotations 2023 🎄</a
         >
-        <p>
+				<p>
           Practice your Web accessibility skills by annotating a real design
           from a different organization each day.
         </p>
-        <ul class="tags">
-          <li class="tag">Figma</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+				<ul class="tags">
+					<li class="tag">Figma</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </section>
 
-{% include "partials/recentPosts.njk" %}
+{% include "partials/recentArticles.njk" %}

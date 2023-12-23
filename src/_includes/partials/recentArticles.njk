@@ -1,0 +1,29 @@
+{% set articlesCount = collections.articles | length %}
+{% set articleslist = collections.articles | head(-1 * 3) %}
+{% set articleslistCounter = articlesCount %}
+
+<section class="recents highlights">
+	<h2>Recent Articles</h2>
+	<div reversed class="card-group">
+		{% for article in articleslist | reverse %}
+			<div
+      class="card interactive articlelist-item{% if article.url == url %} articlelist-item-active{% endif %}"
+    >
+				<time class="articlelist-date" datetime="{{ article.date | htmlDateString }}"
+        >{{ article.date | readableDate("LLLL yyyy") }}</time
+      >
+				<a href="{{ article.url }}" class="articlelist-link"
+        >
+					{% if article.data.pageTitle %}{{ article.data.pageTitle }}
+					{% else %}
+						<code
+          >{{ article.url }}</code
+        >
+					{% endif %}
+				</a
+      >
+				<p>{{ article.data.description }}</p>
+			</div>
+		{% endfor %}
+	</div>
+</section>

@@ -9,8 +9,6 @@
 @import "layouts/index";
 @import "layouts/about";
 
-@import "partials/contact";
-
 @import "components/header";
 @import "components/button";
 @import "components/link";
@@ -24,3 +22,5 @@
 @import "components/video-embed";
 @import "components/footer";
 @import "components/blockquote";
+
+@import "components/contact";
