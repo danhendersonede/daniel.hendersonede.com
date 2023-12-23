@@ -1,4 +1,4 @@
-{# ---
+---
 # Metadata comes from _data/metadata.js
 permalink: /feed/feed.xml
 ---
@@ -10,18 +10,21 @@ permalink: /feed/feed.xml
 	<link href="{{ metadata.url | addPathPrefixToFullUrl }}"/>
 	<updated>{{ collections.articles | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 	<id>{{ metadata.url }}</id>
+	<category>Accessibility and Design Systems</category>
+	<language>en-us</language>
 	<author>
 		<name>{{ metadata.author.name }}</name>
 		<email>{{ metadata.author.email }}</email>
 	</author>
 	{%- for article in collections.articles | reverse %}
-		{% set absoluteArticleUrl %}{{ article.url | htmlBaseUrl(metadata.url) }}{% endset %}
+		{% set absoluteArticleUrl %}{{ article.data.eleventyNavigation.url or article.url  | htmlBaseUrl(metadata.url) }}{% endset %}
 		<entry>
-			<title>{{ article.data.title }}</title>
+			<title>{{ article.data.pageTitle }}</title>
 			<link href="{{ absoluteArticleUrl }}"/>
 			<updated>{{ article.date | dateToRfc3339 }}</updated>
 			<id>{{ absoluteArticleUrl }}</id>
-			<content type="html">{{ article.templateContent | transformWithHtmlBase(absoluteArticleUrl, article.url) }}</content>
+			<description>{{ article.data.description }}</description>
+			{# <content type="html">{{ article.templateContent | transformWithHtmlBase(absoluteArticleUrl, article.url) }}</content> #}
 		</entry>
 	{%- endfor %}
-</feed> #}
+</feed>
