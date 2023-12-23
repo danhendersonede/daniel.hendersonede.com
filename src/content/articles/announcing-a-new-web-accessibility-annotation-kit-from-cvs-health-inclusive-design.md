@@ -7,6 +7,10 @@ tags:
   - Accessibility
   - Design Systems
   - Annotations
-source: CVS Health Tech Blog
-sourceURL: https://medium.com/cvs-health-tech-blog/announcing-a-new-web-accessibility-annotation-kit-from-inclusive-design-607bc23ba419
+publicationName: CVS Health Tech Blog
+eleventyNavigation:
+  key: { { pageTitle } }
+  parent: { { year } }
+  url: https://medium.com/cvs-health-tech-blog/announcing-a-new-web-accessibility-annotation-kit-from-inclusive-design-607bc23ba419
+permalink: false
 ---

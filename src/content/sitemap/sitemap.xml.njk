@@ -8,11 +8,14 @@ eleventyExcludeFromCollections: true
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
-  {%- for page in collections.all %} {% set absoluteUrl %}{{ page.url |
-  htmlBaseUrl(metadata.url) }}{% endset %}
-  <url>
-    <loc>{{ absoluteUrl }}</loc>
-    <lastmod>{{ page.date | htmlDateString }}</lastmod>
-  </url>
+  {%- for page in collections.all %}
+    {% if page.data.permalink %}
+      {% set absoluteUrl %}{{ page.url |
+    htmlBaseUrl(metadata.url) }}{% endset %}
+      <url>
+        <loc>{{ absoluteUrl }}</loc>
+        <lastmod>{{ page.date | htmlDateString }}</lastmod>
+      </url>
+    {% endif %}
   {%- endfor %}
 </urlset>

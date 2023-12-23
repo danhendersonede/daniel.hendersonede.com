@@ -2,15 +2,15 @@
 	{% for article in articleslist | reverse %}
 		<li class="card interactive articlelist-item{% if article.url == url %} articlelist-item-active{% endif %}">
 			<time class="articlelist-date" datetime="{{ article.date | htmlDateString }}">{{ article.date | readableDate("LLLL yyyy") }}</time>
-			<a href="{{ article.data.sourceURL or article.url }}" aria-describedby="{{ article.data.sourceURL }}" class="articlelist-link">
+			<a href="{{ article.data.eleventyNavigation.url or article.url}}" aria-describedby="{{ article.data.eleventyNavigation.url or article.url}}" class="articlelist-link">
 				{% if article.data.pageTitle %}{{ article.data.pageTitle }}
 				{% else %}
 					<code>{{ article.url }}</code>
 				{% endif %}
 			</a>
 			<p>{{article.data.description}}</p>
-			{% if article.data.sourceURL %}
-				<p class="tag" id="{{ article.data.sourceURL }}">{{ article.data.source }}</p>
+			{% if article.data.publicationName %}
+				<p class="tag" id="{{ article.data.eleventyNavigation.url or article.url}}">{{ article.data.publicationName }}</p>
 			{% endif %}
 		</li>
 	{% endfor %}

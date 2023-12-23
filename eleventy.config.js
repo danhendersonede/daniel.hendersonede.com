@@ -82,6 +82,12 @@ module.exports = function (eleventyConfig) {
 		);
 	});
 
+	const util = require("util");
+
+	eleventyConfig.addFilter("console", function (value) {
+		return util.inspect(value);
+	});
+
 	// Customize Markdown library settings:
 	eleventyConfig.amendLibrary("md", (mdLib) => {
 		mdLib.use(markdownItAnchor, {

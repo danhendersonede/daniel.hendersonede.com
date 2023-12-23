@@ -20,7 +20,7 @@ eleventyNavigation:
 			<div>
 				<img src="/img/theme/arrow-left-down.svg" role="img" alt=""/>
 				<strong>Latest article</strong>
-				<a href="{{ latestArticle.url }}">{{ latestArticle.data.pageTitle }}</a>
+				<a href="{{ latestArticle.data.eleventyNavigation.url or latestArticle.url }}">{{ latestArticle.data.pageTitle }}</a>
 			</div>
 		</div>
 		<div class="card interactive">

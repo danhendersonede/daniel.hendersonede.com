@@ -7,6 +7,10 @@ tags:
   - Accessibility
   - Design Systems
   - Annotations
-source: CVS Health Tech Blog
-sourceURL: https://medium.com/cvs-health-tech-blog/behind-the-scenes-of-creating-a-new-web-accessibility-annotation-kit-1834815544d3
+publicationName: CVS Health Tech Blog
+permalink: false
+eleventyNavigation:
+  key: { { pageTitle } }
+  parent: { { year } }
+  url: https://medium.com/cvs-health-tech-blog/behind-the-scenes-of-creating-a-new-web-accessibility-annotation-kit-1834815544d3
 ---
