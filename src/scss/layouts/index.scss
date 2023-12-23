@@ -14,13 +14,10 @@
 	}
 
 	> div:first-child {
-		background-color: #fffcc7;
-		padding: 30px;
-		border: var(--tile-border-style);
-		border-width: var(--tile-border-width);
+		padding: 0 0 4rem 0;
 
 		h1 {
-			font-size: var(--font-display-small);
+			font-size: var(--font-display-large);
 			margin: 0;
 		}
 	}
