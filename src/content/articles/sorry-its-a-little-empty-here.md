@@ -4,7 +4,7 @@ description: We have to start somewhere, thanks for being one of the first visit
 date: 2023-09-25
 ---
 
-Well here we are, the classic first article article!
+Well here we are, the classic first post!
 
 If you are reading this in 2023, sorry there's not much else on my site right now. There's a lot to say, but so far, not enough time to write it down.
 

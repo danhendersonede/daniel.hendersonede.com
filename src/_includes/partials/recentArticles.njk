@@ -6,23 +6,18 @@
 	<h2>Recent Articles</h2>
 	<div reversed class="card-group">
 		{% for article in articleslist | reverse %}
-			<div
-      class="card interactive articlelist-item{% if article.url == url %} articlelist-item-active{% endif %}"
-    >
-				<time class="articlelist-date" datetime="{{ article.date | htmlDateString }}"
-        >{{ article.date | readableDate("LLLL yyyy") }}</time
-      >
-				<a href="{{ article.url }}" class="articlelist-link"
-        >
+			<div class="card interactive articlelist-item{% if article.url == url %} articlelist-item-active{% endif %}">
+				<time class="articlelist-date" datetime="{{ article.date | htmlDateString }}">{{ article.date | readableDate("LLLL yyyy") }}</time>
+				<a href="{{ article.data.eleventyNavigation.url or article.url }}" class="articlelist-link">
 					{% if article.data.pageTitle %}{{ article.data.pageTitle }}
 					{% else %}
-						<code
-          >{{ article.url }}</code
-        >
+						<code>{{ article.url }}</code>
 					{% endif %}
-				</a
-      >
-				<p>{{ article.data.description }}</p>
+				</a>
+				<p>{{ article.data.description | truncate(125) }}</p>
+				{% if article.data.publicationName %}
+					<p class="tag" id="{{ article.fileSlug }}">{{ article.data.publicationName }}</p>
+				{% endif %}
 			</div>
 		{% endfor %}
 	</div>

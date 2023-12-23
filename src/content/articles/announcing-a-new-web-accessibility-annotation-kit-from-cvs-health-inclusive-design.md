@@ -1,6 +1,6 @@
 ---
 pageTitle: Announcing a new Web Accessibility Annotation Kit from CVS Health Inclusive Design
-description: The CVS Health® Inclusive Design team has created new Figma annotation kits for multiple platforms. Today, we are releasing the first of these tools for annotating web accessibility. Our hope is that the Design and Accessibility disciplines use and improve on them so that the internet as a whole may become more accessible.
+description: The CVS Health Inclusive Design team has created new Figma annotation kits for multiple platforms. Today, we are releasing the first of these tools for annotating web accessibility. Our hope is that the Design and Accessibility disciplines use and improve on them so that the internet as a whole may become more accessible.
 date: 2023-11-28
 year: 2023
 tags:
