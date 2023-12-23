@@ -1,24 +1,17 @@
 <ul reversed class="card-group articlelist">
 	{% for article in articleslist | reverse %}
-		<li
-    class="card interactive articlelist-item{% if article.url == url %} articlelist-item-active{% endif %}"
-  >
-			<a href="{{ article.url }}" class="articlelist-link"
-      >
+		<li class="card interactive articlelist-item{% if article.url == url %} articlelist-item-active{% endif %}">
+			<time class="articlelist-date" datetime="{{ article.date | htmlDateString }}">{{ article.date | readableDate("LLLL yyyy") }}</time>
+			<a href="{{ article.data.sourceURL or article.url }}" aria-describedby="{{ article.data.sourceURL }}" class="articlelist-link">
 				{% if article.data.pageTitle %}{{ article.data.pageTitle }}
 				{% else %}
-					<code
-        >{{ article.url }}</code
-      >
+					<code>{{ article.url }}</code>
 				{% endif %}
-			</a
-    >
+			</a>
 			<p>{{article.data.description}}</p>
-			<p>
-				<time class="articlelist-date" datetime="{{ article.date | htmlDateString }}"
-        >{{ article.date | readableDate("LLLL yyyy") }}</time
-      >
-			</p>
+			{% if article.data.sourceURL %}
+				<p class="tag" id="{{ article.data.sourceURL }}">{{ article.data.source }}</p>
+			{% endif %}
 		</li>
 	{% endfor %}
 </ul>
