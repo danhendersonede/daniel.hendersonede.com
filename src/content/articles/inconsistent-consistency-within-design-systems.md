@@ -6,7 +6,7 @@ year: 2024
 tags:
   - Design Systems
   - Accessibility
-publicationName: Medium
+publicationName: Redesigning Design Systems
 eleventyNavigation:
   key: { { pageTitle } }
   parent: { { year } }
