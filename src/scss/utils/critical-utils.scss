@@ -1,4 +1,4 @@
-.visually-hidden {
+.visually-hidden:not(.link-skip:focus) {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 	height: 1px;
@@ -6,6 +6,15 @@
 	position: absolute;
 	white-space: nowrap;
 	width: 1px;
+}
+
+.link-skip-wrapper:has(.link-skip:focus) {
+	display: block;
+	padding: 8px 1rem;
+	top: 0;
+	left: 0;
+	background-color: var(--container-background-color);
+	width: 100%;
 }
 
 .container {

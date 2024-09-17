@@ -51,7 +51,6 @@ header {
 		display: flex;
 		padding: 1.5em 1em;
 		align-items: center;
-		column-gap: 4rem;
 		row-gap: 1rem;
 
 		body.no-js & {
@@ -121,8 +120,12 @@ header {
 				text-decoration-color: var(--color-gray-100);
 			}
 		}
+	}
 
-		@media only screen and (min-width: 768px) {
+	@media only screen and (min-width: 768px) {
+		.container {
+			column-gap: 4rem;
+
 			nav {
 				margin-left: 0;
 

@@ -2,55 +2,57 @@
 
 <!DOCTYPE html>
 <html lang="{{ metadata.language }}">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>
-      {{eleventyNavigation.key or pageTitle}} - {{ title or metadata.title }}
-    </title>
-    <meta
+		<title>
+			{{eleventyNavigation.key or pageTitle}} - {{ title or metadata.title }}
+		</title>
+		<meta
       name="description"
       content="{{ description or metadata.description }}"
 />
 
-    {#- Atom and JSON feeds included by default #}
-    <link
+		{#- Atom and JSON feeds included by default #}
+		<link
       rel="alternate"
       href="/feed/feed.xml"
       type="application/atom+xml"
       title="{{ metadata.title }}"
 />
-    <link
+		<link
       rel="alternate"
       href="/feed/feed.json"
       type="application/json"
       title="{{ metadata.title }}"
 />
 
-    <meta name="generator" content="{{ eleventy.generator }}"/>
+		<meta name="generator" content="{{ eleventy.generator }}"/>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
-    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
-    <link rel="manifest" href="/manifest.json">
+		<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+		<link rel="shortcut icon" href="/img/favicon/favicon.ico">
+		<link rel="manifest" href="/manifest.json">
 
-    <style>
-      {% include "css/critical.css" %}
-    </style>
+		<style>
+			{% include "css/critical.css" %}
+		</style>
 
-    <script src="/js/main.js" defer></script>
-  </head>
-  <body class="no-js">
-    <div style="overflow-x: hidden">
-      <a href="#skip" class="visually-hidden">Skip to main content</a>
+		<script src="/js/main.js" defer></script>
+	</head>
+	<body class="no-js">
+		<div style="overflow-x: hidden">
+			<div class="link-skip-wrapper">
+				<a href="#skip" class="visually-hidden link-skip">Skip to main content</a>
+			</div>
 
-      {% include "partials/header.njk" %}
+			{% include "partials/header.njk" %}
 
-      <main id="skip" class="container">{{ content | safe }}</main>
+			<main id="skip" class="container">{{ content | safe }}</main>
 
-      {% include "partials/footer.njk" %}
-    </div>
-  </body>
+			{% include "partials/footer.njk" %}
+		</div>
+	</body>
 </html>
