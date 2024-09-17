@@ -1,9 +1,6 @@
 ---
 layout: layouts/home.njk
 pageTitle: Home
-eleventyNavigation:
-  key: Home
-  order: 1
 ---
 
 {% set latestArticle = collections.articles | last %}
@@ -12,26 +9,22 @@ eleventyNavigation:
 <section id="intro">
 	<div>
 		<h1>
-      Exploring the wonderful world of accessibility and design systems
+      Crafting accessible and scalable design systems
     </h1>
 	</div>
 	<div>
 		<div class="card interactive">
-			<div>
-				<img src="/img/theme/arrow-left-down.svg" role="img" alt=""/>
-				<strong>Latest article</strong>
-				<a href="{{ latestArticle.data.eleventyNavigation.url or latestArticle.url }}">{{ latestArticle.data.pageTitle }}</a>
-			</div>
+			<img src="/img/theme/arrow-left-down.svg" role="img" alt=""/>
+			<strong>Latest article</strong>
+			<a href="{{ latestArticle.data.eleventyNavigation.url or latestArticle.url }}">{{ latestArticle.data.pageTitle }}</a>
 		</div>
 		<div class="card interactive">
-			<div>
-				<img src="/img/theme/arrow-right-up.svg" role="img" alt=""/>
-				<strong>Featured resource</strong>
-				<a
+			{# <img src="/img/theme/arrow-right-up.svg" role="img" alt=""/> #}
+			<strong>Featured resource</strong>
+			<a
         href="https://www.figma.com/community/file/1331647574396908226/accessibility-annotation-kit-for-ios"
         >Accessibility Annotation Kit for iOS</a
       >
-			</div>
 		</div>
 	</div>
 </section>
@@ -39,7 +32,7 @@ eleventyNavigation:
 <section class="recents highlights">
 	<h2>Resources</h2>
 	<div class="card-group">
-		<div class="card interactive">
+		<div class="card interactive full-bleed">
 			<img
         src="/img/resources/annotations-kit-for-ios.png"
         alt="Figma file cover of the CVS Health Accessibility Annotation Kit for iOS. To the side of the text is a mosaic of different annotation stamps. The subtitle reads, Communicating design intent to create experiences anyone can use."
@@ -62,7 +55,7 @@ eleventyNavigation:
 				</ul>
 			</div>
 		</div>
-		<div class="card interactive">
+		<div class="card interactive full-bleed">
 			<img
         src="/img/resources/web-annotations-kit.png"
         alt="Figma file cover of the CVS Health Web Accessibility Annotation Kit. To the side of the text is a mosaic of different annotation stamps. The subtitle reads, “Communicating design intent to create experiences anyone can use."
@@ -86,7 +79,7 @@ eleventyNavigation:
 				</ul>
 			</div>
 		</div>
-		<div class="card interactive">
+		<div class="card interactive full-bleed">
 			<img
         src="/img/resources/advent-of-annotations-2023.png"
         alt="Figma file cover of the Advent of Annotations 2023. 24 daily annotation challenges. The cover includes two christmas trees with ornaments made from the CVS Health Web Accessibility Annotations Kit."

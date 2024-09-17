@@ -14,6 +14,7 @@ a[href] {
 	color: var(--text-color-link);
 	text-underline-offset: 0.4rem;
 	border-radius: var(--border-radius-extra-small);
+	transition: text-underline-offset 200ms ease;
 
 	&:visited {
 		color: var(--text-color-link-visited);
@@ -24,7 +25,6 @@ a[href] {
 	&:focus-visible {
 		color: var(--text-color-link-active);
 		text-underline-offset: 0.25rem;
-		transition: text-underline-offset 250ms ease-out;
 	}
 }
 

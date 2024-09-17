@@ -15,14 +15,15 @@
 /* Headings */
 h1 {
 	font-size: 3rem;
-	color: var(--color-blue-90);
 	margin-bottom: 1.5rem;
+	font-weight: 600;
 }
 
 h2 {
-	margin-top: 0.75rem;
-	font-size: 2.5rem;
+	margin-top: 0;
+	font-size: 2rem;
 	margin-bottom: 0.5rem;
+	font-weight: 600;
 
 	.highlights & {
 		margin-bottom: 1.5rem;
@@ -31,6 +32,7 @@ h2 {
 
 h3 {
 	margin-bottom: 0.25rem;
+	font-weight: 600;
 }
 
 hgroup {
@@ -51,6 +53,10 @@ p {
 
 	&:not(:last-child) {
 		margin-bottom: 1rem;
+	}
+
+	& + ul {
+		margin-top: 0;
 	}
 }
 
