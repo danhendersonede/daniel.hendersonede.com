@@ -1,16 +1,17 @@
 button {
-	background-color: #fff;
-	border: solid 3px var(--primary-action);
-	box-shadow: none;
+	background-color: var(--primary-action);
 	padding: 4px 12px;
 	font-size: 1.1rem;
-	border-radius: 50px;
+	border-radius: var(--border-radius-xs);
 	font-weight: 600;
 	color: var(--text-color);
 	gap: 4px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border: var(--card-border-width) solid var(--color-gray-100);
+	box-shadow: var(--card-border-width) calc(var(--card-border-width) * 2) 0 0
+		var(--card-border-color);
 
 	&:has(img) {
 		padding: 4px 12px 4px 8px;
