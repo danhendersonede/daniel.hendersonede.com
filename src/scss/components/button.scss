@@ -3,7 +3,7 @@ button {
 	padding: 4px 12px;
 	font-size: 1.1rem;
 	border-radius: var(--border-radius-xs);
-	font-weight: 600;
+	font-weight: var(--font-weight-bold);
 	color: var(--text-color);
 	gap: 4px;
 	display: flex;

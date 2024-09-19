@@ -16,23 +16,19 @@
 h1 {
 	font-size: 3rem;
 	margin-bottom: 1.5rem;
-	font-weight: 600;
+	font-weight: var(--font-weight-bold);
 }
 
 h2 {
 	margin-top: 0;
 	font-size: 2rem;
-	margin-bottom: 0.5rem;
-	font-weight: 600;
-
-	.highlights & {
-		margin-bottom: 1.5rem;
-	}
+	margin-bottom: 1.5rem;
+	font-weight: var(--font-weight-bold);
 }
 
 h3 {
 	margin-bottom: 0.25rem;
-	font-weight: 600;
+	font-weight: var(--font-weight-strong);
 }
 
 hgroup {
@@ -46,10 +42,11 @@ hgroup {
 	}
 }
 
-p {
-	max-width: 70ch;
-	line-height: 1.5;
-	text-wrap: pretty;
+p,
+figcaption {
+	max-width: var(--line-max-length);
+	line-height: var(--line-height);
+	text-wrap: var(--line-wrap);
 
 	&:not(:last-child) {
 		margin-bottom: 1rem;
@@ -60,8 +57,14 @@ p {
 	}
 }
 
-li {
-	line-height: 1.5;
+ul:not([class]) li {
+	max-width: var(--line-max-length);
+	line-height: var(--line-height);
+	text-wrap: var(--line-wrap);
+
+	& + li {
+		margin-top: 0.5rem;
+	}
 }
 
 hr {
