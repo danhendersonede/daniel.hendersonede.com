@@ -1,5 +1,3 @@
-document.body.className = document.body.className.replace("no-js", "js");
-
 const menuButtonOpen = document.getElementById("menu-button--open");
 const menuButtonClose = document.getElementById("menu-button--close");
 const header = document.getElementById("header");
