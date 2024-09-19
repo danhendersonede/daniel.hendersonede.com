@@ -53,7 +53,7 @@ tags:
 <p>The organization needed accessibility annotation kits that were intuitive and easy for our team. Therefore, I decided to leverage Figma, which could allow design specs to be delivered with inline accessibility annotations all at once.</p>
 
 <figure>
-	<img class="card full-bleed" src="/img/work/creating-the-cvs-health-annotations-kits/miro.webp"/>
+	<img class="card full-bleed" alt="" src="/img/work/creating-the-cvs-health-annotations-kits/miro.webp"/>
 	<figcaption>Figure 1: Highlights of the some of the existing annotations workflows on Miro, Confluence, and Sketch.</figcaption>
 </figure>
 
@@ -90,13 +90,13 @@ tags:
 <p>We began building annotation stamps based on immediate need and complexity: headings, landmarks, links, buttons, images, focus order, reading order, and a general freeform note. I made the decision to postpone the addition of complex annotations like form inputs, focus states, and keyboard controls until we had a proof of concept.</p>
 
 <figure>
-	<img class="card full-bleed" src="/img/work/creating-the-cvs-health-annotations-kits/types.webp"/>
+	<img class="card full-bleed" alt="" src="/img/work/creating-the-cvs-health-annotations-kits/types.webp"/>
 	<figcaption>Figure 2: Diagram of an arrow stamp and its anatomy, highlighting an icon, text label, directional arrow, outline and shadow, and an optional reference number.</figcaption>
 </figure>
 <p>Following our accessibility principles to differentiate stamps from designs and one another, each stamp may have its own color, icon, text label, number, outline, shadow, and a directional arrow or outline.</p>
 
 <figure>
-	<img class="card full-bleed" src="/img/work/creating-the-cvs-health-annotations-kits/highlights.webp"/>
+	<img class="card full-bleed" alt="" src="/img/work/creating-the-cvs-health-annotations-kits/highlights.webp"/>
 	<figcaption>Figure 3: A full set of arrow, lasso, and detail stamps for landmarks, headings, links, notes, buttons, images, reading order, and focus order.</figcaption>
 </figure>
 
@@ -116,7 +116,7 @@ tags:
 <p>We released our new kit to a half-dozen internal teams and collected data for the next four weeks. Our stress testing included running co-design sessions, training people on how to use the kit, and trying to use the kit to annotate complex design system patterns. This gave us insight into where it fell short, where our assumptions were wrong, and how to improve it.</p>
 
 <figure>
-	<img class="card full-bleed" src="/img/work/creating-the-cvs-health-annotations-kits/stress-test.webp"/>
+	<img class="card full-bleed" alt="" src="/img/work/creating-the-cvs-health-annotations-kits/stress-test.webp"/>
 	<figcaption>Figure 4: Five nested lasso annotation stamps with outlines that all have different dashed styles. It is difficult, at this level of complexity, to discern which is which.</figcaption>
 </figure>
 
@@ -124,7 +124,7 @@ tags:
 <p>We thought distinct outline styles for each stamp type would help differentiate one type from another and help not have to rely on color alone. In practice, there was no real benefit. When complex components required multiple outlines inside or adjacent to one another, this became visually overwhelming, and it was harder to differentiate them from each other. We updated all outline styles to use a uniform dash style.</p>
 
 <figure>
-	<img class="card full-bleed" src="/img/work/creating-the-cvs-health-annotations-kits/heading.webp"/>
+	<img class="card full-bleed" alt="" src="/img/work/creating-the-cvs-health-annotations-kits/heading.webp"/>
 	<figcaption>Figure 5: A heading annotation stamp’s heading level drop-down menu in Figma’s component properties panel.</figcaption>
 </figure>
 
@@ -134,7 +134,7 @@ tags:
 </p>
 
 <figure>
-	<img class="card full-bleed" src="/img/work/creating-the-cvs-health-annotations-kits/headings.webp"/>
+	<img class="card full-bleed" alt="" src="/img/work/creating-the-cvs-health-annotations-kits/headings.webp"/>
 	<figcaption>Figure 6: Two rows of four heading stamps. The top row has a capital H close to the number of the heading level. The bottom row has a lowercase H isn’t as close to the number, making it easier to discern the level of heading.</figcaption>
 </figure>
 
@@ -142,7 +142,7 @@ tags:
 <p>Through my close relationships with people who use the kit. A colleagues with dyslexia reached out to me and said they found it difficult to discern the level of a heading stamp. Even though each level had dots on the left to help with this, the primary visual differentiation between levels came from the number itself. We addressed this by making the “h” lower case and adding subtle spacing around it, which helped the number stand out.</p>
 
 <figure>
-	<img class="card full-bleed" src="/img/work/creating-the-cvs-health-annotations-kits/size.webp"/>
+	<img class="card full-bleed" alt="" src="/img/work/creating-the-cvs-health-annotations-kits/size.webp"/>
 	<figcaption>Figure 7: Two sets of four annotation stamps. The left set uses a ‘touch target’ height of 44px. The right set uses a height of 32px and takes up 3/4 the vertical space.</figcaption>
 </figure>
 
@@ -162,7 +162,7 @@ tags:
 	<strong>Pro-tip:</strong> No tool or kit is a substitute for the shared understanding that comes from talking to each other. We avoided a staggering number of miscommunications, errors, and money wasted trying to fix them by meeting with designers and developers to review our finished annotations.</p>
 
 <figure>
-	<img class="card full-bleed" src="/img/work/creating-the-cvs-health-annotations-kits/legend.webp"/>
+	<img class="card full-bleed" alt="" src="/img/work/creating-the-cvs-health-annotations-kits/legend.webp"/>
 	<figcaption>Figure 8: An annotation legend for developers to understand the purpose and format of each stamp.</figcaption>
 </figure>
 
@@ -172,14 +172,14 @@ tags:
 <p>Since annotations are one of our most important deliverables, the risk of them being deleted was a wake-up call. Without this tool to create consistent documentation, we wouldn’t be able to tackle things like scalable process or training. And if our updates to the tool erased data, adoption could suffer enough to bury the project.</p>
 
 <figure>
-	<img class="card full-bleed" src="/img/work/creating-the-cvs-health-annotations-kits/branch-review.webp"/>
+	<img class="card full-bleed" alt="" src="/img/work/creating-the-cvs-health-annotations-kits/branch-review.webp"/>
 	<figcaption>Figure 9: A Figma branch review comparing a filled out Details component in a Before view and Latest view. One of the filled out properties has been overridden by a component change.</figcaption>
 </figure>
 
 <p>Fortunately, we found a solution before this caused too much pain. <strong>To prevent data loss, we implemented Visual Regression Testing (VRT) for every stamp component.</strong> VRT is an internal library tool used to catch breaking changes, such as loss of data. They provide an opportunity for a human review to check that the update will not break an instance already consumed by a team.</p>
 
 <figure>
-	<img class="card full-bleed" src="/img/work/creating-the-cvs-health-annotations-kits/collection.webp"/>
+	<img class="card full-bleed" alt="" src="/img/work/creating-the-cvs-health-annotations-kits/collection.webp"/>
 	<figcaption>Figure 10: A grid of pin stamp, lasso stamp, and detail components for landmarks, headings, focus order, links, inputs, reading order, notes, buttons, and images.</figcaption>
 </figure>
 
