@@ -3,8 +3,7 @@ layout: layouts/home.njk
 pageTitle: Home
 ---
 
-{% set latestArticle = collections.articles | last %}
-{% set featuredArticle = collections.articles | random %}
+{% set latestResource = collections.articles | last %}
 
 <section id="intro">
 	<div>
@@ -13,10 +12,15 @@ pageTitle: Home
     </h1>
 	</div>
 	<div>
-		<div class="card interactive">
+		{# <div class="card interactive">
 			<img src="/img/full/theme/arrow-left-down.svg" role="img" alt=""/>
 			<strong>Latest article</strong>
 			<a href="{{ latestArticle.data.eleventyNavigation.url or latestArticle.url }}">{{ latestArticle.data.pageTitle }}</a>
+		</div> #}
+		<div class="card interactive">
+			<img src="/img/full/theme/arrow-left-down.svg" role="img" alt=""/>
+			<strong>My latest talk</strong>
+			<a href="https://www.youtube.com/watch?v=_c2pJ6fU910" target="_blank">In the file: Design Systems and Accessibility with Figma</a>
 		</div>
 		<div class="card interactive">
 			{# <img src="/img/full/theme/arrow-right-up.svg" role="img" alt=""/> #}
