@@ -23,11 +23,11 @@ const { cite, ...rest } = Astro.props as Props;
 
     /* Credit to https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/ for the quote styling */
     &:before {
-      color: var(--color-gray-90);
+      color: var(--color-gray-80);
       content: open-quote;
       font-size: 14em;
-      line-height: 0.01em;
-      vertical-align: -6.5rem;
+      line-height: 0;
+      vertical-align: -7.5rem;
     }
 
     p {

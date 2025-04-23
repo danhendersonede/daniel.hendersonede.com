@@ -21,29 +21,12 @@ const { size } = Astro.props as Props;
   </svg>
 
   <Image
+    height={size === "small" ? 100 : 270}
+    width={size === "small" ? 100 : 270}
     src={profile}
     alt="A smiling white male with short, red hair, standing in the center of the image, wearing a stripey shirt."
   />
 </div>
-
-<script>
-  import { animate } from "motion";
-
-  const profilePicture = document.getElementById("profile-picture");
-
-  if (profilePicture?.classList.contains("small")) {
-    animate(
-      "#blobClip",
-      { rotate: 360 },
-      {
-        repeat: Infinity,
-        repeatDelay: 0,
-        duration: 30,
-        ease: "linear",
-      }
-    );
-  }
-</script>
 
 <style>
   .profile-picture {
@@ -63,15 +46,5 @@ const { size } = Astro.props as Props;
 
   .profile-picture.large clipPath {
     transform-origin: 300px 300px !important;
-  }
-
-  .profile-picture.small {
-    width: 100px;
-    height: 100px;
-  }
-
-  .profile-picture.large {
-    width: 270px;
-    height: 270px;
   }
 </style>
