@@ -1,54 +1,27 @@
 {
-	"name": "daniel.hendersonede.com",
-	"version": "8.0.0",
-	"description": "A website to host content from Daniel Henderson-Ede.",
-	"scripts": {
-		"build": "npx gulp && npx @11ty/eleventy",
-		"build-ghpages": "npx gulp && npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
-		"start": "npx gulp && concurrently \"npx gulp watch\" \"npx eleventy --serve\"",
-		"production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy",
-		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/danhendersonede/daniel.hendersonede.com.git"
-	},
-	"author": {
-		"name": "Daniel Henderson-Ede",
-		"email": "daniel@hendersonede.com",
-		"url": "https://daniel.henderson-ede.com/"
-	},
-	"license": "MIT",
-	"engines": {
-		"node": ">=14"
-	},
-	"bugs": {
-		"url": "https://github.com/danhendersonede/daniel.hendersonede.com/issues"
-	},
-	"homepage": "https://github.com/danhendersonede/daniel.hendersonede.com#readme",
-	"devDependencies": {
-		"@11ty/eleventy": "^2.0.1",
-		"@11ty/eleventy-img": "^3.1.0",
-		"@11ty/eleventy-navigation": "^0.3.5",
-		"@11ty/eleventy-plugin-bundle": "^1.0.4",
-		"@11ty/eleventy-plugin-rss": "^1.2.0",
-		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-		"@netlify/plugin-a11y": "^1.0.0-beta.1",
-		"@netlify/plugin-lighthouse": "^5.0.0",
-		"@netlify/plugin-sitemap": "^0.8.1",
-		"luxon": "^3.3.0",
-		"markdown-it-anchor": "^8.6.7",
-		"netlify-plugin-checklinks": "^4.1.1",
-		"netlify-plugin-no-more-404": "^0.0.15"
-	},
-	"dependencies": {
-		"concurrently": "^8.2.1",
-		"get-google-fonts": "^1.2.2",
-		"gulp": "^4.0.2",
-		"gulp-clean-css": "^4.3.0",
-		"gulp-sass": "^5.1.0",
-		"sass": "^1.69.3"
-	}
+  "name": "danhendersonede",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "dev-host": "astro dev --host",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.2.4",
+    "@astrojs/react": "^4.2.4",
+    "@astrojs/sitemap": "^3.3.0",
+    "@fontsource-variable/inclusive-sans": "^5.2.5",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "astro": "^5.7.3",
+    "date-fns": "^4.1.0",
+    "motion": "^12.7.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "^5.7.2"
+  }
 }

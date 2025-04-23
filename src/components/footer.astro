@@ -1,0 +1,125 @@
+---
+
+---
+
+<footer class="footer">
+  <nav class="footer-bottom" aria-label="footer">
+    <ul role="list" class="links legal">
+      <li role="listitem">
+        <a href="/contact">Contact</a>
+      </li>
+      <li role="listitem">
+        <a href="/accessibility-statement">Accessibility Statement</a>
+      </li>
+    </ul>
+    <p>© 2025 Daniel Henderson-Ede. All rights reserved.</p>
+  </nav>
+</footer>
+
+<style>
+  img {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .branding {
+    flex-basis: 35rem;
+  }
+
+  .branding .logo {
+    height: 2.5rem;
+  }
+
+  .social {
+    margin-top: var(--spacing-s);
+  }
+
+  .social a {
+    display: inline-flex;
+    gap: var(--spacing-xs);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .social img {
+      filter: invert(1);
+    }
+
+    .social img:hover img,
+    .social img:focus-visible img {
+      filter: invert(0);
+    }
+  }
+
+  .partners {
+    flex-basis: fit-content;
+    flex-grow: 1;
+    display: flex;
+    align-self: center;
+  }
+
+  .partners img {
+    height: 6rem;
+    width: auto;
+  }
+
+  footer {
+    padding: 0 var(--section-horizontal-padding)
+      var(--section-horizontal-padding) var(--section-horizontal-padding);
+  }
+
+  footer * {
+    font-size: var(--font-size-xxs);
+    color: var(--color-text);
+  }
+
+  hr {
+    margin-top: var(--section-vertical-padding);
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-s);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-s);
+    flex-grow: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--spacing-s);
+  }
+
+  li {
+    width: fit-content;
+  }
+
+  @media (max-width: 768px) {
+    .footer-bottom {
+      flex-direction: column;
+      align-items: normal;
+    }
+
+    .partners {
+      justify-content: center;
+    }
+
+    ul {
+      flex-direction: column;
+    }
+
+    ul.legal {
+      align-items: end;
+    }
+
+    .legal li {
+      width: 100%;
+      text-align: right;
+    }
+  }
+</style>

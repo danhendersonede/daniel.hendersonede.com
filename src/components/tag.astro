@@ -1,0 +1,54 @@
+---
+interface Props {
+  type: "primary" | "secondary" | "tertiary";
+}
+
+const { type } = Astro.props;
+---
+
+<span class={`tag ${type}`}>
+  <slot />
+</span>
+
+<style>
+  .tag {
+    display: inline-block;
+    padding: var(--spacing-xxxs) var(--spacing-xxs);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-xxs);
+  }
+
+  .tag.primary {
+    display: inline-block;
+    background: linear-gradient(
+      145deg,
+      var(--color-green-10),
+      var(--color-green-20),
+      var(--color-green-10)
+    );
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    color: var(--color-text-inverse);
+  }
+
+  .tag.secondary {
+    border: 2px dashed var(--background-color-accent);
+  }
+
+  .tag.tertiary {
+    background-color: var(--color-text-inverse);
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>

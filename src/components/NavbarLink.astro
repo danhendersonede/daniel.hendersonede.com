@@ -1,0 +1,56 @@
+---
+interface Props {
+  href: string;
+  newTab?: boolean;
+}
+
+const { href, newTab } = Astro.props as Props;
+const currentPath = Astro.url.pathname;
+
+const isActive = (href: string) => {
+  if (href === "/") {
+    return currentPath === "/";
+  }
+  return currentPath === href;
+};
+
+const active = isActive(href);
+---
+
+<li
+  role="listitem"
+  class={active ? "active" : ""}
+  aria-current={active ? "page" : undefined}
+>
+  <a
+    href={href}
+    target={newTab ? "_blank" : undefined}
+    rel={newTab ? "noopener noreferrer" : undefined}
+  >
+    <slot />
+  </a>
+</li>
+
+<style>
+  li a {
+    font-size: var(--font-size-xs);
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-xs);
+  }
+
+  li.active a {
+    color: var(--color-text-inverse);
+    text-decoration: none;
+    background-color: var(--background-color-accent);
+  }
+
+  li a :global(img) {
+    transition: transform 0.25s ease-in-out;
+  }
+
+  li a :global(img:hover),
+  li a :global(img:focus-visible) {
+    transform: scale(1.1);
+  }
+</style>

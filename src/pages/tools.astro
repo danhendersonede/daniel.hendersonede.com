@@ -1,0 +1,38 @@
+---
+import Layout from "@layouts/base.astro";
+import { pageConfig } from "@config/root-page-config";
+import ResourceListItem from "@components/resourceListItem.astro";
+import { getCollection } from "astro:content";
+const tools = await getCollection("tools");
+const recentTools = tools.sort(
+  (a, b) => b.data.lastUpdated.getTime() - a.data.lastUpdated.getTime()
+);
+---
+
+<Layout
+  pageTitle={pageConfig.tools.pageTitle}
+  pageDescription={pageConfig.tools.description}
+  ogType="website"
+>
+  <h1>{pageConfig.tools.pageTitle}</h1>
+  <ul role="list">
+    {
+      recentTools.map((tool) => (
+        <ResourceListItem
+          isInVerticalList
+          title={tool.data.toolName}
+          description={tool.data.description}
+          href={!tool.data.url ? `/tool/${tool.id}` : tool.data.url}
+          coverImageLightURL={tool.data.coverImageURL.src}
+        />
+      ))
+    }
+  </ul>
+</Layout>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+</style>

@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import profile from "@assets/profile.jpg";
+
+interface Props {
+  size: "small" | "large";
+}
+
+const { size } = Astro.props as Props;
+---
+
+<div id="profile-picture" class={`profile-picture ${size}`}>
+  <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="blobClip" clipPathUnits="objectBoundingBox">
+        <path
+          d="M0.1019 0.1922C0.2025 0.0538 0.3712 -0.0122 0.5351 0.0227L0.6534 0.0479C0.7667 0.072 0.8626 0.1497 0.9123 0.2578C0.9662 0.3764 0.9591 0.5156 0.8909 0.6265L0.8448 0.7018C0.7465 0.8623 0.5664 0.9482 0.3857 0.9214L0.3029 0.9093C0.1831 0.8908 0.0946 0.8032 0.0463 0.6808C0.0152 0.6299 0.0091 0.5753 0.0156 0.5212L0.0176 0.4199C0.0245 0.3366 0.0539 0.2582 0.1019 0.1922Z"
+        ></path>
+      </clipPath>
+    </defs>
+  </svg>
+
+  <Image
+    src={profile}
+    alt="A smiling white male with short, red hair, standing in the center of the image, wearing a stripey shirt."
+  />
+</div>
+
+<script>
+  import { animate } from "motion";
+
+  const profilePicture = document.getElementById("profile-picture");
+
+  if (profilePicture?.classList.contains("small")) {
+    animate(
+      "#blobClip",
+      { rotate: 360 },
+      {
+        repeat: Infinity,
+        repeatDelay: 0,
+        duration: 30,
+        ease: "linear",
+      }
+    );
+  }
+</script>
+
+<style>
+  .profile-picture {
+    display: inline-block;
+    position: relative;
+  }
+
+  .profile-picture img {
+    object-fit: cover;
+    clip-path: url(#blobClip);
+    -webkit-clip-path: url(#blobClip);
+  }
+
+  .profile-picture.small clipPath {
+    transform-origin: 100px 100px !important;
+  }
+
+  .profile-picture.large clipPath {
+    transform-origin: 300px 300px !important;
+  }
+
+  .profile-picture.small {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-picture.large {
+    width: 270px;
+    height: 270px;
+  }
+</style>

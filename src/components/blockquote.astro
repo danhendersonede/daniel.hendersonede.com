@@ -1,0 +1,62 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"blockquote"> {}
+
+const { cite, ...rest } = Astro.props as Props;
+---
+
+<blockquote cite={cite} {...rest}>
+  <slot />
+</blockquote>
+
+<style>
+  blockquote {
+    margin: 2rem 0;
+    padding: 1rem 1.5em 1.5rem 1.5em;
+    min-width: 70%;
+    max-width: 70ch;
+    background-color: var(--container-background-color);
+    display: block;
+    scroll-snap-align: start;
+    height: fit-content;
+
+    // Credit to https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/ for the quote styling
+	&:before {
+      color: var(--color-gray-90);
+      content: open-quote;
+      font-size: 14em;
+      line-height: 0.01em;
+      vertical-align: -6.5rem;
+    }
+
+    p {
+      &:last-of-type:after {
+        color: var(--color-gray-90);
+        content: close-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -2rem;
+      }
+    }
+
+    cite {
+      margin-top: 1rem;
+      display: block;
+      font-style: normal;
+
+      a {
+        display: inline-block;
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 0.25rem;
+      }
+
+      span {
+        display: block;
+        font-weight: 500;
+        font-size: 0.85rem;
+      }
+    }
+  }
+</style>

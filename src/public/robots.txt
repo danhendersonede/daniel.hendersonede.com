@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://daniel.hendersonede.com/sitemap.xml

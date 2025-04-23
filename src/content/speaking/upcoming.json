@@ -1,0 +1,35 @@
+[
+    {
+        "id": "john-slatin-accessu-2025",
+        "eventName": "John Slatin AccessU 2025",
+        "description": "Both design systems and accessibility teams aim to prove impact, improve efficiency, and create better products, yet they often work in silos, missing opportunities to solve mutual roadblocks. This session will explore practical strategies for fostering collaboration between these teams to address common issues such as consistency, compliance, and stakeholder buy-in. Through real-world examples and interactive discussions, attendees will learn how this partnership can streamline workflows, enhance product quality, and deliver better outcomes for their organizations. By the end of the session, participants will gain actionable insights into leveraging this relationship for maximum impact.",
+        "date": "2025-05-13",
+        "time": "2:15 PM - 3:45 PM CT",
+        "location": "In-Person & Online event",
+        "cost": "Ticketed Event",
+        "linkType": "register",
+        "URL": "https://knowbility.org/programs/john-slatin-accessu-2025/couples-therapy-how-accessibility-and-design-systems-teams-can-work-better-together"
+    },
+    {
+        "id": "ds-live-by-zeroheight",
+        "eventName": "DS Live by ZeroHeight",
+        "description": "Both design systems and accessibility teams aim to prove impact, improve efficiency, and create better products, yet they often work in silos, missing opportunities to solve mutual roadblocks. This session will explore practical strategies for fostering collaboration between these teams to address common issues such as consistency, compliance, and stakeholder buy-in. Through real-world examples and interactive discussions, attendees will learn how this partnership can streamline workflows, enhance product quality, and deliver better outcomes for their organizations. By the end of the session, participants will gain actionable insights into leveraging this relationship for maximum impact.",
+        "date": "2025-06-25",
+        "time": "11:00 AM - 12:00 PM CT",
+        "location": "Online event",
+        "cost": "Free",
+        "linkType": "info",
+        "URL": "https://webinars.zeroheight.com/register/zeroheight-ds-live-daniel-henderson-ede-couples-therapy-how-design-systems-and-accessibility-teams-can-work-better-together"
+    },
+    {
+        "id": "inspect-reflect-apples-hig",
+        "eventName": "Inspect & Reflect by Infa.ai: Apple's HIG",
+        "description": "Together, we’ll perform a design system inventory audit of Apple’s Human Interface Guidelines directly on apple.com. You’ll get an inside look at how experts approach design system inventories, identify inconsistencies, and discuss actionable strategies for optimizing component adoption.",
+        "date": "2025-06-26",
+        "time": "11:00 AM - 12:00 PM CT",
+        "location": "Online event",
+        "cost": "Free",
+        "linkType": "register",
+        "URL": "https://infa.ai/events/apple_20250605"
+    }
+]

@@ -1,0 +1,63 @@
+---
+import BaseHead from "./base-head.astro";
+import Navbar from "@components/navbar.astro";
+import Footer from "@components/footer.astro";
+import { ClientRouter } from "astro:transitions";
+
+interface Props {
+  pageTitle: string;
+  pageDescription: string;
+  pageTitleOverride?: boolean;
+  ogImageURL?: string;
+  ogType: "website" | "article" | "event" | "profile" | "product";
+  navDefaultStyle?: "default" | "transparent";
+  mainNoTopPadding?: boolean;
+  robotsNoIndex?: boolean;
+  showTransitions?: boolean;
+}
+
+const {
+  pageTitle,
+  pageDescription,
+  ogImageURL,
+  ogType,
+  pageTitleOverride = false,
+  navDefaultStyle = "default",
+  mainNoTopPadding = false,
+  robotsNoIndex = false,
+  showTransitions = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    {showTransitions && <ClientRouter />}
+    <BaseHead
+      pageTitle={pageTitle}
+      pageTitleOverride={pageTitleOverride}
+      pageDescription={pageDescription}
+      ogImageURL={ogImageURL}
+      ogType={ogType}
+      robotsNoIndex={robotsNoIndex}
+    />
+  </head>
+  <body>
+    <Navbar defaultStyle={navDefaultStyle} />
+    <main class={mainNoTopPadding ? "no-top-padding" : ""} id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
+    min-height: 40rem;
+  }
+
+  main.no-top-padding {
+    padding-top: 0;
+  }
+</style>

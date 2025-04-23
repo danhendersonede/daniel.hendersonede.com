@@ -1,0 +1,42 @@
+---
+import ResourceListItem from "@components/resourceListItem.astro";
+
+interface Props {
+  work: {
+    id: string;
+    data: {
+      pageTitle: string;
+      description: string;
+      tags: string[];
+      featured: boolean;
+      createdDate: string;
+      coverImageURL: string;
+    };
+  };
+}
+
+const { work } = Astro.props as Props;
+---
+
+<ResourceListItem
+  isInVerticalList
+  title={work.data.pageTitle}
+  description={work.data.description}
+  href={`/work/${work.id}`}
+  coverImageLightURL={work.data.coverImageURL}
+/>
+
+<style>
+  .work-tile {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .content {
+    max-width: 70ch;
+  }
+
+  a {
+    font-size: var(--font-size-l);
+  }
+</style>

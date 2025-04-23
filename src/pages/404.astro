@@ -1,0 +1,25 @@
+---
+import Layout from "@layouts/base.astro";
+import LinkCTA from "@components/CTALink.astro";
+---
+
+<Layout
+  pageTitle="Page not found"
+  pageDescription="Oops! It looks like you've taken a wrong turn. Don't worry, it happens to the best of us. Let's get you back on track!"
+  ogType="website"
+  robotsNoIndex
+>
+  <h1>Oops! We couldn't find that page.</h1>
+  <p>
+    It looks like you've taken a wrong turn. Don't worry, it happens to the best
+    of us. Let's get you back on track!
+  </p>
+  <LinkCTA href="/">Take me home</LinkCTA>
+
+  <style>
+    div {
+      padding: var(--section-vertical-padding) var(--section-horizontal-padding)
+        0 var(--section-horizontal-padding);
+    }
+  </style>
+</Layout>

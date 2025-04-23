@@ -1,0 +1,39 @@
+---
+import Layout from "@layouts/base.astro";
+import { pageConfig } from "@config/root-page-config";
+import ResourceListItem from "@components/resourceListItem.astro";
+import { getCollection } from "astro:content";
+const articles = await getCollection("articles");
+const recentArticles = articles.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<Layout
+  pageTitle={pageConfig.articles.pageTitle}
+  pageDescription={pageConfig.articles.description}
+  ogType="website"
+>
+  <h1>{pageConfig.articles.pageTitle}</h1>
+  <ul role="list">
+    {
+      recentArticles.map((article) => (
+        <ResourceListItem
+          isInVerticalList
+          date={article.data.date}
+          publisher={article.data.publicationName}
+          title={article.data.pageTitle}
+          href={!article.data.url ? `/article/${article.id}` : article.data.url}
+          coverImageLightURL={article.data.coverImageURL.src}
+        />
+      ))
+    }
+  </ul>
+</Layout>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+</style>

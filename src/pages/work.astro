@@ -1,0 +1,33 @@
+---
+import Layout from "@layouts/base.astro";
+import { pageConfig } from "@config/root-page-config";
+import { getCollection } from "astro:content";
+import WorkTile from "@components/work-tile.astro";
+
+const work = await getCollection("work").then((work) =>
+  work.filter((work) => work.data.featured)
+);
+---
+
+<Layout
+  pageTitle={pageConfig.work.pageTitle}
+  pageDescription={pageConfig.work.description}
+  ogType="website"
+>
+  <h1>{pageConfig.work.pageTitle}</h1>
+
+  {
+    work.map((work) => (
+      <WorkTile
+        work={{
+          ...work,
+          data: {
+            ...work.data,
+            createdDate: work.data.createdDate.toISOString(),
+            coverImageURL: work.data.coverImageURL.src,
+          },
+        }}
+      />
+    ))
+  }
+</Layout>

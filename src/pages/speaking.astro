@@ -1,0 +1,32 @@
+---
+import Layout from "@layouts/base.astro";
+import { pageConfig } from "@config/root-page-config";
+import UpcomingSpeakingEvents from "@components/speaking/upcoming-speaking-events.astro";
+import PastSpeakingEvents from "@components/speaking/past-speaking-events.astro";
+import CTALink from "@components/CTALink.astro";
+---
+
+<Layout
+  pageTitle={pageConfig.speaking.pageTitle}
+  pageDescription={pageConfig.speaking.description}
+  ogType="website"
+>
+  <h1>{pageConfig.speaking.pageTitle}</h1>
+  <UpcomingSpeakingEvents />
+  <PastSpeakingEvents />
+  <section class="highlight">
+    <h2>I'm available for speaking engagements</h2>
+    <p>
+      I'm available for speaking engagements. I'm a frequent speaker at
+      conferences and events. I'm also available for remote speaking
+      engagements.
+    </p>
+    <CTALink href="/contact">Book me for your event</CTALink>
+  </section>
+</Layout>
+
+<style>
+  .highlight {
+    margin-top: var(--section-vertical-padding);
+  }
+</style>

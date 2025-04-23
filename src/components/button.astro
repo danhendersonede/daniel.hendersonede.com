@@ -1,0 +1,82 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"button"> {
+    subtype: "primary" | "secondary";
+}
+
+const { subtype, class: className = "", ...rest } = Astro.props;
+---
+
+<button {...rest} class={`${className} ${subtype}`}>
+    <slot name="icon" />
+    <slot />
+</button>
+
+<style is:global>
+    button {
+        display: inline-flex;
+        align-items: center;
+        justify-items: center;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-xs) var(--spacing-s);
+        border: var(--border-style);
+        border-radius: var(--border-radius-interactive);
+        text-decoration: none;
+        color: var(--color-text);
+        font-weight: var(--font-weight-heading);
+        width: fit-content;
+        font-family: var(--font-family-heading);
+        min-height: 44px;
+    }
+
+    button.primary {
+        background-color: var(--color-text);
+        color: var(--color-text-inverse);
+    }
+
+    button.secondary {
+        background-color: transparent;
+        color: var(--color-text);
+    }
+
+    button:hover,
+    button:focus-visible {
+        background-color: var(--color-text);
+        outline-offset: 2px;
+        color: var(--color-text-inverse);
+    }
+
+    button.primary [slot="icon"] {
+        filter: invert(1);
+    }
+
+    button:hover [slot="icon"],
+    button:focus-visible [slot="icon"] {
+        filter: invert(1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        button.primary [slot="icon"] {
+            filter: invert(0);
+        }
+
+        button.secondary [slot="icon"] {
+            filter: invert(1);
+        }
+
+        button:hover [slot="icon"],
+        button:focus-visible [slot="icon"] {
+            filter: invert(0);
+        }
+    }
+
+    button[aria-disabled="true"],
+    button:disabled {
+        background-color: transparent;
+        border-color: var(--color-text-disabled);
+        border-style: dashed;
+        cursor: default;
+        color: var(--color-text-disabled);
+    }
+</style>

@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import ResourceListItem from "@components/resourceListItem.astro";
+const tools = await getCollection("tools");
+const featuredTools = tools
+  .sort((a, b) => b.data.lastUpdated.getTime() - a.data.lastUpdated.getTime())
+  .filter((tool) => tool.data.featured);
+---
+
+<section>
+  <div class="heading-group">
+    <h2>Featured Tools</h2>
+    <a href="/tools">View all tools</a>
+  </div>
+  <ul role="list">
+    {
+      featuredTools.map((tool) => (
+        <ResourceListItem
+          title={tool.data.toolName}
+          href={!tool.data.url ? `/tool/${tool.id}` : tool.data.url}
+          coverImageLightURL={tool.data.coverImageURL.src}
+        />
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: var(--spacing-s);
+  }
+</style>

@@ -1,0 +1,157 @@
+---
+import Tag from "@components/tag.astro";
+import { formatDate } from "@utils/dates";
+
+interface Props {
+  title: string;
+  description?: string;
+  href: string;
+  coverImageDarkURL?: any;
+  coverImageLightURL: any;
+  tags?: string[];
+  date?: Date;
+  publisher?: string;
+  isInVerticalList?: boolean;
+}
+
+const {
+  title,
+  description,
+  href,
+  coverImageDarkURL,
+  coverImageLightURL,
+  tags,
+  date,
+  publisher,
+  isInVerticalList = false,
+} = Astro.props;
+---
+
+<li
+  role="listitem"
+  class={`interactive-card resource list ${isInVerticalList ? "vertical" : ""}`}
+>
+  <div class="resource-cover">
+    <picture>
+      {
+        coverImageDarkURL && (
+          <source
+            srcset={coverImageDarkURL.src}
+            media="(prefers-color-scheme: dark)"
+          />
+        )
+      }
+      {coverImageLightURL && <img src={coverImageLightURL} alt="" />}
+    </picture>
+  </div>
+  <div class={`content ${description && tags ? "detailed" : ""}`}>
+    {
+      date && (
+        <div class="date">
+          {formatDate(date)}{" "}
+          {publisher && <span class="publisher">{publisher}</span>}
+        </div>
+      )
+    }
+    <a href={href} class="card-link">
+      {title}
+    </a>
+    {description && <p>{description}</p>}
+    {
+      tags && tags.length > 0 && (
+        <div class="meta">
+          <div class="tags">
+            {tags.map((tag) => (
+              <Tag type="secondary">{tag}</Tag>
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+</li>
+
+<style>
+  /* Import the shared styles within the style tag to scope them */
+  @import "/src/styles/resource-card.css";
+
+  /* List-specific styles only */
+  .resource.list {
+    display: flex;
+    gap: var(--spacing-s);
+    align-content: start;
+    max-width: 100%;
+  }
+
+  .resource.list .resource-cover {
+    max-width: 100%;
+    border-radius: var(--border-radius-m);
+    height: fit-content;
+  }
+
+  .resource.list.vertical {
+    flex-wrap: wrap;
+    padding: var(--spacing-xs) 0;
+  }
+
+  .resource.list:not(.vertical) {
+    flex-direction: column;
+  }
+
+  .resource.list.vertical .resource-cover {
+    flex: 0 0 250px;
+  }
+
+  .resource.list.vertical .content {
+    flex-grow: 1;
+  }
+
+  @media (max-width: 520px) {
+    .resource.list .resource-cover,
+    .resource.list.vertical .resource-cover {
+      flex: 1 1 100%;
+    }
+
+    .resource.list picture {
+      aspect-ratio: 16/9;
+    }
+  }
+
+  img {
+    border-radius: var(--border-radius-m);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .resource.list:hover img {
+      transform: scale(1.02);
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .date {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xxs);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .detailed a {
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .meta {
+    margin-top: var(--spacing-xs);
+    flex-grow: 1;
+    align-content: end;
+  }
+</style>

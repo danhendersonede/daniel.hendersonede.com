@@ -1,0 +1,116 @@
+---
+import Layout from "@layouts/base.astro";
+import type { MarkdownLayoutProps } from "astro";
+
+type Props = MarkdownLayoutProps<{
+    pageTitle: string;
+    description: string;
+    createdDate?: string;
+    tags?: string[];
+}>;
+
+const { frontmatter } = Astro.props as Props;
+---
+
+<Layout
+    pageTitle={frontmatter.pageTitle}
+    pageDescription={frontmatter.description}
+    ogType="article"
+>
+    <article>
+        <section>
+        <div class="article-header strip-heading-margin">
+                <h1>{frontmatter.pageTitle}</h1>
+                {frontmatter.description && <p class="description">{frontmatter.description}</p>}
+            </div>
+            <!-- {!frontmatter.hideCoverImage && article && (
+                <picture class="article-cover-image">
+                    <source
+                        srcset={article.data.coverImageDarkURL.src}
+                        media="(prefers-color-scheme: dark)"
+                    />
+                    <Image src={article.data.coverImageLightURL} alt={article.data.coverImageAltText} class="cover-image" />
+                </picture>
+            )} -->
+        </section>
+        <div class="article-content">
+            <div>
+                <slot />
+            </div>
+        </div>
+    </article>
+</Layout>
+
+<style>
+    h1 {
+        margin-bottom: var(--spacing-xs);
+        font-size: var(--font-size-xl);
+    }
+
+    .author-info {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-m);
+    }
+
+    .author-image {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--border-radius-m);
+        object-fit: cover;
+    }
+
+    .author-name a {
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-xxs);
+    }
+
+    .author-role {
+        color: var(--color-text-accent);
+        font-size: 0.9rem;
+    }
+
+    .description {
+        margin-top: 0
+    }
+
+    .article-cover-image img {
+        border-radius: var(--border-radius-l);
+        max-height: 400px;
+        width: auto;
+    }
+
+    @media (min-width: 769px) {
+        :not(.no-aside) .article-content {
+            display: grid;
+            grid-template-columns: 65% 30%;
+            gap: var(--spacing-m);
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        :not(.no-aside) .article-content {
+            grid-template-columns: 60% 25%;
+            gap: 15%;
+            gap: var(--spacing-xl);
+        }
+    }
+</style>
+
+<style is:inline>
+    .no-aside main {
+        max-width: 100%
+        padding: 0
+    }
+
+    body:has(.no-top-padding) {
+        margin-top: 0;
+    }
+</style>

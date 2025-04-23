@@ -1,0 +1,68 @@
+---
+
+---
+
+<section>
+  <h2>What I believe</h2>
+  <p>
+    If you feel I am ever not following my own principles, please
+    <a href="mailto:daniel@hendersonede.com">reach out</a> to me so I can make changes.
+  </p>
+  <div class="card-group">
+    <div class="principle">
+      <h3>Systems should serve people</h3>
+      <p>
+        A well-designed website, app, or component only matters if it helps real
+        people do better work or have better experiences. I design and develop
+        for clarity, reusability, and long-term impact.
+      </p>
+    </div>
+
+    <div class="principle">
+      <h3>Evolution over perfection</h3>
+      <p>
+        Whether it's design or code, I create systems that are built to evolve.
+        I treat every project with flexibility and openness, and I welcome
+        feedback as a chance to improve it.
+      </p>
+    </div>
+
+    <div class="principle">
+      <h3>Always learning and sharing</h3>
+      <p>
+        I've been lucky to learn from some brilliant people, and I do my best to
+        pass that on in internal documentation, by giving public talks, or just
+        pairing with someone new. So please reach out!
+      </p>
+    </div>
+  </div>
+
+  <style>
+    .card-group {
+      display: grid;
+      gap: var(--spacing-m);
+      margin-top: var(--spacing-m);
+    }
+
+    @media (min-width: 60rem) {
+      .card-group {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .principle {
+      background: var(--background-color-accent);
+      padding: var(--spacing-m);
+      border-radius: var(--border-radius);
+    }
+
+    .principle h3,
+    .principle p {
+      color: var(--color-text-inverse);
+    }
+
+    .principle h3 {
+      margin-top: 0;
+    }
+  </style>
+</section>

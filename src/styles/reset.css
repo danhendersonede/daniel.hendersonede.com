@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  font-feature-settings: "kern";
+  font-kerning: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+input:is([type="checkbox"], [type="radio"]),
+select,
+label,
+button {
+  cursor: pointer;
+}
+
+img,
+svg,
+video {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+@media (forced-colors: active) {
+  button {
+    border: 1px solid;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  html:has(.expertise-section[id]:target) {
+    scroll-behavior: auto;
+  }
+}

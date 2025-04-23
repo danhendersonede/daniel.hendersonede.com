@@ -1,0 +1,82 @@
+:root {
+  /* typography */
+  --font-family-heading: 'Inclusive Sans Variable', sans-serif;
+  --font-family-body: 'Inclusive Sans Variable', sans-serif;
+
+  --font-weight-heading: 300;
+  --font-weight-bold: 600;
+  --font-weight-body: 400;
+
+  --font-letter-spacing: 0.5px;
+  --font-line-height: 1.4;
+  --font-line-height-heading: 1.2;
+
+  --font-size-xxl: 5rem;
+  --font-size-xl: 3rem;
+  --font-size-l: 2.5rem;
+  --font-size-m: 2rem;
+  --font-size-s: 1.5rem;
+  --font-size-xs: 1.25rem;
+  --font-size-xxs: 1.1rem;
+  --font-size-dynamic-mxl: clamp(2rem, 14vh, 3rem);
+  --font-size-dynamic-ml: clamp(1.5rem, 14vh, 2.5rem);
+
+  /* color */
+  --color-green-0: #1c4532;
+  --color-green-10: #276749;
+  --color-green-20: #2f855a;
+  --color-green-30: #38a169;
+  --color-green-40: #48bb78;
+  --color-green-50: #68d391;
+  --color-green-60: #9ae6b4;
+  --color-green-70: #92c73e;
+  --color-green-80: #c6f6d5;
+  --color-green-90: #f0fff4;
+  --color-green-100: #f0f3ee;
+  
+  --color-gray-0: #000000;
+  --color-gray-10: #262626;
+  --color-gray-20: #404040;
+  --color-gray-30: #595959;
+  --color-gray-40: #737373;
+  --color-gray-50: #8c8c8c;
+  --color-gray-60: #a6a6a6;
+  --color-gray-70: #bfbfbf;
+  --color-gray-80: #d9d9d9;
+  --color-gray-90: #f8f8f8;
+  --color-gray-100: #ffffff;
+  --color-gray-100-translucent: rgba(255, 255, 255, 0.85);
+
+  --color-red-0: #330000;
+  --color-red-10: #660000;
+  --color-red-20: #990000;
+  --color-red-30: #cc0000;
+  --color-red-40: #e60000;
+  --color-red-50: #ff0000;
+  --color-red-60: #ff3333;
+  --color-red-70: #ff6666;
+  --color-red-80: #ff9999;
+  --color-red-90: #ffcccc;
+  --color-red-100: #ffe6e6;
+
+  /* spacing */
+  --spacing-xl: 6rem;
+  --spacing-l: 3rem;
+  --spacing-m: 2rem;
+  --spacing-s: 1rem;
+  --spacing-xs: 0.5rem;
+  --spacing-xxs: 0.25rem;
+  --spacing-xxxs: 0.125rem;
+  --spacing-none: 0px;
+
+  /* border radius */
+  --border-radius-l: 16px;
+  --border-radius-m: 8px;
+  --border-radius-s: 4px;
+  --border-radius-xs: 2px;
+  --border-radius-none: 0px;
+
+  /* elevation */
+  --elevation-m: 0px 4px 10px rgba(0, 0, 0, 0.15),
+    0px 1px 3px rgba(0, 0, 0, 0.1);
+}

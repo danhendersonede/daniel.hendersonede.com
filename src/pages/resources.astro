@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/base.astro";
+import { pageConfig } from "@config/root-page-config";
+import RecentArticles from "@components/recent-articles.astro";
+import FeaturesTools from "@components/features-tools.astro";
+---
+
+<Layout
+  pageTitle={pageConfig.resources.pageTitle}
+  pageDescription={pageConfig.resources.description}
+  ogType="website"
+>
+  <h1>{pageConfig.resources.pageTitle}</h1>
+  <RecentArticles />
+  <FeaturesTools />
+</Layout>
+
+<style></style>

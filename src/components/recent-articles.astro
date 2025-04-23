@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import ResourceListItem from "@components/resourceListItem.astro";
+const articles = await getCollection("articles");
+const recentArticles = articles
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+---
+
+<section>
+  <div class="heading-group">
+    <h2>Latest Articles</h2>
+    <a href="/articles">View all articles</a>
+  </div>
+  <ul role="list">
+    {
+      recentArticles.map((article) => (
+        <ResourceListItem
+          isInVerticalList
+          date={article.data.date}
+          publisher={article.data.publicationName}
+          title={article.data.pageTitle}
+          href={!article.data.url ? `/article/${article.id}` : article.data.url}
+          coverImageLightURL={article.data.coverImageURL.src}
+        />
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+</style>

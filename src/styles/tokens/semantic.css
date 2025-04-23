@@ -1,0 +1,24 @@
+:root {
+  --color-text: var(--color-gray-0);
+  --color-text-muted: var(--color-gray-30);
+  --color-text-accent: var(--color-green-20);
+  --color-text-inverse: var(--color-gray-100);
+  --color-text-disabled: var(--color-gray-30);
+  --color-link: var(--color-text);
+  --color-error: var(--color-red-50);
+
+  --background-color: var(--color-gray-100);
+  --background-color-accent: var(--color-green-10);
+  
+  --border-style: solid 2px var(--color-text);
+  --border-radius: var(--border-radius-m);
+  --border-radius-interactive: var(--border-radius-m);
+
+  /* section */
+  --main-horizontal-padding: 40px;
+
+  --section-horizontal-padding: clamp(20px, 5vw, 40px);
+  --section-vertical-padding: 4rem;
+
+  --navbar-background-color: var(--color-gray-100-translucent);
+}

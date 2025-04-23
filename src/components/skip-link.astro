@@ -1,0 +1,40 @@
+<div class="skip-link-container">
+  <a href="#main">Skip to Content</a>
+</div>
+
+<style>
+  .skip-link-container {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: var(--spacing-s);
+    top: -100px;
+    padding: 8px;
+    z-index: 10000;
+
+    text-underline-offset: var(--spacing-xxs);
+    text-decoration-thickness: 3px;
+    background: var(--background-color-accent);
+    padding: 0.4rem;
+    padding-left: var(--section-horizontal-padding);
+    min-width: 18rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .skip-link-container:focus-within {
+    top: 0;
+    left: 0;
+  }
+
+  a {
+    font-size: var(--font-size-xxs);
+    color: var(--color-text-inverse);
+    text-decoration: none;
+    padding: 0 var(--spacing-xxs);
+  }
+
+  a:focus-visible {
+    outline-color: var(--color-text-inverse);
+    outline-offset: 1px;
+  }
+</style>

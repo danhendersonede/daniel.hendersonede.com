@@ -1,0 +1,16 @@
+.word-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    list-style: none;
+    padding: 0;
+    gap: var(--spacing-s);
+  }
+  
+  .word-list li {
+    padding: var(--spacing-s);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--background-color-accent);
+    border-radius: var(--border-radius-m);
+    align-content: center;
+  }
+  

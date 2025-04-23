@@ -1,0 +1,50 @@
+---
+import Layout from "@layouts/base.astro";
+import Hero from "@components/Hero.astro";
+import ProfilePicture from "@components/ProfilePicture.astro";
+import Principles from "@components/principles.astro";
+import Recommendations from "@components/recommendations.astro";
+import { pageConfig } from "@config/root-page-config";
+---
+
+<Layout
+  pageTitle={pageConfig.about.pageTitle}
+  pageDescription={pageConfig.about.description}
+  ogType="website"
+>
+  <h1>{pageConfig.about.pageTitle}</h1>
+
+  <Hero layout="reverse">
+    <div slot="start">
+      <h2>What I do</h2>
+      <p>
+        I'm Daniel Henderson-Ede, a Design Engineer who is system-minded and
+        loves accessibility. I've spent the last 8+ years making complex things
+        simpler at companies like Pinterest, CVS Health, and the UK Government.
+      </p>
+      <p>I'm currently the Principle Consultant at Mantis & Co.</p>
+    </div>
+    <div slot="end">
+      <ProfilePicture size="large" />
+    </div>
+    <div slot="after"></div>
+  </Hero>
+
+  <Recommendations />
+
+  <h2>Why I'm here</h2>
+  <p>
+    I started as a full-stack engineer, but I naturally gravitated toward
+    design. After earning my NN/g UX certification, I landed in the space where
+    design meets development and I haven't looked back.
+  </p>
+  <p></p>
+  <p>
+    What drives me is creating accessible experiences that improve real people's
+    lives. I'm fortunate to get to do this work to support my wife (Emma), our
+    dog (Ashwa), and four guinea pigs with way too much personality: Nutmeg,
+    Truffle, Bournville, and Junior. I never take that for granted.
+  </p>
+
+  <Principles />
+</Layout>

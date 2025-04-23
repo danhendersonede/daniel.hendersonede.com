@@ -1,0 +1,38 @@
+/* Base interactive card styles */
+.interactive-card {
+  position: relative;
+}
+
+.interactive-card a {
+  position: static;
+}
+
+.interactive-card a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* Hover effect */
+.interactive-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .interactive-card:hover::after {
+    transform: translateY(-4px);
+  }
+
+  .interactive-card:hover img {
+    transform: scale(1.02);
+  }
+}
+
+/* Image transitions */
+.interactive-card img {
+  transition: transform 0.2s ease;
+} 

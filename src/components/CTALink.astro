@@ -1,0 +1,100 @@
+---
+import { Image } from "astro:assets";
+import type { HTMLAttributes } from "astro/types";
+import rightArrow from "@assets/icon/circle-arrow-right.svg";
+
+interface Props extends HTMLAttributes<"a"> {
+  fullWidth?: boolean;
+  arrowDirection?: "left" | "down" | "right";
+  arrowPosition?: "before" | "after";
+}
+
+const {
+  href,
+  fullWidth,
+  arrowDirection = "right",
+  arrowPosition = "after",
+  class: className,
+  ...rest
+} = Astro.props;
+---
+
+<a
+  href={href}
+  {...rest}
+  class={`link-cta ${className} ${fullWidth ? "full-width" : ""}`}
+>
+  {
+    arrowPosition === "before" && (
+      <Image
+        loading="eager"
+        src={rightArrow}
+        alt=""
+        data-arrow-direction={arrowDirection}
+      />
+    )
+  }
+  <slot />
+  {
+    arrowPosition === "after" && (
+      <Image
+        loading="eager"
+        src={rightArrow}
+        alt=""
+        data-arrow-direction={arrowDirection}
+      />
+    )
+  }
+</a>
+
+<style>
+  .link-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    padding: var(--spacing-xs) var(--spacing-s);
+    border: var(--border-style);
+    border-radius: var(--border-radius-interactive);
+    text-decoration: none;
+    color: var(--color-text);
+    min-height: 44px;
+  }
+
+  .link-cta:hover,
+  .link-cta:focus-visible {
+    background-color: var(--color-text);
+    outline-offset: 2px;
+    color: var(--color-text-inverse);
+  }
+
+  .link-cta:hover img,
+  .link-cta:focus-visible img {
+    filter: invert(1);
+  }
+
+  img[data-arrow-direction="down"] {
+    transform: rotate(90deg);
+  }
+
+  img[data-arrow-direction="left"] {
+    transform: rotate(180deg);
+  }
+
+  @media (max-width: 768px) {
+    .link-cta.full-width {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    img {
+      filter: invert(1);
+    }
+
+    .link-cta:hover img,
+    .link-cta:focus-visible img {
+      filter: invert(0);
+    }
+  }
+</style>
