@@ -17,5 +17,7 @@ export default defineConfig({
     '/tool': '/tools'
   },
 
-  adapter: netlify()
+  adapter: netlify({
+    imageCDN: false,
+  }),
 });
