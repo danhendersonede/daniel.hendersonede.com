@@ -1,6 +1,6 @@
 ---
 import { pageConfig } from "@config/root-page-config";
-import ResourceFeaturedItem from "@components/resourceFeaturedItem.astro";
+import FeaturedLink from "@components/featured-link.astro";
 ---
 
 <section class="featured-links">
@@ -8,13 +8,10 @@ import ResourceFeaturedItem from "@components/resourceFeaturedItem.astro";
     Object.entries(pageConfig).map(([_, item]) => {
       if (item.featured) {
         return (
-          <ResourceFeaturedItem
+          <FeaturedLink
             title={item.pageTitle}
-            description={item.description}
-            coverImageDarkURL={null}
-            coverImageLightURL={null}
             href={`/${item.slug}`}
-            showDescription={true}
+            type="large"
           />
         );
       }
@@ -27,7 +24,7 @@ import ResourceFeaturedItem from "@components/resourceFeaturedItem.astro";
 
   inView(".featured-links", () => {
     animate(
-      ".featured-link",
+      ".featured-link.animate",
       { y: 0, opacity: 1 },
       {
         delay: stagger(0.2),
@@ -45,5 +42,12 @@ import ResourceFeaturedItem from "@components/resourceFeaturedItem.astro";
     margin: 3rem 0;
     align-items: stretch;
     padding: 0;
+  }
+</style>
+
+<style is:global>
+  .featured-links .resource.featured {
+    width: 100%;
+    max-width: 32rem;
   }
 </style>

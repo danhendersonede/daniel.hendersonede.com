@@ -1,20 +1,20 @@
 ---
 interface Props {
   title: string;
-  description: string;
-  coverImageDarkURL: any;
-  coverImageLightURL: any;
   href: string;
-  showDescription: boolean;
+  type: "large" | "small";
+  noAnimation?: boolean;
 }
 
-const { title, href } = Astro.props;
+const { title, href, type = "large", noAnimation = false } = Astro.props;
 
 import { Image } from "astro:assets";
 import ArrowRightUp from "@assets/icon/arrow-right-up.svg";
 ---
 
-<div class="interactive-card resource featured highlight featured-link">
+<div
+  class={`interactive-card resource featured highlight featured-link ${type} ${!noAnimation ? "animate" : ""}`}
+>
   <div class="content">
     <a href={href} class="card-link">{title}</a>
   </div>
@@ -34,16 +34,32 @@ import ArrowRightUp from "@assets/icon/arrow-right-up.svg";
     padding: 0;
     scroll-snap-align: center;
     position: relative;
+  }
+
+  .animate {
     transform: translateY(100px);
     opacity: 0;
+  }
+
+  .small .content {
+    padding: var(--spacing-xs) var(--spacing-s);
+  }
+
+  .small .content a {
+    font-size: var(--font-size-s);
+  }
+
+  .small img {
+    width: 36px;
+    height: 36px;
   }
 
   img {
     position: absolute;
     right: var(--spacing-xxs);
     top: var(--spacing-xxs);
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
   }
 
   @media (min-width: 60rem) {
@@ -106,15 +122,15 @@ import ArrowRightUp from "@assets/icon/arrow-right-up.svg";
 
   @media (max-width: 960px) {
     .resource.featured {
-      width: 100%;
-      max-width: 32rem;
       flex-direction: column;
       min-height: auto;
+      width: fit-content;
+      padding-right: var(--spacing-xl);
     }
 
     .content {
       order: 2;
-      padding: var(--spacing-s) var(--spacing-m);
+      padding: var(--spacing-xs) var(--spacing-s);
       flex-grow: 1;
     }
 

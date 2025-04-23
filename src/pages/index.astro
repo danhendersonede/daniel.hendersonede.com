@@ -4,6 +4,7 @@ import Hero from "@components/Hero.astro";
 import ProfilePicture from "@components/ProfilePicture.astro";
 import { pageConfig } from "@config/root-page-config";
 import FeaturedLinks from "@components/featured-links.astro";
+import FeaturedLink from "@components/featured-link.astro";
 ---
 
 <Layout
@@ -23,7 +24,12 @@ import FeaturedLinks from "@components/featured-links.astro";
     <div slot="end">
       <ProfilePicture size="small" />
       <div>
-        <a href={`/${pageConfig.about.slug}`}>About me</a>
+        <FeaturedLink
+          title="About me"
+          href={`/${pageConfig.about.slug}`}
+          type="small"
+          noAnimation
+        />
         <p>
           I've spent the last 8+ years making complex things simpler at
           companies like Pinterest, CVS Health, and the UK Government. As a
