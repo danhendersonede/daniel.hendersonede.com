@@ -6,23 +6,46 @@ interface Props {
 }
 
 const { metrics } = Astro.props;
+const totalReached = metrics.totalAttendees + metrics.totalViews;
 ---
 
 <section class="speaking-metrics">
   <!-- Hero Stats Grid -->
   <div class="metrics-grid">
-    <div class="metric-card">
-      <span class="metric-value">{metrics.totalEvents}</span>
+    <div
+      class="metric-card"
+      data-animate="true"
+      data-target={metrics.totalEvents}
+      data-format="basic"
+    >
+      <span class="metric-value" aria-label={`${metrics.totalEvents} events`}
+        >{metrics.totalEvents}</span
+      >
       <span class="metric-label">Events</span>
     </div>
-    <div class="metric-card">
-      <span class="metric-value">{metrics.totalAttendees.toLocaleString()}</span
+    <div
+      class="metric-card"
+      data-animate="true"
+      data-target={metrics.totalAttendees}
+      data-format="locale"
+    >
+      <span
+        class="metric-value"
+        aria-label={`${metrics.totalAttendees.toLocaleString()} live attendees`}
+        >{metrics.totalAttendees.toLocaleString()}</span
       >
       <span class="metric-label">Live Attendees</span>
     </div>
-    <div class="metric-card primary">
-      <span class="metric-value"
-        >{(metrics.totalAttendees + metrics.totalViews).toLocaleString()}</span
+    <div
+      class="metric-card primary"
+      data-animate="true"
+      data-target={totalReached}
+      data-format="locale"
+    >
+      <span
+        class="metric-value"
+        aria-label={`${totalReached.toLocaleString()} people reached`}
+        >{totalReached.toLocaleString()}</span
       >
       <span class="metric-label">People Reached</span>
     </div>
@@ -81,6 +104,26 @@ const { metrics } = Astro.props;
     font-size: var(--font-size-l);
   }
 
+  /* Animation support */
+  @media (prefers-reduced-motion: no-preference) {
+    .metric-card[data-animate='true'] {
+      transform: translateY(8px);
+      opacity: 0.8;
+      transition:
+        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        opacity 0.6s ease-out;
+    }
+
+    .metric-card[data-animate='true'].animate-in {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .metric-value {
+      transition: color 0.2s ease-out;
+    }
+  }
+
   @media (max-width: 768px) {
     .metrics-grid {
       grid-template-columns: repeat(1, 1fr);
@@ -96,3 +139,187 @@ const { metrics } = Astro.props;
     }
   }
 </style>
+
+<script>
+  /**
+   * Count-up animation system for speaking metrics
+   * Follows Astro best practices with progressive enhancement
+   */
+  class CountUpAnimator {
+    private element: HTMLElement;
+    private targetValue: number;
+    private duration: number;
+    private useLocaleString: boolean;
+    private startValue: number = 0;
+    private animationId: number | null = null;
+
+    constructor(
+      element: HTMLElement,
+      targetValue: number,
+      options: {
+        duration?: number;
+        useLocaleString?: boolean;
+      } = {}
+    ) {
+      this.element = element;
+      this.targetValue = targetValue;
+      this.duration = options.duration || 2000;
+      this.useLocaleString = options.useLocaleString || false;
+    }
+
+    /**
+     * Start the count-up animation with accessibility support
+     */
+    animate(): void {
+      // Respect user's motion preferences
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        this.element.textContent = this.formatValue(this.targetValue);
+        return;
+      }
+
+      // Set up ARIA live region for screen readers
+      this.element.setAttribute('aria-live', 'polite');
+
+      // Start the animation loop
+      this.startAnimation();
+    }
+
+    private startAnimation(): void {
+      const startTime = performance.now();
+
+      const animateFrame = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / this.duration, 1);
+
+        // Smoother easing function (easeOutCubic for gentler end)
+        const easedProgress = this.easeOutCubic(progress);
+
+        // Use smoother interpolation that reduces jumpiness
+        const rawValue =
+          this.startValue +
+          (this.targetValue - this.startValue) * easedProgress;
+
+        // For the final 10% of animation, use more precise rounding
+        const currentValue =
+          progress > 0.9 ? Math.round(rawValue) : Math.floor(rawValue);
+
+        // Update the display value
+        this.element.textContent = this.formatValue(currentValue);
+
+        if (progress < 1) {
+          this.animationId = requestAnimationFrame(animateFrame);
+        } else {
+          // Ensure final value is exactly correct
+          this.element.textContent = this.formatValue(this.targetValue);
+          this.cleanup();
+        }
+      };
+
+      this.animationId = requestAnimationFrame(animateFrame);
+    }
+
+    private formatValue(value: number): string {
+      return this.useLocaleString ? value.toLocaleString() : value.toString();
+    }
+
+    private easeOutCubic(t: number): number {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    private cleanup(): void {
+      if (this.animationId) {
+        cancelAnimationFrame(this.animationId);
+        this.animationId = null;
+      }
+      // Remove aria-live after animation to prevent unnecessary announcements
+      this.element.removeAttribute('aria-live');
+    }
+
+    /**
+     * Cancel animation and clean up resources
+     */
+    cancel(): void {
+      this.cleanup();
+      this.element.textContent = this.formatValue(this.targetValue);
+    }
+  }
+
+  /**
+   * Initialize count-up animations when metrics come into view
+   */
+  function initializeMetricsAnimation(): void {
+    const animatedCards = document.querySelectorAll<HTMLElement>(
+      '[data-animate="true"]'
+    );
+
+    if (animatedCards.length === 0) return;
+
+    // Set up intersection observer for scroll-triggered animation
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (
+            entry.isIntersecting &&
+            !entry.target.hasAttribute('data-animated')
+          ) {
+            const card = entry.target as HTMLElement;
+            const valueElement = card.querySelector(
+              '.metric-value'
+            ) as HTMLElement;
+
+            if (valueElement) {
+              // Mark as animated to prevent re-triggering
+              card.setAttribute('data-animated', 'true');
+
+              // Add entrance animation class
+              if (
+                !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+              ) {
+                card.classList.add('animate-in');
+              }
+
+              // Get target value and format from data attributes
+              const targetValue = parseInt(
+                card.getAttribute('data-target') || '0',
+                10
+              );
+              const format = card.getAttribute('data-format') || 'basic';
+              const useLocaleString = format === 'locale';
+
+              // Start count-up animation
+              const animator = new CountUpAnimator(valueElement, targetValue, {
+                duration: 1000,
+                useLocaleString,
+              });
+
+              // Small delay to let entrance animation start
+              setTimeout(() => animator.animate(), 200);
+            }
+
+            // Stop observing this element
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% visible
+        rootMargin: '0px 0px -50px 0px', // Start animation slightly before fully in view
+      }
+    );
+
+    // Observe all animated cards
+    animatedCards.forEach(card => observer.observe(card));
+
+    // Cleanup observer when page is unloaded
+    window.addEventListener('beforeunload', () => {
+      observer.disconnect();
+    });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeMetricsAnimation);
+  } else {
+    initializeMetricsAnimation();
+  }
+</script>
