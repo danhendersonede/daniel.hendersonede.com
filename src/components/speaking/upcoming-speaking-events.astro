@@ -1,7 +1,7 @@
 ---
-import { getCollection } from "astro:content";
-import { formatDate } from "../../utils/dates";
-const upcomingSpeakingEvents = await getCollection("upcomingSpeakingEvents");
+import { getCollection } from 'astro:content';
+import { formatDate } from '../../utils/dates';
+const upcomingSpeakingEvents = await getCollection('upcomingSpeakingEvents');
 ---
 
 <section class="upcoming-speaking-events">
@@ -9,7 +9,7 @@ const upcomingSpeakingEvents = await getCollection("upcomingSpeakingEvents");
   <ul role="list">
     {
       upcomingSpeakingEvents.length > 0 ? (
-        upcomingSpeakingEvents.map((event) => (
+        upcomingSpeakingEvents.map(event => (
           <li role="listitem">
             <h3>{event.data.eventName}</h3>
             <p>
@@ -18,10 +18,10 @@ const upcomingSpeakingEvents = await getCollection("upcomingSpeakingEvents");
             <p>
               {event.data.location}, {event.data.cost}
             </p>
-            {event.data.linkType === "info" && (
+            {event.data.linkType === 'info' && (
               <a href={event.data.URL}>More Info</a>
             )}
-            {event.data.linkType === "register" && (
+            {event.data.linkType === 'register' && (
               <a href={event.data.URL}>Register</a>
             )}
           </li>

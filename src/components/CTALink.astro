@@ -1,19 +1,19 @@
 ---
-import { Image } from "astro:assets";
-import type { HTMLAttributes } from "astro/types";
-import rightArrow from "@assets/icon/circle-arrow-right.svg";
+import { Image } from 'astro:assets';
+import type { HTMLAttributes } from 'astro/types';
+import rightArrow from '@assets/icon/circle-arrow-right.svg';
 
-interface Props extends HTMLAttributes<"a"> {
+interface Props extends HTMLAttributes<'a'> {
   fullWidth?: boolean;
-  arrowDirection?: "left" | "down" | "right";
-  arrowPosition?: "before" | "after";
+  arrowDirection?: 'left' | 'down' | 'right';
+  arrowPosition?: 'before' | 'after';
 }
 
 const {
   href,
   fullWidth,
-  arrowDirection = "right",
-  arrowPosition = "after",
+  arrowDirection = 'right',
+  arrowPosition = 'after',
   class: className,
   ...rest
 } = Astro.props;
@@ -22,10 +22,10 @@ const {
 <a
   href={href}
   {...rest}
-  class={`link-cta ${className} ${fullWidth ? "full-width" : ""}`}
+  class={`link-cta ${className} ${fullWidth ? 'full-width' : ''}`}
 >
   {
-    arrowPosition === "before" && (
+    arrowPosition === 'before' && (
       <Image
         loading="eager"
         src={rightArrow}
@@ -36,7 +36,7 @@ const {
   }
   <slot />
   {
-    arrowPosition === "after" && (
+    arrowPosition === 'after' && (
       <Image
         loading="eager"
         src={rightArrow}
@@ -72,11 +72,11 @@ const {
     filter: invert(1);
   }
 
-  img[data-arrow-direction="down"] {
+  img[data-arrow-direction='down'] {
     transform: rotate(90deg);
   }
 
-  img[data-arrow-direction="left"] {
+  img[data-arrow-direction='left'] {
     transform: rotate(180deg);
   }
 

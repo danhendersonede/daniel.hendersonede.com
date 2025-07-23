@@ -8,14 +8,14 @@
 }
 
 .interactive-card a::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
 }
 
 /* Hover effect */
 .interactive-card::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -35,4 +35,4 @@
 /* Image transitions */
 .interactive-card img {
   transition: transform 0.2s ease;
-} 
+}

@@ -2,7 +2,9 @@ import type { ImageMetadata } from 'astro';
 import { getServiceSlug } from '../utils/getServiceSlug';
 
 // Import all images from the services directory
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/illustrations/services/*.{png,jpg,jpeg,webp}');
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/illustrations/services/*.{png,jpg,jpeg,webp}'
+);
 
 export const getServiceImage = async (path: string) => {
   const slug = getServiceSlug(path);
@@ -12,4 +14,4 @@ export const getServiceImage = async (path: string) => {
   }
   const image = await images[imagePath]();
   return image.default;
-}; 
+};

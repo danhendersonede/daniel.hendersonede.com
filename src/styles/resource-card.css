@@ -1,49 +1,49 @@
 /* Import the base interactive card styles */
-@import "./interactive-card.css";
+@import './interactive-card.css';
 
 .resource {
-    border-radius: var(--border-radius-m);
-    overflow: hidden;
+  border-radius: var(--border-radius-m);
+  overflow: hidden;
 }
 
 /* Common image styles */
 .resource-cover {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 picture {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    transform-origin: center;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform-origin: center;
 }
 
 /* Common tag styles */
 .tags {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    gap: var(--spacing-xs);
-    flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
 }
 
 /* Common card link styles */
 .card-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    cursor: pointer;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
 }
 
 /* Common focus styles */
 :where(.resource.list, .resource.featured):focus-within .card-link:focus {
-    text-decoration: none;
+  text-decoration: none;
 }

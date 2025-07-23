@@ -1,24 +1,23 @@
 .metric-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    list-style: none;
-    padding: 0;
-    gap: var(--spacing-s);
-  }
-  
-  .metric-list li {
-    padding: var(--spacing-s) var(--spacing-s) 0 var(--spacing-s);
-    background-color: var(--background-color-accent);
-    border-radius: var(--border-radius-m);
-  }
-  
-  .metric-list h3 {
-    margin-top: 0;
-    margin-bottom: var(--spacing-xs);
-    font-size: var(--font-size-s);
-  }
-  
-  .metric-list .description {
-    font-size: var(--font-size-xxs);
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  list-style: none;
+  padding: 0;
+  gap: var(--spacing-s);
+}
+
+.metric-list li {
+  padding: var(--spacing-s) var(--spacing-s) 0 var(--spacing-s);
+  background-color: var(--background-color-accent);
+  border-radius: var(--border-radius-m);
+}
+
+.metric-list h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-s);
+}
+
+.metric-list .description {
+  font-size: var(--font-size-xxs);
+}

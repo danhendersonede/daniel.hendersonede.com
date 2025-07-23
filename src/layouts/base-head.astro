@@ -1,24 +1,24 @@
 ---
-import "@fontsource-variable/inclusive-sans";
-import initialFont from "@fontsource-variable/inclusive-sans/files/inclusive-sans-latin-wght-normal.woff2";
-import "../styles/global.css";
+import '@fontsource-variable/inclusive-sans';
+import initialFont from '@fontsource-variable/inclusive-sans/files/inclusive-sans-latin-wght-normal.woff2';
+import '../styles/global.css';
 
 interface Props {
   pageTitle: string;
   pageTitleOverride: boolean;
   pageDescription: string;
-  ogType: "website" | "article" | "event" | "profile" | "product";
+  ogType: 'website' | 'article' | 'event' | 'profile' | 'product';
   ogImageURL?: string;
   robotsNoIndex?: boolean;
 }
 
-const siteURL = "https://www.daniel.hendersonede.com";
+const siteURL = 'https://www.daniel.hendersonede.com';
 
 const {
   pageTitle,
   pageTitleOverride,
   pageDescription,
-  ogImageURL = "/og-image/default.png",
+  ogImageURL = '/og-image/default.png',
   ogType,
   robotsNoIndex,
 } = Astro.props;
@@ -38,7 +38,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 <meta name="author" content="Daniel Henderson-Ede" />
 <meta
   name="robots"
-  content={robotsNoIndex ? "noindex, nofollow" : "index, follow"}
+  content={robotsNoIndex ? 'noindex, nofollow' : 'index, follow'}
 />
 
 <title>

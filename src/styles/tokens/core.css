@@ -33,7 +33,7 @@
   --color-green-80: #c6f6d5;
   --color-green-90: #f0fff4;
   --color-green-100: #f0f3ee;
-  
+
   --color-gray-0: #000000;
   --color-gray-10: #262626;
   --color-gray-20: #404040;
@@ -77,6 +77,6 @@
   --border-radius-none: 0px;
 
   /* elevation */
-  --elevation-m: 0px 4px 10px rgba(0, 0, 0, 0.15),
-    0px 1px 3px rgba(0, 0, 0, 0.1);
+  --elevation-m:
+    0px 4px 10px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.1);
 }

@@ -1,7 +1,7 @@
 ---
-import { getCollection } from "astro:content";
-import ResourceListItem from "@components/resourceListItem.astro";
-const articles = await getCollection("articles");
+import { getCollection } from 'astro:content';
+import ResourceListItem from '@components/resourceListItem.astro';
+const articles = await getCollection('articles');
 const recentArticles = articles
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
@@ -14,7 +14,7 @@ const recentArticles = articles
   </div>
   <ul role="list">
     {
-      recentArticles.map((article) => (
+      recentArticles.map(article => (
         <ResourceListItem
           isInVerticalList
           date={article.data.date}

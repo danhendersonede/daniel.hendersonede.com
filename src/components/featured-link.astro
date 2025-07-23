@@ -2,18 +2,18 @@
 interface Props {
   title: string;
   href: string;
-  type: "large" | "small";
+  type: 'large' | 'small';
   noAnimation?: boolean;
 }
 
-const { title, href, type = "large", noAnimation = false } = Astro.props;
+const { title, href, type = 'large', noAnimation = false } = Astro.props;
 
-import { Image } from "astro:assets";
-import ArrowRightUp from "@assets/icon/arrow-right-up.svg";
+import { Image } from 'astro:assets';
+import ArrowRightUp from '@assets/icon/arrow-right-up.svg';
 ---
 
 <div
-  class={`interactive-card resource featured highlight featured-link ${type} ${!noAnimation ? "animate" : ""}`}
+  class={`interactive-card resource featured highlight featured-link ${type} ${!noAnimation ? 'animate' : ''}`}
 >
   <div class="content">
     <a href={href} class="card-link">{title}</a>
@@ -23,7 +23,7 @@ import ArrowRightUp from "@assets/icon/arrow-right-up.svg";
 
 <style>
   /* Import the shared styles within the style tag to scope them */
-  @import "/src/styles/resource-card.css";
+  @import '/src/styles/resource-card.css';
 
   /* Featured-specific styles only */
   .resource.featured {

@@ -1,10 +1,10 @@
 ---
-import { getCollection } from "astro:content";
-import ResourceListItem from "@components/resourceListItem.astro";
-const tools = await getCollection("tools");
+import { getCollection } from 'astro:content';
+import ResourceListItem from '@components/resourceListItem.astro';
+const tools = await getCollection('tools');
 const featuredTools = tools
   .sort((a, b) => b.data.lastUpdated.getTime() - a.data.lastUpdated.getTime())
-  .filter((tool) => tool.data.featured);
+  .filter(tool => tool.data.featured);
 ---
 
 <section>
@@ -14,7 +14,7 @@ const featuredTools = tools
   </div>
   <ul role="list">
     {
-      featuredTools.map((tool) => (
+      featuredTools.map(tool => (
         <ResourceListItem
           title={tool.data.toolName}
           href={!tool.data.url ? `/tool/${tool.id}` : tool.data.url}

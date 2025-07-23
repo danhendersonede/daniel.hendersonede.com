@@ -1,51 +1,24 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
   "compilerOptions": {
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@image/*": [
-        "src/assets/image/*"
-      ],
-      "@illustration/*": [
-        "src/assets/illustrations/*"
-      ],
-      "@resources/*": [
-        "src/assets/resources/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@config/*": [
-        "src/config/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@tokens/*": [
-        "src/styles/tokens/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ]
+      "@assets/*": ["src/assets/*"],
+      "@image/*": ["src/assets/image/*"],
+      "@illustration/*": ["src/assets/illustrations/*"],
+      "@resources/*": ["src/assets/resources/*"],
+      "@components/*": ["src/components/*"],
+      "@config/*": ["src/config/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"],
+      "@tokens/*": ["src/styles/tokens/*"],
+      "@utils/*": ["src/utils/*"]
     },
     "jsx": "react-jsx",
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "jsxImportSource": "react"
   }
 }

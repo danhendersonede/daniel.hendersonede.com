@@ -1,9 +1,9 @@
 ---
-import Layout from "@layouts/base.astro";
-import { pageConfig } from "@config/root-page-config";
-import ResourceListItem from "@components/resourceListItem.astro";
-import { getCollection } from "astro:content";
-const articles = await getCollection("articles");
+import Layout from '@layouts/base.astro';
+import { pageConfig } from '@config/root-page-config';
+import ResourceListItem from '@components/resourceListItem.astro';
+import { getCollection } from 'astro:content';
+const articles = await getCollection('articles');
 const recentArticles = articles.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
@@ -17,7 +17,7 @@ const recentArticles = articles.sort(
   <h1>{pageConfig.articles.pageTitle}</h1>
   <ul role="list">
     {
-      recentArticles.map((article) => (
+      recentArticles.map(article => (
         <ResourceListItem
           isInVerticalList
           date={article.data.date}

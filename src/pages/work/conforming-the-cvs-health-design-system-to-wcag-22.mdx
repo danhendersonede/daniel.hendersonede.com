@@ -1,20 +1,20 @@
 ---
 layout: ../../layouts/work.astro
-pageTitle: "Conforming the CVS Health design system to WCAG 2.2"
-description: "By taking the time and effort to think beyond the minimum standard (what was WCAG 2.1 AA) since day one, I saved the enterprise months of time in the cost of rework later."
+pageTitle: 'Conforming the CVS Health design system to WCAG 2.2'
+description: 'By taking the time and effort to think beyond the minimum standard (what was WCAG 2.1 AA) since day one, I saved the enterprise months of time in the cost of rework later.'
 createdDate: 2024-02-20
-tags: ["Design Systems"]
+tags: ['Design Systems']
 featured: true
-coverImageURL: "../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/buttons.webp"
+coverImageURL: '../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/buttons.webp'
 ---
 
-import { Image } from "astro:assets";
-import tabs from "../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/tabs.webp";
-import figmaVsComponent from "../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/figma-vs-coded.webp";
-import focusCard from "../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/focus-card.webp";
-import focusLink from "../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/focus-inline.webp";
-import buttons from "../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/buttons.webp";
-import inputPassword from "../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/input-password.webp";
+import { Image } from 'astro:assets';
+import tabs from '../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/tabs.webp';
+import figmaVsComponent from '../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/figma-vs-coded.webp';
+import focusCard from '../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/focus-card.webp';
+import focusLink from '../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/focus-inline.webp';
+import buttons from '../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/buttons.webp';
+import inputPassword from '../../assets/work/conforming-the-cvs-health-design-system-to-wcag-22/input-password.webp';
 
 ## Overview
 
@@ -25,27 +25,33 @@ The CVS Health Design System is a critical driver in creating accessible, barrie
 When we began developing the design system, I took a proactive approach by aligning components with the WCAG 2.2 working draft, even before it was finalized. While I knew the language of the guidelines might evolve, the core intent and user needs would remain consistent.
 
 ### The problem
+
 How how can we use the design system to future-proof products with upcoming WCAG updates?
 
 ### The team
+
 - 2x Senior Product Designer
 - 3x Senior Software Engineer
-- Senior Accessibility Designer ***(me)***
+- Senior Accessibility Designer **_(me)_**
 
 ### The timeline
+
 6 months
 
 ## Outcomes
+
 - Designed for **8 upcoming** success criteria during the **initial creation of the design system**.
 - Acheived WCAG 2.2 conformance **before** it became the new W3C recommendation.
 - **Enabled consuming teams to go beyond the minimum requirements at the time.**
 
 ## Participation in the W3C
+
 In 2022, CVS Health joined the W3C (World Wide Web Consortium) as a member organization. The membership enables experts to join working groups developing new W3C standards.
 
 Along with contributing to the CVS Health design system, I was chosen to represent CVS Health in the Accessibility Guidelines Working Group (AG WG), which maintains and develops WCAG. This participation provided access to upcoming guidelines at its earliest point and an opportunity to drive improvements to all digital experiences on the Web.
 
 ## Creating the Inclusivity pillar
+
 Inclusivity is one of the three pillars of the CVS Health Design System. In collaboration with the Design System Director, we created this shared principle to make sure the team always considers how components can create equitable experiences since its inception. Throughout the component design and development process, I was constantly referring to future versions of WCAG, as well as changes to existing guidance and new supplementary guidance using the wealth of public research and collaborating with Fable to conduct studies with disabled people.
 
 > CVS customers approach our digital experiences with many different contexts, perspectives, and abilities. Our overarching goal is to create our design system with an inclusive design methodology to produce the building blocks for equitable experiences.
@@ -56,9 +62,13 @@ Inclusivity is one of the three pillars of the CVS Health Design System. In coll
 >
 > We have the support of inclusive designers and researchers, as well as accessibility engineers. This partnership ensures our styles are perceivable (meet color contrast ratios, etc.), that our components are understandable, operable and robust, and that our design patterns consider the human impact and communicate component relationships accessibly.
 >
-> <cite>[CVS Health Tech Blog](https://medium.com/cvs-health-tech-blog/the-path-to-wcag-2-2-conformance-through-our-design-system-59913a8bf876#:~:text=CVS%20customers%20approach,component%20relationships%20accessibly.)</cite>
+> <cite>
+>   [CVS Health Tech
+>   Blog](https://medium.com/cvs-health-tech-blog/the-path-to-wcag-2-2-conformance-through-our-design-system-59913a8bf876#:~:text=CVS%20customers%20approach,component%20relationships%20accessibly.)
+> </cite>
 
 ## What were the new success criteria?
+
 There were 9 new success criteria in WCAG 2.2. Of that set, 8 applied directly to the design system:
 
 - 2.4.11 Focus Not Obscured (Minimum) (AA)
@@ -70,7 +80,7 @@ There were 9 new success criteria in WCAG 2.2. Of that set, 8 applied directly t
 - 3.3.8 Accessible Authentication (Minimum) (AA)
 - 3.3.9 Accessible Authentication (Enhanced) (AAA)
 
-3.2.6 Consistent Help (A) was the one success criterion that did not apply to the design system. However, if a "help" or "support" component existed, then it likely would have.
+  3.2.6 Consistent Help (A) was the one success criterion that did not apply to the design system. However, if a "help" or "support" component existed, then it likely would have.
 
 ## 2.4.11 Focus Not Obscured (Minimum) (AA)
 
@@ -82,7 +92,8 @@ In the Card component, its link sits close to the edge of the Card border. So mu
   src={focusCard}
   alt="The 'find a mental health providier' link sits close to the end of the Card component, when the link is focused, the indicator ignores the Card container so that the entire focus indicator is still fully visible"
 />
-*Figure 1: A link focused within the Card component with the focus indicator not being obscured by its container.*
+*Figure 1: A link focused within the Card component with the focus indicator not
+being obscured by its container.*
 
 However, since the focus indicator is not obscured, such as hiding any Card overflow, it conforms to the normative language and intent of 2.4.11 Focus Not Obscured (Minimum).
 
@@ -92,7 +103,8 @@ I wanted our focus indicator to be highly visible, so we made it 4px wide. Howev
   src={focusLink}
   alt="Two PDF links, Accessibility statement and Non-discrimination policy. The latter is focused and shows the focus indicator covering up the other link so that the indicator is unobscured."
 />
-*Figure 2: A list of Link components with the focus indicator present and visible above any surrounding content.*
+*Figure 2: A list of Link components with the focus indicator present and
+visible above any surrounding content.*
 
 If the consuming team has a position override, this may cause z-index issues and create a failure. This was a good reminder than accessible components can be misused and create inaccessible experiences.
 
@@ -107,6 +119,7 @@ But since they are not obscured in any way, they also provide conformance to 2.4
 ## 2.4.13 Focus Appearance (AAA)
 
 > When the keyboard focus indicator is visible, an area of the focus indicator meets all the following:
+>
 > - is at least as large as the area of a 2 CSS pixel thick perimeter of the unfocused component or sub-component, and
 > - has a contrast ratio of at least 3:1 between the same pixels in the focused and unfocused states.
 
@@ -124,7 +137,8 @@ The Button and Link components are the most common components to be used on mult
   src={buttons}
   alt="Three Default Buttons with black focus indicators on a white background, and the Reversed Buttons with white indicators on a blue background."
 />
-*Figure 3: The collection of Button components in their Default and Reversed variants.*
+*Figure 3: The collection of Button components in their Default and Reversed
+variants.*
 
 Due to the indicator color options being at either end of the color spectrum, there will always be a color contrast of at least 4.5:1.
 
@@ -140,7 +154,8 @@ The only component that supports dragging movement on our web platform is the Ta
   src={tabs}
   alt="A group a Tabs, that has horizontal overflow. It can be controlled by a button before the tab group with a left arrow icon, and after the tab group is button with a right arrow icon."
 />
-*Figure 4: The Tab component horizontally scrolls when content cannot fit within the viewport.*
+*Figure 4: The Tab component horizontally scrolls when content cannot fit within
+the viewport.*
 
 The key normative language in this success criterion is any dragging can also be "achieved by a single pointer without dragging". To conform to this, the Tabs component comes built-in with buttons named Previous Tab, and Next Tab.
 
@@ -160,7 +175,8 @@ For example, the Radio Buttons have a minimum height of 44px in both the compone
   src={figmaVsComponent}
   alt="Both the Figma and Coded component of a Radio Button are shown, with developer tools showing that in both cases, each radio button has a height of 44px."
 />
-*Figure 5: A comparison of the Figma and coded components for the Radio Button component.*
+*Figure 5: A comparison of the Figma and coded components for the Radio Button
+component.*
 
 The only component that does have a minimum height of 24 CSS pixels is the Inline Link component. However, that is covered under the Inline exceptions for this success criterion:
 
@@ -187,6 +203,7 @@ Learn more about Redundant Entry [link to internal resource]
 ## 3.3.8 Accessible Authentication (Minimum) (AA)
 
 > A cognitive function test (such as remembering a password or solving a puzzle) is not required for any step in an authentication process unless that step provides at least one of the following:
+>
 > 1. **Alternative:** Another authentication method that does not rely on a cognitive function test.
 > 2. **Mechanism:** A mechanism is available to assist the user in completing the cognitive function test.
 > 3. **Object Recognition:** The cognitive function test is to recognize objects.
@@ -200,11 +217,13 @@ Therefore, it has a mechanism to assist the user with the cognitive function tes
   src={inputPassword}
   alt="An input labelled 'New password' and a checkbox to show/hide the new password. There is no 'Repeat new password' input following the previous password input."
 />
-*Figure 6: The Password Input component is also built-in with a show/hide functionality.*
+*Figure 6: The Password Input component is also built-in with a show/hide
+functionality.*
 
 ## 3.3.9 Accessible Authentication (Enhanced) (AAA)
 
 > A cognitive function test (such as remembering a password or solving a puzzle) is not required for any step in an authentication process unless that step provides at least one of the following:
+>
 > 1. Alternative: Another authentication method that does not rely on a cognitive function test.
 > 2. Mechanism: A mechanism is available to assist the user in completing the cognitive function test.
 

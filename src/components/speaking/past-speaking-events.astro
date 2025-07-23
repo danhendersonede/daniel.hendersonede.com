@@ -1,14 +1,14 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
 
-const pastEvents = await getCollection("pastSpeakingEvents");
+const pastEvents = await getCollection('pastSpeakingEvents');
 ---
 
 <section class="past-speaking-events">
   <h2>Past Events</h2>
   <div>
     {
-      pastEvents.map((event) => (
+      pastEvents.map(event => (
         <section class="card">
           <h3>{event.data.title}</h3>
           <a href={event.data.link} target="_blank">

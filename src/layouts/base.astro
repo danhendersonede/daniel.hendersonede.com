@@ -1,16 +1,16 @@
 ---
-import BaseHead from "./base-head.astro";
-import Navbar from "@components/navbar.astro";
-import Footer from "@components/footer.astro";
-import { ClientRouter } from "astro:transitions";
+import BaseHead from './base-head.astro';
+import Navbar from '@components/navbar.astro';
+import Footer from '@components/footer.astro';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   pageTitle: string;
   pageDescription: string;
   pageTitleOverride?: boolean;
   ogImageURL?: string;
-  ogType: "website" | "article" | "event" | "profile" | "product";
-  navDefaultStyle?: "default" | "transparent";
+  ogType: 'website' | 'article' | 'event' | 'profile' | 'product';
+  navDefaultStyle?: 'default' | 'transparent';
   mainNoTopPadding?: boolean;
   robotsNoIndex?: boolean;
   showTransitions?: boolean;
@@ -22,7 +22,7 @@ const {
   ogImageURL,
   ogType,
   pageTitleOverride = false,
-  navDefaultStyle = "default",
+  navDefaultStyle = 'default',
   mainNoTopPadding = false,
   robotsNoIndex = false,
   showTransitions = false,
@@ -44,7 +44,7 @@ const {
   </head>
   <body>
     <Navbar defaultStyle={navDefaultStyle} />
-    <main class={mainNoTopPadding ? "no-top-padding" : ""} id="main">
+    <main class={mainNoTopPadding ? 'no-top-padding' : ''} id="main">
       <slot />
     </main>
     <Footer />

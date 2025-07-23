@@ -1,9 +1,9 @@
 ---
-import Layout from "@layouts/base.astro";
-import { pageConfig } from "@config/root-page-config";
-import ResourceListItem from "@components/resourceListItem.astro";
-import { getCollection } from "astro:content";
-const tools = await getCollection("tools");
+import Layout from '@layouts/base.astro';
+import { pageConfig } from '@config/root-page-config';
+import ResourceListItem from '@components/resourceListItem.astro';
+import { getCollection } from 'astro:content';
+const tools = await getCollection('tools');
 const recentTools = tools.sort(
   (a, b) => b.data.lastUpdated.getTime() - a.data.lastUpdated.getTime()
 );
@@ -17,7 +17,7 @@ const recentTools = tools.sort(
   <h1>{pageConfig.tools.pageTitle}</h1>
   <ul role="list">
     {
-      recentTools.map((tool) => (
+      recentTools.map(tool => (
         <ResourceListItem
           isInVerticalList
           title={tool.data.toolName}

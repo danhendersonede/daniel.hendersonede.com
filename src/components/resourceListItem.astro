@@ -1,6 +1,6 @@
 ---
-import Tag from "@components/tag.astro";
-import { formatDate } from "@utils/dates";
+import Tag from '@components/tag.astro';
+import { formatDate } from '@utils/dates';
 
 interface Props {
   title: string;
@@ -29,7 +29,7 @@ const {
 
 <li
   role="listitem"
-  class={`interactive-card resource list ${isInVerticalList ? "vertical" : ""}`}
+  class={`interactive-card resource list ${isInVerticalList ? 'vertical' : ''}`}
 >
   <div class="resource-cover">
     <picture>
@@ -44,11 +44,11 @@ const {
       {coverImageLightURL && <img src={coverImageLightURL} alt="" />}
     </picture>
   </div>
-  <div class={`content ${description && tags ? "detailed" : ""}`}>
+  <div class={`content ${description && tags ? 'detailed' : ''}`}>
     {
       date && (
         <div class="date">
-          {formatDate(date)}{" "}
+          {formatDate(date)}{' '}
           {publisher && <span class="publisher">{publisher}</span>}
         </div>
       )
@@ -61,7 +61,7 @@ const {
       tags && tags.length > 0 && (
         <div class="meta">
           <div class="tags">
-            {tags.map((tag) => (
+            {tags.map(tag => (
               <Tag type="secondary">{tag}</Tag>
             ))}
           </div>
@@ -73,7 +73,7 @@ const {
 
 <style>
   /* Import the shared styles within the style tag to scope them */
-  @import "/src/styles/resource-card.css";
+  @import '/src/styles/resource-card.css';
 
   /* List-specific styles only */
   .resource.list {

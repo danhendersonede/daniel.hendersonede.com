@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 const RevealEmail = () => {
   const [isRevealed, setIsRevealed] = useState(false);
   const email = 'daniel@hendersonede.com';
-  const maskedEmail = "Email hidden from bots";
+  const maskedEmail = 'Email hidden from bots';
 
   return (
     <div className="reveal-email-container">
@@ -28,7 +28,7 @@ const RevealEmail = () => {
           min-width: 250px;
           text-align: center;
           position: relative;
-          width: 35ch
+          width: 35ch;
         }
 
         .email-text {
@@ -60,7 +60,7 @@ const RevealEmail = () => {
 
       <div className="email-display">
         <motion.span
-          key={isRevealed ? "revealed" : "masked"}
+          key={isRevealed ? 'revealed' : 'masked'}
           initial={{ opacity: 0, y: isRevealed ? -10 : 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: isRevealed ? 10 : -10 }}
@@ -69,7 +69,7 @@ const RevealEmail = () => {
           {isRevealed ? email : maskedEmail}
         </motion.span>
       </div>
-      
+
       <motion.button
         className="reveal-button"
         onClick={() => setIsRevealed(!isRevealed)}

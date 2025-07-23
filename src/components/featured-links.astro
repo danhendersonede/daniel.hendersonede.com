@@ -1,6 +1,6 @@
 ---
-import { pageConfig } from "@config/root-page-config";
-import FeaturedLink from "@components/featured-link.astro";
+import { pageConfig } from '@config/root-page-config';
+import FeaturedLink from '@components/featured-link.astro';
 ---
 
 <section class="featured-links">
@@ -20,11 +20,11 @@ import FeaturedLink from "@components/featured-link.astro";
 </section>
 
 <script>
-  import { animate, inView, stagger } from "motion";
+  import { animate, inView, stagger } from 'motion';
 
-  inView(".featured-links", () => {
+  inView('.featured-links', () => {
     animate(
-      ".featured-link.animate",
+      '.featured-link.animate',
       { y: 0, opacity: 1 },
       {
         delay: stagger(0.2),

@@ -1,13 +1,13 @@
 ---
-import linkedIn from "@assets/icon/linkedin.svg";
-import { Image } from "astro:assets";
-import NavLink from "@components/NavbarLink.astro";
-import { pageConfig } from "@config/root-page-config";
+import linkedIn from '@assets/icon/linkedin.svg';
+import { Image } from 'astro:assets';
+import NavLink from '@components/NavbarLink.astro';
+import { pageConfig } from '@config/root-page-config';
 ---
 
 {
   Object.entries(pageConfig)
-    .filter(([_, item]) => "navOrder" in item)
+    .filter(([_, item]) => 'navOrder' in item)
     .sort(
       (a, b) =>
         (a[1] as { navOrder: number }).navOrder -

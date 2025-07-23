@@ -9,7 +9,7 @@
 
   --background-color: var(--color-gray-100);
   --background-color-accent: var(--color-green-10);
-  
+
   --border-style: solid 2px var(--color-text);
   --border-radius: var(--border-radius-m);
   --border-radius-interactive: var(--border-radius-m);

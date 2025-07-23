@@ -17,7 +17,7 @@ export default defineConfig({
 
   redirects: {
     '/article': '/articles',
-    '/tool': '/tools'
+    '/tool': '/tools',
   },
 
   adapter: netlify({

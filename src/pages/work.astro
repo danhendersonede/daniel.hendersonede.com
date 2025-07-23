@@ -1,11 +1,11 @@
 ---
-import Layout from "@layouts/base.astro";
-import { pageConfig } from "@config/root-page-config";
-import { getCollection } from "astro:content";
-import WorkTile from "@components/work-tile.astro";
+import Layout from '@layouts/base.astro';
+import { pageConfig } from '@config/root-page-config';
+import { getCollection } from 'astro:content';
+import WorkTile from '@components/work-tile.astro';
 
-const work = await getCollection("work").then((work) =>
-  work.filter((work) => work.data.featured)
+const work = await getCollection('work').then(work =>
+  work.filter(work => work.data.featured)
 );
 ---
 
@@ -17,7 +17,7 @@ const work = await getCollection("work").then((work) =>
   <h1>{pageConfig.work.pageTitle}</h1>
 
   {
-    work.map((work) => (
+    work.map(work => (
       <WorkTile
         work={{
           ...work,

@@ -1,18 +1,18 @@
 ---
-import "@tokens/semantic.css";
-import { Image } from "astro:assets";
-import logoLight from "@assets/logo/logo.svg";
-import logoDark from "@assets/logo/logo.svg";
-import bars from "@assets/icon/bars.svg";
-import xmark from "@assets/icon/xmark.svg";
-import Button from "./button.astro";
-import NavbarMenuItems from "./navbar-menu-items.astro";
-import SkipLink from "./skip-link.astro";
+import '@tokens/semantic.css';
+import { Image } from 'astro:assets';
+import logoLight from '@assets/logo/logo.svg';
+import logoDark from '@assets/logo/logo.svg';
+import bars from '@assets/icon/bars.svg';
+import xmark from '@assets/icon/xmark.svg';
+import Button from './button.astro';
+import NavbarMenuItems from './navbar-menu-items.astro';
+import SkipLink from './skip-link.astro';
 interface Props {
-  defaultStyle: "default" | "transparent";
+  defaultStyle: 'default' | 'transparent';
 }
 
-const { defaultStyle = "default" } = Astro.props as Props;
+const { defaultStyle = 'default' } = Astro.props as Props;
 ---
 
 <header>
@@ -68,33 +68,33 @@ const { defaultStyle = "default" } = Astro.props as Props;
 </dialog>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.querySelectorAll(".navbar-toggle");
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.querySelectorAll('.navbar-toggle');
     const dialog = document.querySelector(
-      "#navbar-dialog"
+      '#navbar-dialog'
     ) as HTMLDialogElement;
 
     if (toggleButton && dialog) {
-      toggleButton.forEach((button) => {
-        button.addEventListener("click", function () {
-          const expanded = dialog.getAttribute("open") === "" || false;
+      toggleButton.forEach(button => {
+        button.addEventListener('click', function () {
+          const expanded = dialog.getAttribute('open') === '' || false;
           if (!expanded) {
             dialog.showModal();
           } else {
             dialog.close();
           }
-          button.classList.toggle("open");
-          document.body.classList.toggle("no-scroll", !expanded);
+          button.classList.toggle('open');
+          document.body.classList.toggle('no-scroll', !expanded);
         });
       });
     }
   });
 
-  window.addEventListener("scroll", () => {
+  window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
-      document.body.classList.add("scrolled");
+      document.body.classList.add('scrolled');
     } else {
-      document.body.classList.remove("scrolled");
+      document.body.classList.remove('scrolled');
     }
   });
 </script>
@@ -121,7 +121,7 @@ const { defaultStyle = "default" } = Astro.props as Props;
     width: 100%;
   }
 
-  body:not(.scrolled) #main-nav[data-default-style="transparent"] {
+  body:not(.scrolled) #main-nav[data-default-style='transparent'] {
     background-color: transparent;
   }
 

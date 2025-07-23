@@ -1,9 +1,9 @@
 ---
-import { Image } from "astro:assets";
-import profile from "@assets/profile.jpg";
+import { Image } from 'astro:assets';
+import profile from '@assets/profile.jpg';
 
 interface Props {
-  size: "small" | "large";
+  size: 'small' | 'large';
 }
 
 const { size } = Astro.props as Props;
@@ -21,8 +21,8 @@ const { size } = Astro.props as Props;
   </svg>
 
   <Image
-    height={size === "small" ? 100 : 270}
-    width={size === "small" ? 100 : 270}
+    height={size === 'small' ? 100 : 270}
+    width={size === 'small' ? 100 : 270}
     src={profile}
     alt="A smiling white male with short, red hair, standing in the center of the image, wearing a stripey shirt."
   />

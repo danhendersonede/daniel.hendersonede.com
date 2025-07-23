@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-  font-feature-settings: "kern";
+  font-feature-settings: 'kern';
   font-kerning: normal;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -14,7 +14,7 @@ body {
   padding: 0;
 }
 
-input:is([type="checkbox"], [type="radio"]),
+input:is([type='checkbox'], [type='radio']),
 select,
 label,
 button {
@@ -38,7 +38,7 @@ video {
   html {
     scroll-behavior: smooth;
   }
-  
+
   html:has(.expertise-section[id]:target) {
     scroll-behavior: auto;
   }
