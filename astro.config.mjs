@@ -11,6 +11,9 @@ export default defineConfig({
   site: 'https://daniel.hendersonede.com',
   trailingSlash: 'never',
   integrations: [mdx(), sitemap(), react()],
+  prefetch: {
+    defaultStrategy: 'hover',
+  },
 
   redirects: {
     '/article': '/articles',
