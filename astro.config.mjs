@@ -8,7 +8,7 @@ import react from '@astrojs/react';
 import netlify from '@astrojs/netlify';
 
 export default defineConfig({
-  site: 'https://daniel.hendersonede.com',
+  site: import.meta.env.PUBLIC_SITE_URL || 'https://daniel.hendersonede.com',
   trailingSlash: 'never',
   integrations: [mdx(), sitemap(), react()],
   prefetch: {
