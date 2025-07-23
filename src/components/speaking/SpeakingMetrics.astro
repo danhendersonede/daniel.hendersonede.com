@@ -19,7 +19,7 @@ const totalReached = metrics.totalAttendees + metrics.totalViews;
       data-format="basic"
     >
       <span class="metric-value" aria-label={`${metrics.totalEvents} events`}
-        >{metrics.totalEvents}</span
+        >0</span
       >
       <span class="metric-label">Events</span>
     </div>
@@ -32,7 +32,7 @@ const totalReached = metrics.totalAttendees + metrics.totalViews;
       <span
         class="metric-value"
         aria-label={`${metrics.totalAttendees.toLocaleString()} live attendees`}
-        >{metrics.totalAttendees.toLocaleString()}</span
+        >0</span
       >
       <span class="metric-label">Live Attendees</span>
     </div>
@@ -44,8 +44,7 @@ const totalReached = metrics.totalAttendees + metrics.totalViews;
     >
       <span
         class="metric-value"
-        aria-label={`${totalReached.toLocaleString()} people reached`}
-        >{totalReached.toLocaleString()}</span
+        aria-label={`${totalReached.toLocaleString()} people reached`}>0</span
       >
       <span class="metric-label">People Reached</span>
     </div>
