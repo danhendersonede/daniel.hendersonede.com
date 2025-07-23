@@ -1,0 +1,23 @@
+{
+  "id": "csun-at-conference",
+  "title": "Evolving the Design Process with Accessibility Annotations",
+  "event": "CSUN AT Conference",
+  "date": "2023-03-15",
+  "format": "in-person",
+  "location": "Anaheim, CA",
+  "type": "talk",
+  "status": "completed",
+  "link": "https://www.csun.edu/cod/conference/sessions/2023/index.php/public/presentations/view/1288",
+  "linkType": "info",
+  "topics": [
+    "accessibility",
+    "annotations",
+    "design-process",
+    "enterprise-accessibility"
+  ],
+  "featured": false,
+  "metrics": {
+    "attendees": 200
+  },
+  "description": "CVS Health has started to adopt accessibility annotations in the digital design process. Doing so has had innumerable benefits on the enterprise and customer experiences. This has improved the experiences of our customers by making digital products more accessible, inclusive, and usable."
+}

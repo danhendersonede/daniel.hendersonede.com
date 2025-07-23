@@ -1,0 +1,25 @@
+{
+  "id": "knapsacks-design-systems-podcast",
+  "title": "Making Design Systems Inclusive",
+  "event": "Design Systems Podcast by Knapsack",
+  "date": "2024-05-16",
+  "format": "virtual",
+  "location": "Online",
+  "type": "podcast",
+  "status": "completed",
+  "link": "https://www.designsystemspodcast.com/episodes/episode/7c60bcaa/109-making-design-systems-inclusive-with-accessibility-specialist-daniel-henderson-ede",
+  "linkType": "podcast",
+  "topics": [
+    "accessibility",
+    "design-systems",
+    "inclusive-design",
+    "wcag",
+    "scaling-accessibility"
+  ],
+  "cost": "Free",
+  "featured": true,
+  "metrics": {
+    "views": 10000
+  },
+  "description": "Welcome to another episode of The Design Systems Podcast! In honor of Global Accessibility Awareness Day, we're thrilled to have Daniel Henderson-Ede, an accessibility specialist, here to discuss the need for and challenges of making inclusive design experiences for those with disabilities, and how design systems can help."
+}

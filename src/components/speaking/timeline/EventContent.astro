@@ -1,0 +1,52 @@
+---
+import type { SpeakingEvent } from '../../../types/speaking-events';
+
+interface Props {
+  event: SpeakingEvent;
+  isFeatured: boolean;
+}
+
+const { event, isFeatured } = Astro.props;
+---
+
+<div class={`event-body ${isFeatured ? 'featured' : 'standard'}`}>
+  <h3 class="event-title">{event.data.title}</h3>
+  <p class="event-name">
+    {
+      event.data.format !== 'virtual'
+        ? `${event.data.event} - ${event.data.location}`
+        : event.data.event
+    }
+  </p>
+</div>
+
+<style>
+  .event-title {
+    margin: 0;
+  }
+
+  .event-name {
+    margin: 0 0 var(--spacing-xs) 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+  }
+
+  .event-body.featured .event-description {
+    font-size: var(--font-size-m);
+    margin: var(--spacing-m) 0;
+  }
+
+  @media (max-width: 480px) {
+    .event-body.featured .event-title {
+      font-size: var(--font-size-m);
+    }
+
+    .event-title {
+      font-size: var(--font-size-s);
+    }
+
+    .event-body {
+      font-size: var(--font-size-xs);
+    }
+  }
+</style>

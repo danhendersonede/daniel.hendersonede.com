@@ -1,0 +1,100 @@
+---
+import EventHeader from './EventHeader.astro';
+import EventContent from './EventContent.astro';
+import EventMedia from './EventMedia.astro';
+import type { SpeakingEvent } from '../../../types/speaking-events';
+
+interface Props {
+  event: SpeakingEvent;
+  index: number;
+  totalEvents: number;
+}
+
+const { event, index, totalEvents } = Astro.props;
+const isFeatured = event.data.featured;
+---
+
+<li
+  class={`timeline-event ${isFeatured ? 'featured' : 'standard'}`}
+  role="listitem"
+>
+  <div class="event-marker" aria-hidden="true">
+    <div class="marker-dot"></div>
+    {index < totalEvents - 1 && <div class="marker-line" />}
+  </div>
+
+  <div class="event-content">
+    <EventHeader event={event} isFeatured={isFeatured} />
+    <EventContent event={event} isFeatured={isFeatured} />
+    <EventMedia event={event} isFeatured={isFeatured} />
+  </div>
+</li>
+
+<style>
+  .timeline-event {
+    position: relative;
+    display: flex;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .timeline-event:last-child {
+    margin-bottom: 0;
+  }
+
+  .event-marker {
+    position: relative;
+    margin-right: var(--spacing-l);
+    flex-shrink: 0;
+  }
+
+  .marker-dot {
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    width: 16px;
+    height: 16px;
+    background: var(--background-color-accent);
+    border: 3px solid var(--background-color);
+    box-shadow: 0 0 0 2px var(--background-color-accent);
+  }
+
+  .marker-line {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: calc(100% + var(--spacing-xl));
+    background: var(--color-gray-80);
+  }
+
+  .event-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .timeline-event.featured .event-content {
+    background: var(--background-color);
+    border: 2px solid var(--background-color-accent);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-l);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .timeline-event.standard .event-content {
+    background: var(--color-gray-95);
+    border: 1px solid var(--color-gray-80);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-m);
+  }
+
+  @media (max-width: 768px) {
+    .event-marker {
+      margin-right: var(--spacing-s);
+    }
+
+    .timeline-event.featured .event-content {
+      padding: var(--spacing-m);
+    }
+  }
+</style>

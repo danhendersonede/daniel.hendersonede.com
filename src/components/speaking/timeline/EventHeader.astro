@@ -1,0 +1,90 @@
+---
+import { formatEventDate } from '@utils/speaking-events';
+import type { SpeakingEvent } from '../../../types/speaking-events';
+
+interface Props {
+  event: SpeakingEvent;
+  isFeatured: boolean;
+}
+
+const { event, isFeatured } = Astro.props;
+---
+
+<div class={`event-header ${isFeatured ? 'featured' : 'standard'}`}>
+  <time class="event-date" datetime={event.data.date.toISOString()}>
+    {formatEventDate(event.data.date)}
+  </time>
+  <div class="event-meta">
+    {
+      event.data.type !== 'podcast' ? (
+        <span class="event-format">{event.data.format}</span>
+      ) : null
+    }
+    <span class="event-type">{event.data.type}</span>
+  </div>
+</div>
+
+<style>
+  .event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-m);
+    gap: var(--spacing-m);
+  }
+
+  .event-date {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-accent);
+    font-size: var(--font-size-s);
+    white-space: nowrap;
+  }
+
+  .event-header.featured .event-date {
+    font-size: var(--font-size-m);
+  }
+
+  .event-meta {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+  }
+
+  .event-format,
+  .event-type,
+  .event-cost {
+    font-size: var(--font-size-xxs);
+    padding: 2px 6px;
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.05em;
+  }
+
+  .event-format {
+    background: var(--color-gray-90);
+    color: var(--color-text);
+  }
+
+  .event-type {
+    background: var(--background-color-accent);
+    color: var(--color-text-inverse);
+  }
+
+  .event-cost {
+    background: var(--color-success);
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .event-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-xs);
+    }
+
+    .event-meta {
+      width: 100%;
+    }
+  }
+</style>

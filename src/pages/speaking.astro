@@ -1,9 +1,13 @@
 ---
 import Layout from '@layouts/base.astro';
 import { pageConfig } from '@config/root-page-config';
-import UpcomingSpeakingEvents from '@components/speaking/upcoming-speaking-events.astro';
-import PastSpeakingEvents from '@components/speaking/past-speaking-events.astro';
+import UpcomingSpeakingEvents from '@components/speaking/UpcomingSpeakingEvents.astro';
+import PreviousSpeakingEvents from '@components/speaking/PreviousSpeakingEvents.astro';
+import SpeakingMetrics from '@components/speaking/SpeakingMetrics.astro';
 import CTALink from '@components/CTALink.astro';
+import { getSpeakingMetrics } from '@utils/speaking-events';
+
+const metrics = await getSpeakingMetrics();
 ---
 
 <Layout
@@ -12,14 +16,18 @@ import CTALink from '@components/CTALink.astro';
   ogType="website"
 >
   <h1>{pageConfig.speaking.pageTitle}</h1>
+
+  <SpeakingMetrics metrics={metrics} />
+
   <UpcomingSpeakingEvents />
-  <PastSpeakingEvents />
+  <PreviousSpeakingEvents />
+
   <section class="highlight">
     <h2>I'm available for speaking engagements</h2>
     <p>
-      I'm available for speaking engagements. I'm a frequent speaker at
-      conferences and events. I'm also available for remote speaking
-      engagements.
+      With {metrics.totalEvents}+ speaking events reaching
+      {(metrics.totalAttendees + metrics.totalViews).toLocaleString()}+ people,
+      I bring proven expertise in accessibility and design systems.
     </p>
     <CTALink href="/contact">Book me for your event</CTALink>
   </section>

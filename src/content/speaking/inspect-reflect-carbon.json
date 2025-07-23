@@ -1,0 +1,19 @@
+{
+  "id": "inspect-reflect-carbon",
+  "title": "Design System Inventory Audit of IBM's Carbon Design System",
+  "event": "Inspect & Reflect by Infa.ai",
+  "date": "2025-01-09",
+  "format": "virtual",
+  "location": "Online",
+  "type": "panel",
+  "status": "completed",
+  "link": "https://infa.ai/events/carbon_20250109",
+  "linkType": "info",
+  "topics": ["design-systems", "accessibility", "web"],
+  "cost": "Free",
+  "metrics": {
+    "attendees": 100,
+    "views": 644
+  },
+  "description": "Together, we'll perform a design system inventory audit of IBM's Carbon Design System directly on ibm.com. You'll get an inside look at how experts approach design system inventories, identify inconsistencies, and discuss actionable strategies for optimizing component adoption."
+}

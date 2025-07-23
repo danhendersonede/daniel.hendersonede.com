@@ -1,0 +1,25 @@
+{
+  "id": "on-theme-the-flaws-of-the-accessibility-is-built-in-to-the-design-system-argument",
+  "title": "The flaws of the “accessibility is built in to the design system” argument",
+  "event": "On Theme: Design Systems in Depth",
+  "date": "2025-04-07",
+  "format": "virtual",
+  "location": "Online",
+  "type": "podcast",
+  "status": "completed",
+  "link": "https://www.buzzsprout.com/2417527/episodes/16922645?utm_source=www.designsystemsontheme.com&utm_medium=referral&utm_campaign=the-flaws-of-the-accessibility-is-built-in-to-the-design-system-argument-with-daniel-henderson-ede",
+  "linkType": "podcast",
+  "topics": [
+    "accessibility",
+    "design-systems",
+    "inclusive-design",
+    "wcag",
+    "scaling-accessibility"
+  ],
+  "cost": "Free",
+  "featured": true,
+  "metrics": {
+    "views": 300
+  },
+  "description": "Daniel Henderson-Ede joins Elyse to unpack a spicy myth in design systems: that accessibility can be fully built-in. Daniel explains the common pitfalls of overselling accessibility, how teams often mistakenly assume the system handles everything, and why simply relying on components isn't enough. They dive into common accessibility missteps by product teams, the crucial role of documentation and annotations, and why contextual examples beat abstract guidelines every time. Plus, Daniel shares his Systems-Accessibility Ownership Matrix with us."
+}

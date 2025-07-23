@@ -1,0 +1,98 @@
+---
+import type { SpeakingMetrics } from '../../types/speaking-events';
+
+interface Props {
+  metrics: SpeakingMetrics;
+}
+
+const { metrics } = Astro.props;
+---
+
+<section class="speaking-metrics">
+  <!-- Hero Stats Grid -->
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <span class="metric-value">{metrics.totalEvents}</span>
+      <span class="metric-label">Events</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-value">{metrics.totalAttendees.toLocaleString()}</span
+      >
+      <span class="metric-label">Live Attendees</span>
+    </div>
+    <div class="metric-card primary">
+      <span class="metric-value"
+        >{(metrics.totalAttendees + metrics.totalViews).toLocaleString()}</span
+      >
+      <span class="metric-label">People Reached</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .speaking-metrics {
+    margin: var(--section-vertical-padding) 0;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-l);
+    margin-bottom: var(--section-vertical-padding);
+  }
+
+  .metric-card {
+    background: var(--background-color);
+    border: 2px solid var(--color-text);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-l);
+    text-align: center;
+    transition: transform 0.2s ease;
+    align-content: center;
+  }
+
+  .metric-card.primary {
+    background: var(--background-color-accent);
+    color: var(--color-text-inverse);
+    border-color: var(--background-color-accent);
+  }
+
+  .metric-value {
+    display: block;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.2;
+  }
+
+  .metric-label {
+    display: block;
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .topics-section {
+    margin: var(--spacing-xl) 0;
+  }
+
+  .topics-section h3 {
+    margin-bottom: var(--spacing-l);
+    font-size: var(--font-size-l);
+  }
+
+  @media (max-width: 768px) {
+    .metrics-grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: var(--spacing-m);
+    }
+
+    .metric-card {
+      padding: var(--spacing-m);
+    }
+
+    .metric-value {
+      font-size: var(--font-size-l);
+    }
+  }
+</style>

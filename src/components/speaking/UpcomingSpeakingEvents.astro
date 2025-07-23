@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import {
+  getUpcomingEvents,
+  getPrimaryEventLink,
+  formatEventDate,
+} from '@utils/speaking-events';
+
+const allEvents = await getCollection('speakingEvents');
+const upcomingSpeakingEvents = getUpcomingEvents(allEvents);
+---
+
+{
+  upcomingSpeakingEvents.length > 0 ? (
+    <section class="upcoming-speaking-events">
+      <h2>{upcomingSpeakingEvents.length} Upcoming Events</h2>
+      <ul role="list">
+        {upcomingSpeakingEvents.map(event => {
+          const primaryLink = getPrimaryEventLink(event);
+          return (
+            <li role="listitem">
+              <h3>{event.data.event}</h3>
+              <p>
+                {formatEventDate(event.data.date)}
+                {event.data.time && `, ${event.data.time}`}
+              </p>
+              <p>
+                {event.data.location}, {event.data.cost}
+              </p>
+              {primaryLink && <a href={primaryLink.url}>{primaryLink.text}</a>}
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  ) : null
+}
+
+<style>
+  ul {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--spacing-l);
+    padding-right: var(--spacing-l);
+    padding-bottom: var(--spacing-s);
+    scroll-padding-right: var(--spacing-l);
+  }
+
+  li {
+    list-style: none;
+    min-width: 20rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+</style>

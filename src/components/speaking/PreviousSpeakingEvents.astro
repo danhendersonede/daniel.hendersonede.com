@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import { getPastEvents } from '@utils/speaking-events';
+import TimelineEvent from './timeline/TimelineEvent.astro';
+
+const allEvents = await getCollection('speakingEvents');
+const pastEvents = getPastEvents(allEvents);
+---
+
+<section class="chronological-speaking-events">
+  <h2>Speaking History</h2>
+  <p class="timeline-intro">
+    A chronological journey through presentations, talks, and workshops on
+    accessibility and design systems.
+  </p>
+
+  <ol class="timeline" role="list">
+    {
+      pastEvents.map((event, index) => (
+        <TimelineEvent
+          event={event}
+          index={index}
+          totalEvents={pastEvents.length}
+        />
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  .chronological-speaking-events {
+    margin: var(--section-vertical-padding) 0;
+  }
+
+  .timeline-intro {
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-text-muted);
+  }
+
+  .timeline {
+    position: relative;
+    margin-left: var(--spacing-m);
+    list-style: none;
+    padding-left: 0;
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      margin-left: var(--spacing-xs);
+    }
+  }
+</style>

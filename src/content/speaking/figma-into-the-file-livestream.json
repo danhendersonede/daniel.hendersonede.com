@@ -1,0 +1,20 @@
+{
+  "id": "figma-into-the-file-livestream",
+  "title": "Design Systems and Accessibility",
+  "event": "Into the File by Figma",
+  "date": "2024-03-15",
+  "format": "virtual",
+  "location": "Online",
+  "type": "talk",
+  "status": "completed",
+  "link": "https://www.youtube.com/watch?v=_c2pJ6fU910",
+  "linkType": "recording",
+  "topics": ["accessibility", "design-systems", "figma", "components"],
+  "cost": "Free",
+  "featured": true,
+  "metrics": {
+    "attendees": 200,
+    "views": 14000
+  },
+  "description": "Luis from Figma and Daniel Henderson-Ede talk all things accessibility with components, variables, and design at scale. Daniel is an accessibility expert and has contributed to the CVS accessibility kit, now used by companies, and has inspired new kits from Github, to document how components can be used and handed off to development teams."
+}

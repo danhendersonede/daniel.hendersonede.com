@@ -1,0 +1,20 @@
+{
+  "id": "inspect-reflect-apples-hig",
+  "title": "Design System Inventory Audit of Apple's Human Interface Guidelines",
+  "event": "Inspect & Reflect by Infa.ai",
+  "date": "2025-06-26",
+  "format": "virtual",
+  "location": "Online",
+  "type": "panel",
+  "status": "completed",
+  "link": "https://infa.ai/events/apple_20250605",
+  "linkType": "info",
+  "topics": ["design-systems", "accessibility", "ios"],
+  "cost": "Free",
+  "time": "11:00 AM - 12:00 PM CT",
+  "metrics": {
+    "attendees": 50,
+    "views": 322
+  },
+  "description": "Together, we'll perform a design system inventory audit of Apple's Human Interface Guidelines directly on apple.com. You'll get an inside look at how experts approach design system inventories, identify inconsistencies, and discuss actionable strategies for optimizing component adoption."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ds-live-by-zeroheight",
+  "title": "Couples Therapy: How Accessibility and Design Systems Teams Can Work Better Together",
+  "event": "DS Live by ZeroHeight",
+  "date": "2025-07-02",
+  "format": "virtual",
+  "location": "Online",
+  "type": "talk",
+  "status": "completed",
+  "link": "https://webinars.zeroheight.com/videos/zeroheight-ds-live-daniel-henderson-ede-couples-therapy-how-design-systems-and-accessibility-teams-can-work-better-together-rescheduled/signup",
+  "linkType": "recording",
+  "topics": [
+    "accessibility",
+    "design-systems",
+    "collaboration",
+    "team-dynamics"
+  ],
+  "cost": "Free",
+  "time": "11:00 AM - 12:00 PM CT",
+  "featured": true,
+  "metrics": {
+    "attendees": 300
+  },
+  "description": "Design systems are powerful tools, but they're often underutilized when it comes to accessibility. This session will dive into how accessibility and design systems teams can collaborate to overcome mutual challenges. Attendees will gain practical strategies to break down silos, improve collaboration, and create better, more inclusive digital products."
+}

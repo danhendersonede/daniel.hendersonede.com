@@ -1,0 +1,83 @@
+---
+import { getPrimaryEventLink, getYouTubeVideoId } from '@utils/speaking-events';
+import type { SpeakingEvent } from '../../../types/speaking-events';
+import CTALink from '@components/CTALink.astro';
+
+interface Props {
+  event: SpeakingEvent;
+  isFeatured: boolean;
+}
+
+const { event, isFeatured } = Astro.props;
+const primaryLink = getPrimaryEventLink(event);
+const youtubeId = primaryLink?.isEmbeddable
+  ? getYouTubeVideoId(primaryLink.url)
+  : null;
+---
+
+{
+  primaryLink && !youtubeId && (
+    <div class="event-actions">
+      <CTALink href={primaryLink.url} target="_blank" rel="noopener noreferrer">
+        {primaryLink.text}
+      </CTALink>
+    </div>
+  )
+}
+
+{
+  isFeatured && youtubeId && (
+    <div class="youtube-embed">
+      <div class="video-wrapper">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${youtubeId}`}
+          title={`Video: ${event.data.title}`}
+          style="border: 0;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      </div>
+    </div>
+  )
+}
+
+<style>
+  .youtube-embed {
+    margin: var(--spacing-l) 0;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+  }
+
+  .event-actions {
+    margin-top: var(--spacing-m);
+  }
+
+  @media (max-width: 768px) {
+    .youtube-embed {
+      margin: var(--spacing-m) -var(--spacing-m);
+    }
+
+    .video-wrapper {
+      border-radius: 0;
+    }
+
+    .video-wrapper iframe {
+      border-radius: 0;
+    }
+  }
+</style>

@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import { file, glob } from 'astro/loaders';
+import { glob } from 'astro/loaders';
 
 // 1. Define your collection(s)
 const work = defineCollection({
@@ -15,31 +15,56 @@ const work = defineCollection({
     }),
 });
 
-const upcomingSpeakingEvents = defineCollection({
-  loader: file('src/content/speaking/upcoming.json'),
-  schema: z.object({
-    id: z.string(),
-    eventName: z.string(),
-    description: z.string(),
-    date: z.string(),
-    time: z.string(),
-    location: z.string(),
-    cost: z.string(),
-    linkType: z.enum(['info', 'register']),
-    URL: z.string(),
+const speakingEvents = defineCollection({
+  loader: glob({
+    pattern: '**/*.{json,md,mdx}',
+    base: './src/content/speaking/',
   }),
-});
+  schema: () =>
+    z.object({
+      // Core required fields
+      id: z.string(),
+      title: z.string(),
+      event: z.string(),
+      date: z.coerce.date(),
+      format: z.enum(['in-person', 'virtual', 'hybrid']),
+      location: z.string(),
+      type: z.enum(['keynote', 'talk', 'workshop', 'panel', 'podcast']),
 
-const pastSpeakingEvents = defineCollection({
-  loader: file('src/content/speaking/previous.json'),
-  schema: z.object({
-    id: z.string(),
-    title: z.string(),
-    type: z.enum(['podcast', 'livestream', 'conference']),
-    description: z.string(),
-    link: z.string().url(),
-    linkText: z.string(),
-  }),
+      // Contextual fields
+      status: z
+        .enum(['upcoming', 'completed', 'cancelled'])
+        .default('upcoming'),
+      link: z.string().url().optional(),
+      linkType: z
+        .enum(['recording', 'info', 'registration', 'podcast'])
+        .optional(),
+      topics: z.array(z.string()).default([]),
+      cost: z.string().optional(),
+      time: z.string().optional(),
+      featured: z.boolean().default(false),
+
+      // Optional analytics
+      metrics: z
+        .object({
+          attendees: z.number().optional(),
+          rating: z.number().min(1).max(5).optional(),
+          views: z.number().optional(),
+          shares: z.number().optional(),
+          downloads: z.number().optional(),
+        })
+        .optional(),
+
+      // Optional content
+      description: z.string().optional(),
+      testimonial: z
+        .object({
+          quote: z.string(),
+          author: z.string(),
+          role: z.string().optional(),
+        })
+        .optional(),
+    }),
 });
 
 const articles = defineCollection({
@@ -88,8 +113,7 @@ const tools = defineCollection({
 //Export a single `collections` object to register your collection(s)
 export const collections = {
   work,
-  upcomingSpeakingEvents,
-  pastSpeakingEvents,
+  speakingEvents,
   articles,
   tools,
 };
