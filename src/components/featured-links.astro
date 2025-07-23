@@ -5,7 +5,7 @@ import FeaturedLink from '@components/featured-link.astro';
 
 <section class="featured-links">
   {
-    Object.entries(pageConfig).map(([_, item]) => {
+    Object.entries(pageConfig).map(([, item]) => {
       if (item.featured) {
         return (
           <FeaturedLink

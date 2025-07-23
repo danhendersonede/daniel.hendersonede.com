@@ -7,13 +7,13 @@ import { pageConfig } from '@config/root-page-config';
 
 {
   Object.entries(pageConfig)
-    .filter(([_, item]) => 'navOrder' in item)
+    .filter(([, item]) => 'navOrder' in item)
     .sort(
       (a, b) =>
         (a[1] as { navOrder: number }).navOrder -
         (b[1] as { navOrder: number }).navOrder
     )
-    .map(([_, item]) => (
+    .map(([, item]) => (
       <NavLink href={`/${item.slug}`}>{item.pageTitle}</NavLink>
     ))
 }

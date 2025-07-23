@@ -1,13 +1,18 @@
-declare global {
-  interface Window {
-    plausible: any;
-    fnames: string[];
-  }
+interface PlausibleFunction {
+  (eventName: string, options?: Record<string, unknown>): void;
+  q?: (IArguments | unknown[])[];
 }
 
-declare function plausible(
-  eventName: string,
-  options?: Record<string, any>
-): void;
+declare global {
+  interface Window {
+    plausible: PlausibleFunction;
+    fnames: string[];
+  }
+
+  function plausible(
+    eventName: string,
+    options?: Record<string, unknown>
+  ): void;
+}
 
 export {};
