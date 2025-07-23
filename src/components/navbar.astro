@@ -136,6 +136,12 @@ const { defaultStyle = 'default' } = Astro.props as Props;
     height: 2.5rem;
   }
 
+  @media (prefers-color-scheme: dark) {
+    img.logo {
+      filter: invert(1);
+    }
+  }
+
   ul {
     flex-grow: 1;
     list-style: none;
