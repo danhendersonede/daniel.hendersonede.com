@@ -1,15 +1,15 @@
 export const pageConfig = {
-  work: {
-    pageTitle: 'Work',
-    slug: 'work',
-    description: 'Our work',
+  caseStudies: {
+    pageTitle: 'Case Studies',
+    slug: 'case-studies',
+    description: 'My work',
     featured: true,
     navOrder: 1,
   },
   speaking: {
     pageTitle: 'Speaking',
     slug: 'speaking',
-    description: 'Our speaking engagements',
+    description: 'My speaking engagements',
     featured: true,
     navOrder: 2,
   },
@@ -23,7 +23,7 @@ export const pageConfig = {
   about: {
     pageTitle: 'About',
     slug: 'about',
-    description: 'About us',
+    description: 'About me',
     featured: false,
     navOrder: 4,
   },

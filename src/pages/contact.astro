@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/base.astro';
-import RevealEmail from '@components/reveal-email.jsx';
+import RevealEmail from '@components/revealEmail/reveal-email.jsx';
 ---
 
 <Layout
@@ -13,7 +13,7 @@ import RevealEmail from '@components/reveal-email.jsx';
     Whether you're looking to book me for a speaking engagement, or discuss a
     project, or would just love a coffee chat, I'd love to hear from you.
   </p>
-  <RevealEmail client:idle />
+  <RevealEmail client:load />
 </Layout>
 
 <style></style>

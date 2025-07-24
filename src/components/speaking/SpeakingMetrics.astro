@@ -202,7 +202,6 @@ const totalReached = metrics.totalAttendees + metrics.totalViews;
         const currentValue =
           progress > 0.9 ? Math.round(rawValue) : Math.floor(rawValue);
 
-        // Update the display value
         this.element.textContent = this.formatValue(currentValue);
 
         if (progress < 1) {
@@ -270,7 +269,6 @@ const totalReached = metrics.totalAttendees + metrics.totalViews;
               // Mark as animated to prevent re-triggering
               card.setAttribute('data-animated', 'true');
 
-              // Add entrance animation class
               if (
                 !window.matchMedia('(prefers-reduced-motion: reduce)').matches
               ) {

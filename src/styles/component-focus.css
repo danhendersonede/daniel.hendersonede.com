@@ -58,7 +58,6 @@
   text-transform: capitalize;
 }
 
-/* Add some spacing for the class name */
 [class]:not(nav):not(main):not(footer):not(header):not(section):not(
     article
   ):not(aside):not(dialog):hover::after,
