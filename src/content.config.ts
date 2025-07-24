@@ -2,8 +2,8 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 // 1. Define your collection(s)
-const work = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/pages/work/' }),
+const caseStudies = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/pages/case-studies/' }),
   schema: ({ image }) =>
     z.object({
       pageTitle: z.string(),
@@ -12,6 +12,7 @@ const work = defineCollection({
       featured: z.boolean(),
       createdDate: z.coerce.date(),
       coverImageURL: image(),
+      valueProposition: z.string(),
     }),
 });
 
@@ -94,25 +95,9 @@ const tools = defineCollection({
     }),
 });
 
-// const resourceSchema = ({ image }: { image: any }) => z.object({
-//     title: z.string(),
-//     description: z.string(),
-//     ogImageURL: z.string(),
-//     featured: z.boolean(),
-//     tags: z.array(z.string()),
-//     createdDate: z.coerce.date(),
-//     coverImageLightURL: image(),
-//     coverImageDarkURL: image(),
-//     coverImageAltText: z.string(),
-//     subPage: z.boolean().optional(),
-//     updatedDate: z.coerce.date().optional(),
-//     draft: z.boolean().optional(),
-//     author: reference('team').optional()
-// });
-
 //Export a single `collections` object to register your collection(s)
 export const collections = {
-  work,
+  caseStudies,
   speakingEvents,
   articles,
   tools,
