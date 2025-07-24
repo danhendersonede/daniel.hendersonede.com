@@ -1,0 +1,51 @@
+---
+import Layout from '@layouts/base.astro';
+import { getCollection } from 'astro:content';
+import Showcase from '@components/case-studies/Showcase.astro';
+import WorkCTA from '@components/case-studies/WorkCTA.astro';
+import { getFeaturedCaseStudies } from '@utils/case-studies';
+
+const caseStudies = await getCollection('caseStudies');
+const featuredCaseStudies = getFeaturedCaseStudies(caseStudies);
+
+const workMetrics = {
+  yearsExperience: 8,
+  usersImpacted: 547000000,
+  productTeamsSupported: 48,
+};
+---
+
+<Layout
+  pageTitle="Senior Product Engineer, Design Systems & Accessibility"
+  pageDescription="Helping to create an inclusive design system and improve accessibility annotations. Views are my own."
+  ogType="website"
+>
+  <hgroup>
+    <h1>Case Studies</h1>
+    <p>
+      {
+        `I build scalable frontend systems and accessible components used by ${workMetrics.productTeamsSupported}+ product teams, improving the experiences of ${workMetrics.usersImpacted.toString().slice(0, 3)}M+ humans, and improved internal processes for 25+ organizations around the world.`
+      }
+    </p>
+  </hgroup>
+  <div class="work-grid">
+    {featuredCaseStudies.map(caseStudy => <Showcase caseStudy={caseStudy} />)}
+  </div>
+
+  <WorkCTA
+    highlight="Ready to Drive Product Impact"
+    title="Let's build scalable systems that delight users"
+    description="I thrive on architecting accessible, performant frontend systems that scale across product teams. My engineering approach focuses on React optimization, component reusability, and user experience accessibility—creating solutions that directly impact millions of users."
+    ctaText="Let's build together"
+    ctaHref="/contact"
+  />
+</Layout>
+
+<style>
+  .work-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+    margin-top: var(--spacing-m);
+  }
+</style>
