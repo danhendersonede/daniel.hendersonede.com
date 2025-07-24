@@ -7,6 +7,7 @@ interface Props extends HTMLAttributes<'a'> {
   fullWidth?: boolean;
   arrowDirection?: 'left' | 'down' | 'right';
   arrowPosition?: 'before' | 'after';
+  variant?: 'default' | 'inverted';
 }
 
 const {
@@ -14,6 +15,7 @@ const {
   fullWidth,
   arrowDirection = 'right',
   arrowPosition = 'after',
+  variant = 'default',
   class: className,
   ...rest
 } = Astro.props;
@@ -22,7 +24,7 @@ const {
 <a
   href={href}
   {...rest}
-  class={`link-cta ${className} ${fullWidth ? 'full-width' : ''}`}
+  class={`link-cta ${variant !== 'default' ? `variant-${variant}` : ''} ${className} ${fullWidth ? 'full-width' : ''}`}
 >
   {
     arrowPosition === 'before' && (
@@ -49,6 +51,18 @@ const {
 
 <style>
   .link-cta {
+    --color-text-link-hover: var(--color-text-inverse);
+  }
+
+  .link-cta.variant-inverted {
+    --color-text: var(--color-text-inverse);
+    --color-text-link-hover: var(--color-gray-0);
+    --border-style: solid 2px var(--color-text-inverse);
+    --image-filter: invert(1);
+    --image-filter-hover: invert(0);
+  }
+
+  .link-cta {
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-s);
@@ -58,18 +72,24 @@ const {
     text-decoration: none;
     color: var(--color-text);
     min-height: 44px;
+    --image-filter: invert(0);
+    --image-filter-hover: invert(1);
   }
 
   .link-cta:hover,
   .link-cta:focus-visible {
     background-color: var(--color-text);
     outline-offset: 2px;
-    color: var(--color-text-inverse);
+    color: var(--color-text-link-hover);
+  }
+
+  img {
+    filter: var(--image-filter);
   }
 
   .link-cta:hover img,
   .link-cta:focus-visible img {
-    filter: invert(1);
+    filter: var(--image-filter-hover);
   }
 
   img[data-arrow-direction='down'] {
@@ -88,13 +108,14 @@ const {
   }
 
   @media (prefers-color-scheme: dark) {
-    img {
-      filter: invert(1);
+    .link-cta {
+      --image-filter: invert(1);
+      --image-filter-hover: invert(0);
     }
 
-    .link-cta:hover img,
-    .link-cta:focus-visible img {
-      filter: invert(0);
+    .link-cta.variant-inverted {
+      --image-filter: invert(0);
+      --image-filter-hover: invert(1);
     }
   }
 </style>
