@@ -1,0 +1,68 @@
+---
+import CTALink from '@components/CTALink.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ctaText: string;
+  ctaHref: string;
+  highlight?: string;
+}
+
+const { title, description, ctaText, ctaHref, highlight } = Astro.props;
+---
+
+<section class="work-cta">
+  <div class="cta-content">
+    {
+      highlight && (
+        <div class="cta-highlight" aria-label="Achievement highlight">
+          {highlight}
+        </div>
+      )
+    }
+    <h2 class="cta-title">{title}</h2>
+    <p class="cta-description">{description}</p>
+    <CTALink href={ctaHref} class="cta-button" variant="inverted">
+      {ctaText}
+    </CTALink>
+  </div>
+</section>
+
+<style>
+  .work-cta {
+    background: var(--background-color-accent);
+    color: var(--color-text-inverse);
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
+    margin: var(--section-vertical-padding) 0;
+    border-radius: var(--border-radius);
+  }
+
+  .cta-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    gap: var(--spacing-xs);
+  }
+
+  .cta-highlight {
+    border: solid 1px var(--color-text-inverse);
+    color: var(--color-text-inverse);
+    padding: var(--spacing-xxxs) var(--spacing-xs);
+    border-radius: var(--border-radius-s);
+    font-size: var(--font-size-xxs);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: var(--spacing-s);
+  }
+
+  .cta-title {
+    margin: 0 0 var(--spacing-s) 0;
+    color: var(--color-text-inverse);
+  }
+
+  .cta-description {
+    color: var(--color-text-inverse);
+  }
+</style>
