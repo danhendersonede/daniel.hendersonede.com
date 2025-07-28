@@ -5,6 +5,17 @@ import {
   getPrimaryEventLink,
   formatEventDate,
 } from '@utils/speaking-events';
+import EventTime from '@components/EventTime.tsx';
+import CTALink from '@components/CTALink.astro';
+import Tag from '@components/tag.astro';
+import {
+  CalendarIcon as Calendar,
+  ClockIcon as Clock,
+  GlobeIcon as Globe,
+  MapPinIcon as MapPin,
+  TagIcon as TagIcon,
+  MicrophoneStageIcon as MicrophoneStage,
+} from '@phosphor-icons/react';
 
 const allEvents = await getCollection('speakingEvents');
 const upcomingSpeakingEvents = getUpcomingEvents(allEvents);
@@ -18,16 +29,51 @@ const upcomingSpeakingEvents = getUpcomingEvents(allEvents);
         {upcomingSpeakingEvents.map(event => {
           const primaryLink = getPrimaryEventLink(event);
           return (
-            <li role="listitem">
-              <h3>{event.data.event}</h3>
-              <p>
-                {formatEventDate(event.data.date)}
-                {event.data.time && `, ${event.data.time}`}
+            <li class="event-card" role="listitem">
+              <h3 class="event-title">{event.data.title}</h3>
+              <p class="event-conference">
+                <MicrophoneStage size="24" />
+                <span>{event.data.event}</span>
               </p>
-              <p>
-                {event.data.location}, {event.data.cost}
-              </p>
-              {primaryLink && <a href={primaryLink.url}>{primaryLink.text}</a>}
+              <div class="event-metadata">
+                <div class="metadata-item">
+                  <Calendar size="24" />
+                  <time datetime={event.data.date.toISOString()}>
+                    {formatEventDate(event.data.date)}
+                  </time>
+                </div>
+                {event.data.startTime && (
+                  <div class="metadata-item">
+                    <Clock size="24" />
+                    <EventTime
+                      startTime={event.data.startTime}
+                      endTime={event.data.endTime}
+                      client:load
+                    />
+                  </div>
+                )}
+                <div class="metadata-item">
+                  {event.data.format === 'virtual' ? (
+                    <Globe size="24" />
+                  ) : (
+                    <MapPin size="24" />
+                  )}
+                  <span>{event.data.location}</span>
+                </div>
+                <div class="metadata-item">
+                  <TagIcon alt="Price" size="24" />
+                  <Tag
+                    type={event.data.cost === 'Free' ? 'primary' : 'secondary'}
+                  >
+                    {event.data.cost}
+                  </Tag>
+                </div>
+              </div>
+              {primaryLink && (
+                <CTALink href={primaryLink.url} fullWidth arrowPosition="after">
+                  {primaryLink.text}
+                </CTALink>
+              )}
             </li>
           );
         })}
@@ -41,18 +87,84 @@ const upcomingSpeakingEvents = getUpcomingEvents(allEvents);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     margin: 0;
-    padding: 0;
     display: flex;
-    gap: var(--spacing-l);
-    padding-right: var(--spacing-l);
-    padding-bottom: var(--spacing-s);
-    scroll-padding-right: var(--spacing-l);
+    gap: var(--spacing-m);
+    padding: var(--spacing-m) var(--spacing-m) var(--spacing-m) 0;
+    scroll-padding-right: var(--spacing-m);
+    list-style: none;
   }
 
-  li {
-    list-style: none;
-    min-width: 20rem;
+  .event-card {
+    flex: 0 0 auto;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    min-width: 22rem;
+    position: relative;
+    background: var(--background-color);
+    border: 2px solid var(--background-color-accent);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-l);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-s);
+  }
+
+  .event-title {
+    margin: 0;
+    color: var(--color-text-accent);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .event-conference {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .svg {
+    color: var(--background-color-accent);
+    flex-shrink: 0;
+  }
+
+  .event-metadata {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-s);
+  }
+
+  .metadata-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+  }
+
+  @media (min-width: 768px) {
+    ul {
+      gap: var(--spacing-l);
+      padding: var(--spacing-l) var(--spacing-l) var(--spacing-l) 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    ul {
+      gap: var(--spacing-m);
+      padding: var(--spacing-m) var(--spacing-m) var(--spacing-m) 0;
+    }
+
+    .event-card {
+      min-width: 0;
+      width: calc(100vw - 3rem);
+      padding: var(--spacing-m);
+    }
+
+    .event-metadata {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xs);
+    }
   }
 </style>

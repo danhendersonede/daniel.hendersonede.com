@@ -1,6 +1,7 @@
 ---
 import { formatEventDate } from '@utils/speaking-events';
 import type { SpeakingEvent } from '../../../types/speaking-events';
+import EventTime from '@components/EventTime.tsx';
 
 interface Props {
   event: SpeakingEvent;
@@ -11,9 +12,20 @@ const { event, isFeatured } = Astro.props;
 ---
 
 <div class={`event-header ${isFeatured ? 'featured' : 'standard'}`}>
-  <time class="event-date" datetime={event.data.date.toISOString()}>
-    {formatEventDate(event.data.date)}
-  </time>
+  <div class="event-date-time">
+    <time class="event-date" datetime={event.data.date.toISOString()}>
+      {formatEventDate(event.data.date)}
+    </time>
+    {
+      event.data.startTime && event.data.status === 'upcoming' && (
+        <EventTime
+          startTime={event.data.startTime}
+          endTime={event.data.endTime}
+          client:load
+        />
+      )
+    }
+  </div>
   <div class="event-meta">
     {
       event.data.type !== 'podcast' ? (
@@ -33,6 +45,12 @@ const { event, isFeatured } = Astro.props;
     gap: var(--spacing-m);
   }
 
+  .event-date-time {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
   .event-date {
     font-weight: var(--font-weight-bold);
     color: var(--color-text-accent);
@@ -40,8 +58,17 @@ const { event, isFeatured } = Astro.props;
     white-space: nowrap;
   }
 
+  .event-time {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+
   .event-header.featured .event-date {
     font-size: var(--font-size-m);
+  }
+
+  .event-header.featured .event-time {
+    font-size: var(--font-size-s);
   }
 
   .event-meta {
@@ -81,6 +108,10 @@ const { event, isFeatured } = Astro.props;
       flex-direction: column;
       align-items: flex-start;
       gap: var(--spacing-xs);
+    }
+
+    .event-date-time {
+      width: 100%;
     }
 
     .event-meta {
