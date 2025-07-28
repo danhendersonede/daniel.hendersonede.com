@@ -1,0 +1,17 @@
+{
+  "id": "inclusive-design-24-2025",
+  "title": "Accessibility Annotations Around the World",
+  "event": "Inclusive Design 24 (#id24)",
+  "date": "2025-09-24",
+  "format": "virtual",
+  "location": "Online",
+  "type": "talk",
+  "status": "upcoming",
+  "link": "https://inclusivedesign24.org/2025/schedule/",
+  "linkType": "info",
+  "topics": ["accessibility", "annotations", "design-systems", "global"],
+  "cost": "Free",
+  "startTime": "2025-09-24T19:00:00Z",
+  "endTime": "2025-09-24T20:00:00Z",
+  "description": "Annotating designs is a common practice for designers and developers to make experiences accessible for people with disabilities. But these libraries and plugins aren't one size fits all tools. In this session, two of the creators of the CVS Annotation Kits take you on a tour of how teams around the world adapt common annotation kits to suit their unique needs. With real world examples, they share challenges these teams face, the patterns they adapt, and the creative ways they tailor their kits to align with their goals, workflows, and systems."
+}

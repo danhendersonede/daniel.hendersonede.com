@@ -11,7 +11,8 @@
   "linkType": "info",
   "topics": ["accessibility", "design-systems", "annotations"],
   "cost": "Paid",
-  "time": "2:15 PM - 3:45 PM CT",
+  "startTime": "2025-05-01T19:15:00Z",
+  "endTime": "2025-05-01T20:45:00Z",
   "metrics": {
     "attendees": 300
   },

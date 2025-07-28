@@ -16,7 +16,8 @@
     "team-dynamics"
   ],
   "cost": "Free",
-  "time": "11:00 AM - 12:00 PM CT",
+  "startTime": "2025-07-02T16:00:00Z",
+  "endTime": "2025-07-02T17:00:00Z",
   "featured": true,
   "metrics": {
     "attendees": 300

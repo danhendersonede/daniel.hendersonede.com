@@ -16,7 +16,8 @@
     "team-dynamics"
   ],
   "cost": "Paid",
-  "time": "2:15 PM - 3:45 PM CT",
+  "startTime": "2025-05-13T19:15:00Z",
+  "endTime": "2025-05-13T20:45:00Z",
   "metrics": {
     "attendees": 15
   },
