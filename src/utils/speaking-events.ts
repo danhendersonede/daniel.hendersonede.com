@@ -85,7 +85,6 @@ export function getPastEvents(events: SpeakingEvent[]): SpeakingEvent[] {
  */
 export function formatEventDate(date: Date): string {
   return date.toLocaleDateString('en-US', {
-    year: 'numeric',
     month: 'long',
     day: 'numeric',
     timeZone: 'UTC',
@@ -218,7 +217,7 @@ export function calculateSpeakingMetrics(
   });
 
   return {
-    totalEvents: events.length,
+    totalEvents: completed.length,
     totalUpcoming: upcoming.length,
     totalCompleted: completed.length,
     totalAttendees,

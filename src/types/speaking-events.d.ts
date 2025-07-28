@@ -14,7 +14,8 @@ export interface SpeakingEventData {
   linkType?: 'recording' | 'info' | 'registration' | 'podcast';
   topics: string[];
   cost?: string;
-  time?: string;
+  startTime?: string;
+  endTime?: string;
   featured: boolean;
   metrics?: {
     attendees?: number;

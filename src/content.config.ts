@@ -42,7 +42,8 @@ const speakingEvents = defineCollection({
         .optional(),
       topics: z.array(z.string()).default([]),
       cost: z.string().optional(),
-      time: z.string().optional(),
+      startTime: z.string().optional(),
+      endTime: z.string().optional(),
       featured: z.boolean().default(false),
 
       // Optional analytics
