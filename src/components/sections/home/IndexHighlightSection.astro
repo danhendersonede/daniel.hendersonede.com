@@ -1,7 +1,7 @@
 ---
 import InfoHighlightLink from './InfoHighlightLink.astro';
-import { pageConfig } from '@config/root-page-config';
-import { getSpeakingMetrics } from '@utils/speaking-events';
+import { pageConfig } from '@config/navigation/rootPageConfig';
+import { getSpeakingMetrics } from '@utils/content/speakingEvents';
 
 // Get dynamic content for highlights
 const speakingMetrics = await getSpeakingMetrics();

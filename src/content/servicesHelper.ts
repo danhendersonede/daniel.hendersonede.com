@@ -1,5 +1,5 @@
 import type { ImageMetadata } from 'astro';
-import { getServiceSlug } from '../utils/getServiceSlug';
+import { getServiceSlug } from '@utils/getServiceSlug';
 
 // Import all images from the services directory
 const images = import.meta.glob<{ default: ImageMetadata }>(

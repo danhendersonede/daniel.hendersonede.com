@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { getPastEvents } from '@utils/speaking-events';
+import { getPastEvents } from '@utils/content/speakingEvents';
 import TimelineEvent from './timeline/TimelineEvent.astro';
 
 const allEvents = await getCollection('speakingEvents');

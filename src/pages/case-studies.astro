@@ -1,9 +1,9 @@
 ---
-import Layout from '@layouts/base.astro';
+import Layout from '@layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import Showcase from '@components/features/case-studies/Showcase.astro';
 import WorkCTA from '@components/features/case-studies/WorkCTA.astro';
-import { getFeaturedCaseStudies } from '@utils/case-studies';
+import { getFeaturedCaseStudies } from '@utils/content/caseStudies';
 
 const caseStudies = await getCollection('caseStudies');
 const featuredCaseStudies = getFeaturedCaseStudies(caseStudies);

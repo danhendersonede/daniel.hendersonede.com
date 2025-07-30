@@ -1,11 +1,11 @@
 ---
-import Layout from '@layouts/base.astro';
-import { pageConfig } from '@config/root-page-config';
+import Layout from '@layouts/Base.astro';
+import { pageConfig } from '@config/navigation/rootPageConfig';
 import UpcomingSpeakingEvents from '@components/features/speaking/UpcomingSpeakingEvents.astro';
 import PreviousSpeakingEvents from '@components/features/speaking/PreviousSpeakingEvents.astro';
 import SpeakingMetrics from '@components/features/speaking/SpeakingMetrics.astro';
 import CTALink from '@components/base/CTALink.astro';
-import { getSpeakingMetrics } from '@utils/speaking-events';
+import { getSpeakingMetrics } from '@utils/content/speakingEvents';
 
 const metrics = await getSpeakingMetrics();
 ---

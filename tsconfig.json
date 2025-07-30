@@ -17,10 +17,17 @@
       "@sections/*": ["src/components/sections/*"],
       "@client/*": ["src/components/client/*"],
       "@config/*": ["src/config/*"],
+      "@config/navigation/*": ["src/config/navigation/*"],
+      "@constants/*": ["src/constants/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
+      "@services/*": ["src/services/*"],
       "@tokens/*": ["src/styles/tokens/*"],
-      "@utils/*": ["src/utils/*"]
+      "@types/*": ["src/types/*"],
+      "@types/content/*": ["src/types/content/*"],
+      "@utils/*": ["src/utils/*"],
+      "@utils/content/*": ["src/utils/content/*"],
+      "@utils/dates/*": ["src/utils/dates/*"]
     },
     "jsx": "react-jsx",
     "types": ["node"],

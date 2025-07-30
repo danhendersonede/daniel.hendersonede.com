@@ -2,7 +2,7 @@ import type {
   SpeakingEvent,
   FilteredEvents,
   SpeakingMetrics,
-} from '../types/speaking-events';
+} from '../../types/content/speakingEvents';
 
 /**
  * Filters speaking events by their status based on current date
@@ -205,7 +205,7 @@ export function calculateSpeakingMetrics(
   // Topic expertise analysis
   const topicCounts: Record<string, number> = {};
   events.forEach(event => {
-    event.data.topics.forEach(topic => {
+    event.data.topics.forEach((topic: string) => {
       topicCounts[topic] = (topicCounts[topic] || 0) + 1;
     });
   });
