@@ -11,7 +11,11 @@ const { caseStudy } = Astro.props;
 
 <section class="interactive-card">
   <div class="card-image">
-    <img src={caseStudy.data.coverImageURL.src} alt="" loading="lazy" />
+    <img
+      src={caseStudy.data.coverImageURL.src}
+      alt={`Cover image for ${caseStudy.data.pageTitle} case study`}
+      loading="lazy"
+    />
     <div class="image-overlay"></div>
   </div>
 
