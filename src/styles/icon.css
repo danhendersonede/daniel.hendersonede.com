@@ -1,0 +1,77 @@
+/* Icon System
+ * Centralized theming for all SVG icons using phosphor-icons/core
+ * Provides consistent sizing, theming, and interaction states
+ */
+
+/* Base icon styles */
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  filter: brightness(0);
+}
+
+.icon.inverted {
+  filter: brightness(0) invert(1);
+}
+
+/* Interactive contexts */
+button .icon,
+a .icon,
+.link-cta .icon {
+  transition: filter 0.2s ease;
+}
+
+button:hover .icon,
+button:focus-visible .icon,
+a:hover .icon,
+a:focus-visible .icon,
+.link-cta:hover .icon,
+.link-cta:focus-visible .icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Inverted variant interactions */
+button .icon.inverted,
+a .icon.inverted,
+.link-cta.variant-inverted .icon {
+  filter: brightness(0) invert(1);
+}
+
+button:hover .icon.inverted,
+button:focus-visible .icon.inverted,
+a:hover .icon.inverted,
+a:focus-visible .icon.inverted,
+.link-cta.variant-inverted:hover .icon,
+.link-cta.variant-inverted:focus-visible .icon {
+  filter: brightness(0);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .icon {
+    filter: brightness(0) invert(1);
+  }
+
+  .icon.inverted {
+    filter: brightness(0);
+  }
+
+  button:hover .icon,
+  button:focus-visible .icon,
+  a:hover .icon,
+  a:focus-visible .icon,
+  .link-cta:hover .icon,
+  .link-cta:focus-visible .icon {
+    filter: brightness(0);
+  }
+
+  button:hover .icon.inverted,
+  button:focus-visible .icon.inverted,
+  a:hover .icon.inverted,
+  a:focus-visible .icon.inverted,
+  .link-cta.variant-inverted:hover .icon,
+  .link-cta.variant-inverted:focus-visible .icon {
+    filter: brightness(0) invert(1);
+  }
+}

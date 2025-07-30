@@ -5,6 +5,7 @@ import profileRender from '@assets/profile-render.png';
 import { pageConfig } from '@config/root-page-config';
 import InfoHighlightLink from '@components/InfoHighlightLink.astro';
 import IndexHighlightSection from '@components/IndexHighlightSection.astro';
+import mapPinIcon from '@phosphor-icons/core/assets/regular/map-pin.svg';
 ---
 
 <Layout
@@ -32,14 +33,21 @@ import IndexHighlightSection from '@components/IndexHighlightSection.astro';
           height={400}
           width={400}
           src={profileRender}
-          alt="Playful 3D illustration of Daniel with spiky red hair and his German Shepherd companion, representing the creative and approachable side of design engineering"
+          alt="Playful 3D illustration of Daniel with spiky red hair and his German Shepherd companion."
           loading="eager"
+          class="profile"
         />
       </div>
       <div class="role">
         <div class="role-badge">Senior Design Engineer</div>
         <div class="location-badge">
-          <span aria-hidden="true">🇺🇸</span> Texas, USA
+          <Image
+            src={mapPinIcon}
+            alt=""
+            loading="eager"
+            class="icon inverted"
+          />
+          Texas, USA
         </div>
       </div>
     </div>
@@ -50,9 +58,10 @@ import IndexHighlightSection from '@components/IndexHighlightSection.astro';
       linkText={pageConfig.about.pageTitle}
     >
       <p>
-        With 8+ years at Pinterest, CVS Health, and the UK Government, I bridge
-        beautiful design and bulletproof code. As a Design Engineer, I create
-        accessible solutions that work for everyone.
+        I ship high quality, scalable, and accessible solutions that work for
+        everyone. From prototyping new ideas to architecting systems used by
+        millions. I believe the best products happen when design and engineering
+        speak the same language.
       </p>
     </InfoHighlightLink>
   </section>
@@ -137,7 +146,9 @@ import IndexHighlightSection from '@components/IndexHighlightSection.astro';
     }
 
     .location-badge {
-      opacity: 0.9;
+      display: flex;
+      gap: var(--spacing-xxxs);
+      align-items: flex-end;
     }
 
     /* Profile Picture */
@@ -153,7 +164,7 @@ import IndexHighlightSection from '@components/IndexHighlightSection.astro';
       box-shadow: none;
     }
 
-    .profile-picture img {
+    .profile-picture img.profile {
       border-radius: 12px 12px 99px 12px;
       width: 100%;
       height: 100%;

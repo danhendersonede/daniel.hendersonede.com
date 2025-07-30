@@ -8,14 +8,13 @@ import {
 import EventTime from '@components/EventTime.tsx';
 import CTALink from '@components/CTALink.astro';
 import Tag from '@components/tag.astro';
-import {
-  CalendarIcon as Calendar,
-  ClockIcon as Clock,
-  GlobeIcon as Globe,
-  MapPinIcon as MapPin,
-  TagIcon as TagIcon,
-  MicrophoneStageIcon as MicrophoneStage,
-} from '@phosphor-icons/react';
+import { Image } from 'astro:assets';
+import calendarIcon from '@phosphor-icons/core/assets/regular/calendar.svg';
+import clockIcon from '@phosphor-icons/core/assets/regular/clock.svg';
+import globeIcon from '@phosphor-icons/core/assets/regular/globe.svg';
+import mapPinIcon from '@phosphor-icons/core/assets/regular/map-pin.svg';
+import tagIcon from '@phosphor-icons/core/assets/regular/tag.svg';
+import microphoneStageIcon from '@phosphor-icons/core/assets/regular/microphone-stage.svg';
 
 const allEvents = await getCollection('speakingEvents');
 const upcomingSpeakingEvents = getUpcomingEvents(allEvents);
@@ -32,19 +31,34 @@ const upcomingSpeakingEvents = getUpcomingEvents(allEvents);
             <li class="event-card" role="listitem">
               <h3 class="event-title">{event.data.title}</h3>
               <p class="event-conference">
-                <MicrophoneStage size="24" />
+                <Image
+                  src={microphoneStageIcon}
+                  alt=""
+                  loading="eager"
+                  class="icon"
+                />
                 <span>{event.data.event}</span>
               </p>
               <div class="event-metadata">
                 <div class="metadata-item">
-                  <Calendar size="24" />
+                  <Image
+                    src={calendarIcon}
+                    alt=""
+                    loading="eager"
+                    class="icon"
+                  />
                   <time datetime={event.data.date.toISOString()}>
                     {formatEventDate(event.data.date)}
                   </time>
                 </div>
                 {event.data.startTime && (
                   <div class="metadata-item">
-                    <Clock size="24" />
+                    <Image
+                      src={clockIcon}
+                      alt=""
+                      loading="eager"
+                      class="icon"
+                    />
                     <EventTime
                       startTime={event.data.startTime}
                       endTime={event.data.endTime}
@@ -54,14 +68,29 @@ const upcomingSpeakingEvents = getUpcomingEvents(allEvents);
                 )}
                 <div class="metadata-item">
                   {event.data.format === 'virtual' ? (
-                    <Globe size="24" />
+                    <Image
+                      src={globeIcon}
+                      alt=""
+                      loading="eager"
+                      class="icon"
+                    />
                   ) : (
-                    <MapPin size="24" />
+                    <Image
+                      src={mapPinIcon}
+                      alt=""
+                      loading="eager"
+                      class="icon"
+                    />
                   )}
                   <span>{event.data.location}</span>
                 </div>
                 <div class="metadata-item">
-                  <TagIcon alt="Price" size="24" />
+                  <Image
+                    src={tagIcon}
+                    alt="Price"
+                    loading="eager"
+                    class="icon"
+                  />
                   <Tag
                     type={event.data.cost === 'Free' ? 'primary' : 'secondary'}
                   >
@@ -123,11 +152,6 @@ const upcomingSpeakingEvents = getUpcomingEvents(allEvents);
     gap: var(--spacing-xs);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
-  }
-
-  .svg {
-    color: var(--background-color-accent);
-    flex-shrink: 0;
   }
 
   .event-metadata {

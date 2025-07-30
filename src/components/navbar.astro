@@ -3,8 +3,8 @@ import '@tokens/semantic.css';
 import { Image } from 'astro:assets';
 import logoLight from '@assets/logo/logo.svg';
 import logoDark from '@assets/logo/logo.svg';
-import bars from '@assets/icon/bars.svg';
-import xmark from '@assets/icon/xmark.svg';
+import listIcon from '@phosphor-icons/core/assets/regular/list.svg';
+import xIcon from '@phosphor-icons/core/assets/regular/x.svg';
 import Button from './button.astro';
 import NavbarMenuItems from './navbar-menu-items.astro';
 import SkipLink from './skip-link.astro';
@@ -22,12 +22,7 @@ const { defaultStyle = 'default' } = Astro.props as Props;
       <a href="/">
         <picture>
           <source srcset={logoDark.src} media="(prefers-color-scheme: dark)" />
-          <Image
-            loading="eager"
-            src={logoLight}
-            alt="  Homepage"
-            class="logo"
-          />
+          <Image loading="eager" src={logoLight} alt="Home page" class="logo" />
         </picture>
       </a>
       <ul class="viewport-large-nav" role="list">
@@ -38,13 +33,7 @@ const { defaultStyle = 'default' } = Astro.props as Props;
         class="navbar-toggle"
         aria-controls="navbar-dialog"
       >
-        <Image
-          loading="eager"
-          slot="icon"
-          src={bars}
-          class="button-icon"
-          alt=""
-        />
+        <Image src={listIcon} alt="" slot="icon" loading="eager" class="icon" />
         Menu
       </Button>
     </nav>
@@ -59,7 +48,7 @@ const { defaultStyle = 'default' } = Astro.props as Props;
         class="navbar-toggle"
         aria-controls="navbar-dialog"
       >
-        <Image slot="icon" src={xmark} class="button-icon" alt="" />
+        <Image src={xIcon} alt="" slot="icon" loading="eager" class="icon" />
         Close
       </Button>
     </li>

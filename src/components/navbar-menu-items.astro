@@ -1,5 +1,5 @@
 ---
-import linkedIn from '@assets/icon/linkedin.svg';
+import linkedinIcon from '@phosphor-icons/core/assets/regular/linkedin-logo.svg';
 import { Image } from 'astro:assets';
 import NavLink from '@components/NavbarLink.astro';
 import { pageConfig } from '@config/root-page-config';
@@ -18,5 +18,5 @@ import { pageConfig } from '@config/root-page-config';
     ))
 }
 <NavLink href="https://www.linkedin.com/in/danhendersonede" newTab>
-  <Image src={linkedIn} loading="eager" alt="LinkedIn" />
+  <Image src={linkedinIcon} alt="LinkedIn" loading="eager" class="icon" />
 </NavLink>

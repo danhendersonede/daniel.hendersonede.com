@@ -1,7 +1,9 @@
 ---
-import { Image } from 'astro:assets';
 import type { HTMLAttributes } from 'astro/types';
-import rightArrow from '@assets/icon/circle-arrow-right.svg';
+import { Image } from 'astro:assets';
+import arrowCircleRight from '@phosphor-icons/core/assets/regular/arrow-circle-right.svg';
+import arrowCircleLeft from '@phosphor-icons/core/assets/regular/arrow-circle-left.svg';
+import arrowCircleDown from '@phosphor-icons/core/assets/regular/arrow-circle-down.svg';
 
 interface Props extends HTMLAttributes<'a'> {
   fullWidth?: boolean;
@@ -27,25 +29,25 @@ const {
   class={`link-cta ${variant !== 'default' ? `variant-${variant}` : ''} ${className} ${fullWidth ? 'full-width' : ''}`}
 >
   {
-    arrowPosition === 'before' && (
-      <Image
-        loading="eager"
-        src={rightArrow}
-        alt=""
-        data-arrow-direction={arrowDirection}
-      />
-    )
+    arrowPosition === 'before' &&
+      (arrowDirection === 'right' ? (
+        <Image src={arrowCircleRight} alt="" loading="eager" class="icon" />
+      ) : arrowDirection === 'down' ? (
+        <Image src={arrowCircleDown} alt="" loading="eager" class="icon" />
+      ) : (
+        <Image src={arrowCircleLeft} alt="" loading="eager" class="icon" />
+      ))
   }
   <slot />
   {
-    arrowPosition === 'after' && (
-      <Image
-        loading="eager"
-        src={rightArrow}
-        alt=""
-        data-arrow-direction={arrowDirection}
-      />
-    )
+    arrowPosition === 'after' &&
+      (arrowDirection === 'right' ? (
+        <Image src={arrowCircleRight} alt="" loading="eager" class="icon" />
+      ) : arrowDirection === 'down' ? (
+        <Image src={arrowCircleDown} alt="" loading="eager" class="icon" />
+      ) : (
+        <Image src={arrowCircleLeft} alt="" loading="eager" class="icon" />
+      ))
   }
 </a>
 
@@ -58,8 +60,6 @@ const {
     --color-text: var(--color-text-inverse);
     --color-text-link-hover: var(--color-gray-0);
     --border-style: solid 2px var(--color-text-inverse);
-    --image-filter: invert(1);
-    --image-filter-hover: invert(0);
   }
 
   .link-cta {
@@ -72,8 +72,6 @@ const {
     text-decoration: none;
     color: var(--color-text);
     min-height: 44px;
-    --image-filter: invert(0);
-    --image-filter-hover: invert(1);
     width: fit-content;
   }
 
@@ -84,39 +82,10 @@ const {
     color: var(--color-text-link-hover);
   }
 
-  img {
-    filter: var(--image-filter);
-  }
-
-  .link-cta:hover img,
-  .link-cta:focus-visible img {
-    filter: var(--image-filter-hover);
-  }
-
-  img[data-arrow-direction='down'] {
-    transform: rotate(90deg);
-  }
-
-  img[data-arrow-direction='left'] {
-    transform: rotate(180deg);
-  }
-
   @media (max-width: 768px) {
     .link-cta.full-width {
       width: 100%;
       justify-content: space-between;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .link-cta {
-      --image-filter: invert(1);
-      --image-filter-hover: invert(0);
-    }
-
-    .link-cta.variant-inverted {
-      --image-filter: invert(0);
-      --image-filter-hover: invert(1);
     }
   }
 </style>

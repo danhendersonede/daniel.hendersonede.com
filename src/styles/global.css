@@ -2,6 +2,7 @@
 @import url('@tokens/core.css');
 @import url('@tokens/core-dark.css');
 @import url('@tokens/semantic.css');
+@import url('./icon.css');
 /* @import url("./component-focus.css"); */
 
 body {
