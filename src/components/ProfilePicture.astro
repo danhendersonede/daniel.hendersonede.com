@@ -1,12 +1,15 @@
 ---
 import { Image } from 'astro:assets';
+import profileRender from '@assets/profile-render.png';
 import profile from '@assets/profile.jpg';
 
 interface Props {
-  size: 'small' | 'large';
+  size: 'small' | 'large' | 'hero-large' | 'creative-medium';
+  useRender?: boolean;
 }
 
-const { size } = Astro.props as Props;
+const { size, useRender = false } = Astro.props as Props;
+const profileImage = useRender ? profileRender : profile;
 ---
 
 <div id="profile-picture" class={`profile-picture ${size}`}>
@@ -21,10 +24,24 @@ const { size } = Astro.props as Props;
   </svg>
 
   <Image
-    height={size === 'small' ? 100 : 270}
-    width={size === 'small' ? 100 : 270}
-    src={profile}
-    alt="A smiling white male with short, red hair, standing in the center of the image, wearing a stripey shirt."
+    height={size === 'small'
+      ? 100
+      : size === 'hero-large'
+        ? 400
+        : size === 'creative-medium'
+          ? 300
+          : 270}
+    width={size === 'small'
+      ? 100
+      : size === 'hero-large'
+        ? 400
+        : size === 'creative-medium'
+          ? 300
+          : 270}
+    src={profileImage}
+    alt={useRender
+      ? 'Playful 3D illustration of Daniel with spiky red hair and his German Shepherd companion, representing the creative and approachable side of design engineering'
+      : 'A smiling white male with short, red hair, standing in the center of the image, wearing a stripey shirt.'}
   />
 </div>
 
@@ -40,11 +57,41 @@ const { size } = Astro.props as Props;
     -webkit-clip-path: url(#blobClip);
   }
 
+  .profile-picture.hero-large {
+    width: clamp(280px, 35vw, 500px);
+    height: clamp(280px, 35vw, 500px);
+    box-shadow: var(--elevation-m);
+  }
+
+  .profile-picture.hero-large img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .profile-picture.creative-medium {
+    width: clamp(250px, 25vw, 350px);
+    height: clamp(250px, 25vw, 350px);
+    box-shadow: var(--elevation-m);
+  }
+
+  .profile-picture.creative-medium img {
+    width: 100%;
+    height: 100%;
+  }
+
   .profile-picture.small clipPath {
     transform-origin: 100px 100px !important;
   }
 
   .profile-picture.large clipPath {
     transform-origin: 300px 300px !important;
+  }
+
+  .profile-picture.hero-large clipPath {
+    transform-origin: center center !important;
+  }
+
+  .profile-picture.creative-medium clipPath {
+    transform-origin: center center !important;
   }
 </style>

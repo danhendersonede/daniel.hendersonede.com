@@ -1,0 +1,74 @@
+---
+import InfoHighlightLink from '@components/InfoHighlightLink.astro';
+import { pageConfig } from '@config/root-page-config';
+import { getSpeakingMetrics } from '@utils/speaking-events';
+
+// Get dynamic content for highlights
+const speakingMetrics = await getSpeakingMetrics();
+
+// Work impact metrics (from case-studies page)
+const workMetrics = {
+  usersImpacted: 547000000,
+  productTeamsSupported: 48,
+};
+---
+
+<div class="navigation-grid">
+  <InfoHighlightLink
+    variant="cases"
+    href={`/${pageConfig.caseStudies.slug}`}
+    linkText={pageConfig.caseStudies.pageTitle}
+  >
+    <span class="highlight-stat"
+      >{workMetrics.usersImpacted.toString().slice(0, 3)}M+ users impacted</span
+    >
+    <span class="highlight-stat"
+      >{workMetrics.productTeamsSupported}+ teams supported</span
+    >
+  </InfoHighlightLink>
+  <InfoHighlightLink
+    variant="speaking"
+    href={`/${pageConfig.speaking.slug}`}
+    linkText={pageConfig.speaking.pageTitle}
+  >
+    <span class="highlight-stat">{speakingMetrics.totalEvents}+ events</span>
+    <span class="highlight-stat"
+      >{
+        (
+          speakingMetrics.totalAttendees + speakingMetrics.totalViews
+        ).toLocaleString()
+      }+ people reached</span
+    >
+  </InfoHighlightLink>
+  <InfoHighlightLink
+    variant="resources"
+    href={`/${pageConfig.resources.slug}`}
+    linkText={pageConfig.resources.pageTitle}
+  >
+    <span class="highlight-stat">Latest articles & tools</span>
+    <span class="highlight-stat">Accessibility resources</span>
+  </InfoHighlightLink>
+</div>
+
+<style>
+  .navigation-grid {
+    display: grid;
+    gap: var(--spacing-m);
+    width: 100%;
+    margin-top: var(--spacing-l);
+  }
+
+  /* Mobile: Single column */
+  @media (max-width: 47.9rem) {
+    .navigation-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Tablet: 3-column grid */
+  @media (min-width: 48rem) {
+    .navigation-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
