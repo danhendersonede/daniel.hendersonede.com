@@ -45,17 +45,17 @@ const active = isActive(href);
     background-color: var(--background-color-accent);
   }
 
-  li a :global(img) {
+  li a img {
     transition: transform 0.25s ease-in-out;
   }
 
-  li a :global(img:hover),
-  li a :global(img:focus-visible) {
+  li a img:hover,
+  li a img:focus-visible {
     transform: scale(1.1);
   }
 
   @media (prefers-color-scheme: dark) {
-    li a :global(img) {
+    li a img {
       filter: invert(1);
     }
   }
