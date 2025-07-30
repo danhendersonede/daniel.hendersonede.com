@@ -1,13 +1,14 @@
 ---
 import Tag from '@components/tag.astro';
 import { formatDate } from '@utils/dates';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   title: string;
   description?: string;
   href: string;
-  coverImageDarkURL?: any;
-  coverImageLightURL: any;
+  coverImageDarkURL?: ImageMetadata | string;
+  coverImageLightURL: ImageMetadata | string;
   tags?: string[];
   date?: Date;
   publisher?: string;
@@ -36,14 +37,26 @@ const {
       {
         coverImageDarkURL && (
           <source
-            srcset={coverImageDarkURL.src}
+            srcset={
+              typeof coverImageDarkURL === 'string'
+                ? coverImageDarkURL
+                : coverImageDarkURL.src
+            }
             media="(prefers-color-scheme: dark)"
           />
         )
       }
       {
         coverImageLightURL && (
-          <img src={coverImageLightURL} alt="" loading="lazy" />
+          <img
+            src={
+              typeof coverImageLightURL === 'string'
+                ? coverImageLightURL
+                : coverImageLightURL.src
+            }
+            alt=""
+            loading="lazy"
+          />
         )
       }
     </picture>
