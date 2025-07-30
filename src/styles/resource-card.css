@@ -1,5 +1,5 @@
 /* Import the base interactive card styles */
-@import './interactive-card.css';
+@import url('./interactive-card.css');
 
 .resource {
   border-radius: var(--border-radius-m);
