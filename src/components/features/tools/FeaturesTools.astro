@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import ResourceListItem from '@components/resourceListItem.astro';
+import ResourceListItem from '@sections/shared/ResourceListItem.astro';
 const tools = await getCollection('tools');
 const featuredTools = tools
   .sort((a, b) => b.data.lastUpdated.getTime() - a.data.lastUpdated.getTime())

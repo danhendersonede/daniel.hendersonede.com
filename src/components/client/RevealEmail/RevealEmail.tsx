@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './reveal-email.module.css';
+import styles from './RevealEmail.module.css';
 
 const RevealEmail = () => {
   const [isRevealed, setIsRevealed] = useState(false);

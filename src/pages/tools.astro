@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/base.astro';
 import { pageConfig } from '@config/root-page-config';
-import ResourceListItem from '@components/resourceListItem.astro';
+import ResourceListItem from '@components/sections/shared/ResourceListItem.astro';
 import { getCollection } from 'astro:content';
 const tools = await getCollection('tools');
 const recentTools = tools.sort(

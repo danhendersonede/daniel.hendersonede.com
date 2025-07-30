@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import ResourceListItem from '@components/resourceListItem.astro';
+import ResourceListItem from '@sections/shared/ResourceListItem.astro';
 const articles = await getCollection('articles');
 const recentArticles = articles
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
