@@ -41,7 +41,11 @@ const {
           />
         )
       }
-      {coverImageLightURL && <img src={coverImageLightURL} alt="" />}
+      {
+        coverImageLightURL && (
+          <img src={coverImageLightURL} alt="" loading="lazy" />
+        )
+      }
     </picture>
   </div>
   <div class={`content ${description && tags ? 'detailed' : ''}`}>
