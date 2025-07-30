@@ -88,28 +88,9 @@ import IndexHighlightSection from '@components/IndexHighlightSection.astro';
       }
     }
 
-    /* ===== FLOATING ELEMENTS ===== */
-    .floating-element {
-      background: var(--background-color);
-      border: var(--border-style);
-      border-radius: var(--border-radius-l);
-      padding: var(--spacing-m);
-      box-shadow: var(--elevation-m);
-      transition: all 0.3s ease;
-    }
-
-    .floating-element:hover {
-      transform: translateY(-4px) rotate(0.5deg);
-      box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
     @media (max-width: 47.9rem) {
       .profile-picture {
         margin: var(--spacing-m) auto;
-      }
-
-      .floating-element:hover {
-        transform: translateY(-2px) !important;
       }
     }
 
