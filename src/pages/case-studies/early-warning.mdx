@@ -1,0 +1,771 @@
+---
+layout: ../../layouts/work.astro
+pageTitle: 'Early Warning - Protecting the UK during COVID-19'
+description: 'A critical cybersecurity service for UK organizations achieving 96% faster registrations and an exceptional 83.7 SUS score'
+createdDate: 2020-09-01
+tags:
+  [
+    'Product Design',
+    'User Research',
+    'Frontend Engineering',
+    'Government',
+    'Cybersecurity',
+  ]
+featured: true
+coverImageURL: '../../assets/work/early-warning/ew3-backup.png'
+valueProposition: 'Designed and built a critical national infrastructure service during the COVID-19 pandemic, protecting UK organizations from cyber threats with a 96% reduction in registration time.'
+---
+
+import { Image } from 'astro:assets';
+
+{/* Hero Images */}
+import ewMockup from '../../assets/work/early-warning/ew3-backup.png';
+import asIs from '../../assets/work/early-warning/as_is.png';
+import toBe from '../../assets/work/early-warning/to_be.png';
+import storyMapping from '../../assets/work/early-warning/story_mapping.png';
+import hmw from '../../assets/work/early-warning/hmw.png';
+import uiPrinciples from '../../assets/work/early-warning/ui_principles.png';
+import uiErrorMessages from '../../assets/work/early-warning/ui_error_messages.png';
+import changesFromTestingV12 from '../../assets/work/early-warning/changes_from_testing_v1.2.png';
+import changesFromTestingV16 from '../../assets/work/early-warning/changes_from_testing_v1.6.png';
+import dashboardActive from '../../assets/work/early-warning/Dashboard/Active.png';
+import settingsActive from '../../assets/work/early-warning/Settings/Active.png';
+import threatReportSummaryInital from '../../assets/work/early-warning/ThreatReportSummary/Inital.png';
+import contactInformation from '../../assets/work/early-warning/Contact Information.png';
+import process from '../../assets/work/early-warning/process.png';
+import processMobile from '../../assets/work/early-warning/process-mobile.png';
+
+<div class="hero-section">
+  <Image
+    src={ewMockup}
+    alt="Mockup of the Early Warning interface on desktop and mobile devices"
+    class="hero-image"
+  />
+</div>
+
+## "Protecting the UK during the COVID-19 Pandemic and the future..."
+
+### Description
+
+In 2019, [60% of medium/large businesses](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/791942/CSBS_2019_Infographics_-_General_Findings.pdf) reported breaches or attacks. Early Warning is a new public service designed to be used by all UK organizations to help add to their capabilities in defending against cyber-attacks. This should lead to fewer data breaches and loss of personal data, reducing the impact on the economy, where a severe breach of a FTSE 100 organization costs on average [£120 million](https://www.cgi.com/sites/default/files/2018-08/cybervalueconnection_full_report_final_lr.pdf).
+
+**My Role:** Product Designer, User Researcher, User Tester, and Frontend-Engineer.
+
+### Goal
+
+The goal of the project was a new public service to play a critical and urgent role during the COVID-19 pandemic as critical national infrastructure (CNI) like the NHS (National Health Service) and life-saving companies such as ones developing vaccines and ventilators were [under attack by advanced persistent threats (APT)](https://www.independent.co.uk/news/uk/politics/coronavirus-cyber-crime-hack-business-dominic-raab-a9500316.html). The product owners made it of utmost importance that these organizations were receiving threat notifications from Early Warning as soon as possible.
+
+### Success Criteria
+
+1. Reduce the time and resources needed to process organization registrations by 50%.  
+   **Achieved. Reduced time by 96%**
+
+2. Receive a reliable System Usability Scale (SUS) score of 77.2.  
+   **Achieved. SUS Score: 83.7 and NPS: 70.73%**
+
+3. Remove the requirement for Microsoft Word to register.  
+   **Achieved. Reduced barriers to entry by removing need for Microsoft Word.**
+
+## My Process
+
+<div class="process-section">
+  <h3>Quick Navigate:</h3>
+  <nav class="process-nav">
+    <a href="#discover">DISCOVER</a>
+    <a href="#define">DEFINE</a>
+    <a href="#develop">DEVELOP</a>
+    <a href="#deliver">DELIVER</a>
+    <a href="#future-work--evaluation">FUTURE IMPROVEMENTS & EVALUATION</a>
+  </nav>
+
+  <div class="process-diagram">
+    <Image
+      src={process}
+      alt="The Double Diamond model by the British Design Council annotated with my process in the following case study."
+      class="desktop-only"
+    />
+    <Image
+      src={processMobile}
+      alt="The Double Diamond model by the British Design Council annotated with my process in the following case study."
+      class="mobile-only"
+    />
+  </div>
+</div>
+
+## DISCOVER
+
+### User Interviews
+
+To understand the current strains of the sign-up process, I interviewed the support team who interact with the user most frequently. From this, I was able to identify the asynchronous events that occurred which lead to a complicated and slow registration process.
+
+<div class="journey-comparison">
+  <div class="journey-tabs">
+    <div class="tab-content">
+      <h4>Current Journey</h4>
+      <Image
+        src={asIs}
+        alt="The current sign-up process diagram which required 7 steps, 5 of which I identified as wasteful."
+      />
+    </div>
+    <div class="tab-content">
+      <h4>Designed Journey</h4>
+      <Image
+        src={toBe}
+        alt="The designed sign-up process diagram which required 4 steps, 0 of which I identified as wasteful."
+      />
+    </div>
+  </div>
+</div>
+
+<div class="insights-grid">
+  <div class="insight-column">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>
+        All manual data entry completed by the admin team was unnecessary and
+        therefore a waste of tax-payer money.
+      </li>
+      <li>
+        The use of email leads to a very asynchronous process that slowed down
+        confirmations and a streamlined sign-up process.
+      </li>
+      <li>The number of steps in the registration could be reduced by 50%.</li>
+    </ul>
+  </div>
+  <div class="insight-column">
+    <h4>Future Considerations</h4>
+    <ul>
+      <li>
+        A website will be required to allow UK organizations to sign up online
+        without the need for Microsoft Word.
+      </li>
+      <li>
+        No public customers were contacted in this phase due to the sudden move
+        to remote working when the UK first hit lockdown. Therefore it needs to
+        be a priority for the future to make sure both the problem and solution
+        are suitable and fit the users' needs.
+      </li>
+    </ul>
+  </div>
+</div>
+
+## DEFINE
+
+### How Might We (HMW)?
+
+Based on the popular [Google's Design Sprint kit](https://designsprintkit.withgoogle.com/). HMW provided the environment to define what some of the most important questions and opportunities were.
+
+This was conducted at the start of the British lockdown, due to the sudden need for remote design thinking workshops and limited licenses, I chose to host it on Google Sheets. This provided a cloud-based whiteboard solution to collate our ideas to conduct HMW, Crazy8s, and User Journey Mapping.
+
+<Image
+  src={hmw}
+  alt="The How Might We results where were then affinity mapped into 7 categories: New Feeds, Analytics, Admin Section, Reducing Noise, Prioritizing Notifications, Turning feeds on/Off, Disabling feeds on specific assets."
+/>
+
+### Story Mapping
+
+The story mapping below was crucial for prioritizing the story mapping with all the project's stakeholders. Splitting the stories into slices/main releases allowed the value to be given to the user at the earliest opportunity, therefore user feedback was gathered earlier.
+
+<Image
+  src={storyMapping}
+  alt="A story mapping artifact where the backlog was mapped into 5 slices: Slice 1 (MVP), A new user can create an organization and receive reports. Slice 5's goal was to Polish Early Warning."
+/>
+
+<div class="insights-grid">
+  <div class="insight-column">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>
+        The priority for the first release is for organizations to just submit
+        their details, no need for user accounts.
+      </li>
+      <li>
+        A key takeaway from HMW was considering how vital threat notifications
+        can be prioritized against less important reports.
+      </li>
+      <li>
+        From the affinity mapping, threat report customization is a critical
+        problem group, however not a 'must' to give an initial value to the
+        user.
+      </li>
+    </ul>
+  </div>
+  <div class="insight-column">
+    <h4>Future Considerations</h4>
+    <ul>
+      <li>
+        During the first design thinking workshop, idea generation from
+        non-engineer stakeholders was limited. In the future, an example
+        walk-through of HMW or Crazy8s may help initialize idea generation.
+      </li>
+      <li>
+        Google Sheets although effective, was limiting since the size of the
+        'whiteboard' was restricted. In the future using a specialist tool such
+        as Mural or Miro would be beneficial.
+      </li>
+    </ul>
+  </div>
+</div>
+
+## DEVELOP
+
+### Prototyping
+
+I used Figma to build high fidelity prototypes with the appropriate government branding based on an internal design system. Not only was the design system key for visual consistency, but the behavior of similar services were studied to make sure they work the same based on Jakob's Law.
+
+Due to Figma's collaborative nature, this allowed me to involve more stakeholders with the high-fidelity designs. I went from teaching my engineering team about Figma, to now over 50 engineers in the department.
+
+<a
+  href="https://www.figma.com/file/2YlkH7YpHvO9UtxkYfWQzo/Early-Warning?node-id=0%3A1"
+  class="btn-primary"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  View Figma File
+</a>
+
+<div class="prototype-grid">
+  <Image
+    src={dashboardActive}
+    alt="Prototype for the user's dashboard which highlights the recent number of informational, advisory, and urgent reports. Along with highlighting other actions the user should take to improve their experience."
+  />
+  <Image
+    src={settingsActive}
+    alt="Prototype to add new API keys to enable external system to interact with the user's data"
+  />
+  <Image
+    src={threatReportSummaryInital}
+    alt="Prototype for users to view reports and customize which reports they receive to improve communication by reducing notification noise"
+  />
+  <Image
+    src={contactInformation}
+    alt="Prototype for entering contact information that allowed users to add multiple contacts, either named individuals or distribution lists"
+  />
+</div>
+
+### Designing for Human Factors
+
+To reduce barriers to entry, key UX theories and laws were used to help create a prototype with statistically proven design patterns to focus on user-centered design and create the best possible minimum viable product (MVP).
+
+<Image
+  src={uiPrinciples}
+  alt="The asset details page is annotated to show which user interface design patterns were used to improve usability and reduce cognitive load. Academics, physiologists and designers were referenced to provide authority in the decisions."
+/>
+
+<details>
+  <summary>View Image Transcript</summary>
+  <ul>
+    <li>
+      The system status helps build trust with users as they feel in control and
+      therefore should always be visible. (Harley, 2018).
+    </li>
+    <li>
+      Tabs were used to split the form up as they have the advantage of being
+      able to alternate between views in the same context (Nielsen, 2016).
+    </li>
+    <li>
+      To encourage users to complete the whole process, showing the little
+      number of steps required is more likely to increase the success rate
+      (Babich, 2016).
+    </li>
+    <li>
+      Highlighted and meaningful headings make the page quickly scannable
+      (Nielsen, 1997).
+    </li>
+    <li>
+      Bullet points makes the supported formats scannable (Nielsen, 2016) and
+      static form help text reduces cognitive load (Whitenton, 2013).
+    </li>
+    <li>
+      Icons help guide the user to where they need to go and should also be
+      placed to the left hand-side of the label (Babich, 2016).
+    </li>
+    <li>
+      Stating fields are "Optional" instead of a * reduces misunderstandings and
+      less negative as red is associated with errors (Verner, 2019).
+    </li>
+    <li>
+      Using a universal icon such as the X to close is easily recognized and
+      understood (Harley, 2014), however it should be user tested to make sure
+      users have the same mental model (Vinney, 2019).
+    </li>
+    <li>
+      Law of Proximity is used to group similar objects together each domain
+      name, its label and the button to remove it. The larger gap between the
+      row above shows they are independent of each other (Yablonski, 2020)
+    </li>
+  </ul>
+</details>
+
+### Useful Error Messages
+
+Client-side validation was key in assisting the user to spot any errors with their IP addresses when entering them into the system. The validation had to be smart though, the IPv6 has a space of 2<sup>128</sup> (340 billion billion billion billion...). therefore, telling the user to "please enter a valid IP address" was not useful, especially to less technical users who do not have a comprehensive understanding of IP addresses.
+
+{/* Note: Original asset ip_error_messages_flow.png was commented out in original - may be missing */}
+
+The validation was iteratively tested internally to prove initially it helped diagnose errors, although because test participants were not real users, a full usability study was conducted in the future (see below). Another consideration was also the order of validation, below shows a prototype of some of the error messages given to the user. To reduce the cognitive load, only one error was shown at once. The flow diagram below, therefore, prioritizes error messages that are related to invalid IP formats and then focused on technical boundaries such as making sure the IP was public.
+
+<Image
+  src={uiErrorMessages}
+  alt="Design for the IP address form fields. Showing adjacent error messages to reduce cognitive load, and helpful error messages depending on the invalidation errors."
+/>
+
+<div class="insights-grid">
+  <div class="insight-column">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>IP validation is complicated!</li>
+      <li>
+        The Figma prototype was extremely useful to show stakeholders and let
+        them imagine what the system will look like and behave; leading to a
+        much-improved system and user experience.
+      </li>
+    </ul>
+  </div>
+  <div class="insight-column">
+    <h4>Future Considerations</h4>
+    <ul>
+      <li>
+        A few stakeholders believed the progress of the service was further
+        along than what had been implemented, and so in the future, I need to
+        make it clear that the prototype is not connected to any APIs or
+        implemented in HTML to prevent any misunderstandings.
+      </li>
+    </ul>
+  </div>
+</div>
+
+## DELIVER
+
+### User Testing Strategy
+
+I used the following test strategy to be confident in my design before full public release:
+
+<div class="strategy-cards">
+  <div class="card">
+    <h5>Behavioral User Research</h5>
+    <p>
+      Each version has an improved error rate and the time taken to complete is
+      reduced.
+    </p>
+  </div>
+  <div class="card">
+    <h5>Attitudinal User Research</h5>
+    <p>
+      A System Usability Scale (SUS) in the top 80th percentile and a Net
+      Promoter Score (NPS) of at least 40.
+    </p>
+  </div>
+  <div class="card">
+    <h5>Accessibility</h5>
+    <p>
+      Automated testing with jest-axe and testing the accessibility on users
+      with disabilities.
+    </p>
+  </div>
+</div>
+
+### Behavioral User Research
+
+Moderated remote usability testing was chosen to study the user's behavior, this qualitative method is a key component in the lean Toyota Production System, and will help [improve the design and a better experience](https://www.nngroup.com/articles/which-ux-research-methods/).
+
+The users tested were mostly Heads of Cyber Security and InfoSec inside councils and government. After each test, notes were compared with all the observers to collate issues with the interface that caused a usability slip or confusion. These were often fixed immediately to see if the changes improved the interface in the next test. Quantitative metrics were tracked throughout the study, error-rate was especially effective to test if the usability improved. The chart below shows a clear trend with each iteration that the error-rate reduced, proving that the usability has increased.
+
+<div class="chart-container">
+  <h4>Error-rate study against the version iterations</h4>
+  <div class="chart-data">
+    <table>
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Error Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>v1.0.2</td>
+          <td>2.9</td>
+        </tr>
+        <tr>
+          <td>v1.0.3</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <td>v1.0.4</td>
+          <td>0.8</td>
+        </tr>
+        <tr>
+          <td>v1.0.5</td>
+          <td>0.2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+The page which caused the most errors was the assets details page, below shows the differences between v1.0.2 and v1.0.6 and the reason the changes were made to help improve the usability.
+
+<div class="version-comparison">
+  <div class="version">
+    <Image
+      src={changesFromTestingV12}
+      alt="v1.0.2 of the Asset Details design"
+    />
+    <div class="caption">
+      <strong>v1.0.2</strong>
+      <p>
+        This version was the initial Alpha release of the registration form.
+      </p>
+    </div>
+  </div>
+  <div class="version">
+    <Image
+      src={changesFromTestingV16}
+      alt="v1.0.6 of the Asset Details design"
+    />
+    <div class="caption">
+      <strong>v1.0.6</strong>
+      <p>
+        This version was the last version before Beta release of Early Warning.
+      </p>
+      <details>
+        <summary>View Changelog</summary>
+        <ul>
+          <li>
+            Added examples for each type of IP address to help people with a
+            lower cyber vocabulary to understand what is accepted.
+          </li>
+          <li>
+            As users scan the page, a more hierarchical format provides better
+            readability than longer sentences.
+          </li>
+          <li>
+            Renamed the IP Address input label to include all the accepted
+            variations: IP Address, range or CIDR block.
+          </li>
+          <li>
+            Added a green check mark icon to the form field to confirm to the
+            user that the IP entered is valid.
+          </li>
+          <li>
+            Renamed the "bulk upload" button to "upload multiple" to encourage
+            users with users will small lists to use the functionality
+          </li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</div>
+
+### Attitudinal User Research
+
+To continue identifying and reducing the hurdles in registering with Early Warning, pilot users were encouraged to volunteer in an [anonymous quantitative study](https://docs.google.com/forms/d/e/1FAIpQLScIFnQJJc_kHmrFWtcz7vPIWkk7sGRruQCG_ZQ5PO88_6WcjA/viewform).
+
+With a sample size of 108, the overall SUS score was 83.7. SUS was used as it is a mature, non-bias, and quantitative questionnaire for validating usability, which has been [benchmarked by Lewis and Sauro's](https://uxpajournal.org/item-benchmarks-system-usability-scale-sus/) to compare the score against. Early Warning's score shows that the service is in the **top 90-95 percentile for usability**.
+
+<div class="metrics-section">
+  <h5>Metrics</h5>
+  <p>Study Sample Size: 108</p>
+
+<div class="metric">
+  <h6>Early Warning System Usability Score: 83.7</h6>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 83.7%;"></div>
+  </div>
+</div>
+
+  <div class="metric">
+    <h6>Net Promoter Score</h6>
+    <div class="nps-comparison">
+      <div>
+        <p>Early Warning: 70.73%</p>
+        <div class="progress-bar success">
+          <div class="progress-fill" style="width: 70.73%;"></div>
+        </div>
+      </div>
+      <div>
+        <p>UK Average: 22.4%</p>
+        <div class="progress-bar danger">
+          <div class="progress-fill" style="width: 22.4%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* Note: Original comments.gif and questionaire_open_question.png were commented out in original */}
+
+<div class="insights-grid">
+  <div class="insight-column">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>
+        Early Warning is an extremely usable service that should have few
+        barriers to registration, a key goal of the project.
+      </li>
+      <li>
+        SUS is helpful at benchmarking against other services within the same
+        ecosystem to see how users compare them.
+      </li>
+      <li>
+        [Nielsen's
+        research](https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/)
+        on only 5 users required to locate 85% of usability issues was
+        repeatable.
+      </li>
+    </ul>
+  </div>
+  <div class="insight-column">
+    <h4>Future Considerations</h4>
+    <ul>
+      <li>
+        Add an open-ended question in the usability survey earlier on, as the
+        first 50 organizations were unable to share valuable qualitative
+        feedback immediately after using our service.
+      </li>
+      <li>
+        I expect the NPS to decrease over time as organizations who are new and
+        do not have any previous loyalty to the company; the current results are
+        likely skewed by these biases.
+      </li>
+    </ul>
+  </div>
+</div>
+
+## FUTURE WORK & EVALUATION
+
+The next stage of the project is to allow users to access their organization's assets and contacts so they can update their details quickly and easily. With more organizations conducting cloud transformations, it is even easier to acquire new IP addresses and domain names. If this process is not also effortless, in a very short period organizations details could be out of date, and therefore will not be receiving the latest threat reports on their assets.
+
+One of the main success criteria was to reduce the time and resources needed to process organization registrations by 50%. The new process nearly doubled this, **new registrations can now be processed 96% faster**.
+
+{/* Note: Original comments.gif was commented out */}
+
+That result would have not been as major if the System Usability Scale (SUS) was not so high either. A score of 77.2 was the target, which would have [benchmarked it at B+](https://uxpajournal.org/item-benchmarks-system-usability-scale-sus/), instead, it reached grade A. This amazing score is also backed up by some of the comments said by users during user testing and feedback.
+
+Over the course of the COVID-19 pandemic, Early Warning has had 1000s of registrations from critical national infrastructure and some of the largest companies in the UK. Although there was no target set for the number of registrations, this far exceeded expectations and the NPS score of 70.73% shows that other companies and organizations are likely to register soon as well.
+
+<style>{`
+  .hero-section {
+    margin: var(--spacing-xl) 0;
+    text-align: center;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-m);
+  }
+
+  .process-section {
+    margin: var(--spacing-xl) 0;
+  }
+
+  .process-nav {
+    display: flex;
+    gap: var(--spacing-m);
+    margin: var(--spacing-m) 0;
+    padding: var(--spacing-s);
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-m);
+    flex-wrap: wrap;
+  }
+
+  .process-nav a {
+    padding: var(--spacing-xs) var(--spacing-s);
+    border-radius: var(--border-radius-s);
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+
+  .process-nav a:hover {
+    background: var(--color-primary-light);
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .desktop-only {
+      display: none;
+    }
+    .mobile-only {
+      display: block;
+    }
+  }
+
+  .journey-comparison {
+    margin: var(--spacing-l) 0;
+  }
+
+  .journey-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-m);
+  }
+
+  @media (max-width: 768px) {
+    .journey-tabs {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .tab-content h4 {
+    margin-bottom: var(--spacing-s);
+  }
+
+  .insights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-l);
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-l);
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-m);
+  }
+
+  @media (max-width: 768px) {
+    .insights-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .insight-column h4 {
+    margin-bottom: var(--spacing-s);
+    color: var(--color-primary);
+  }
+
+  .prototype-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-m);
+    margin: var(--spacing-l) 0;
+  }
+
+  @media (max-width: 768px) {
+    .prototype-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .strategy-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-m);
+    margin: var(--spacing-l) 0;
+  }
+
+  .card {
+    padding: var(--spacing-m);
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-m);
+    border: 1px solid var(--color-border);
+  }
+
+  .card h5 {
+    margin-bottom: var(--spacing-s);
+    color: var(--color-primary);
+  }
+
+  .chart-container {
+    margin: var(--spacing-l) 0;
+    padding: var(--spacing-m);
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-m);
+  }
+
+  .chart-data table {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .chart-data th,
+  .chart-data td {
+    padding: var(--spacing-s);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .version-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-l);
+    margin: var(--spacing-xl) 0;
+  }
+
+  @media (max-width: 768px) {
+    .version-comparison {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .version .caption {
+    margin-top: var(--spacing-s);
+    padding: var(--spacing-s);
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-s);
+  }
+
+  .metrics-section {
+    padding: var(--spacing-l);
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-m);
+    margin: var(--spacing-l) 0;
+  }
+
+  .metric {
+    margin: var(--spacing-m) 0;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 24px;
+    background: var(--color-background);
+    border-radius: var(--border-radius-s);
+    overflow: hidden;
+    margin: var(--spacing-xs) 0;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--color-success);
+    transition: width 1s ease-in-out;
+  }
+
+  .progress-bar.success .progress-fill {
+    background: var(--color-success);
+  }
+
+  .progress-bar.danger .progress-fill {
+    background: var(--color-error);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: var(--spacing-s) var(--spacing-m);
+    background: var(--color-primary);
+    color: var(--color-background);
+    text-decoration: none;
+    border-radius: var(--border-radius-m);
+    transition: background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-dark);
+  }
+
+  details summary {
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    color: var(--color-primary);
+  }
+
+  details summary:hover {
+    text-decoration: underline;
+  }
+`}</style>
