@@ -74,4 +74,8 @@ a:focus-visible .icon.inverted,
   .link-cta.variant-inverted:focus-visible .icon {
     filter: brightness(0) invert(1);
   }
+
+  .link-cta.variant-inverted .icon {
+    filter: brightness(0) invert(0);
+  }
 }
