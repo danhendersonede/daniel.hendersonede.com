@@ -22,12 +22,10 @@ const { caseStudy } = Astro.props;
   <div class="card-content">
     <div class="card-main">
       <h2 class="card-title">
-        <a href={`/case-studies/${caseStudy.id}`} class="card-link">
-          {caseStudy.data.pageTitle}
-        </a>
+        <a href={`/case-studies/${caseStudy.id}`} class="card-link"
+          >{caseStudy.data.pageTitle}</a
+        >
       </h2>
-
-      <p class="value-proposition">{caseStudy.data.valueProposition}</p>
     </div>
     {
       caseStudy.data.tags && caseStudy.data.tags.length > 0 && (
@@ -44,8 +42,9 @@ const { caseStudy } = Astro.props;
 <style>
   .interactive-card {
     display: flex;
-    gap: var(--spacing-l);
-    padding: var(--spacing-l);
+    flex-direction: column;
+    gap: var(--spacing-m);
+    padding: var(--spacing-m);
     border: 2px solid var(--color-gray-80);
     border-radius: var(--border-radius);
     background: var(--background-color);
@@ -77,7 +76,7 @@ const { caseStudy } = Astro.props;
 
   /* Image section with overlay */
   .card-image {
-    flex: 0 0 450px;
+    flex: 0 0 250px;
     border-radius: var(--border-radius);
     overflow: hidden;
     position: relative;
@@ -133,7 +132,9 @@ const { caseStudy } = Astro.props;
 
   .card-title a {
     margin: 0;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-m);
+    letter-spacing: -1px;
+    line-height: 10px;
   }
 
   .card-title a:after {

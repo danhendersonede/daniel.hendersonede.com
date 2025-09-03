@@ -43,8 +43,8 @@ const workMetrics = {
 
 <style>
   .work-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     gap: var(--spacing-m);
     margin-top: var(--spacing-m);
   }
