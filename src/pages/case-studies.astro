@@ -8,6 +8,8 @@ import { getFeaturedCaseStudies } from '@utils/content/caseStudies';
 const caseStudies = await getCollection('caseStudies');
 const featuredCaseStudies = getFeaturedCaseStudies(caseStudies);
 
+featuredCaseStudies.sort((a, b) => a.data.order - b.data.order);
+
 const workMetrics = {
   yearsExperience: 8,
   usersImpacted: 547000000,

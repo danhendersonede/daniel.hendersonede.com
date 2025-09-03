@@ -13,6 +13,7 @@ const caseStudies = defineCollection({
       createdDate: z.coerce.date(),
       coverImageURL: image(),
       valueProposition: z.string(),
+      order: z.number(),
     }),
 });
 
