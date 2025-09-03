@@ -136,6 +136,12 @@ const { caseStudy } = Astro.props;
     font-size: var(--font-size-lg);
   }
 
+  .card-title a:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
   .card-link {
     color: var(--color-text);
     text-decoration: none;

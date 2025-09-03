@@ -48,6 +48,12 @@ const { href, linkText, variant } = Astro.props;
     margin-bottom: var(--spacing-s);
   }
 
+  .info-highlight a:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
   .info-highlight a:hover {
     color: var(--color-text-accent);
   }
