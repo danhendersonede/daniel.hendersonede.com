@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/work.astro
-pageTitle: 'Early Warning - Protecting the UK during COVID-19'
+pageTitle: 'Early Warning - Protecting the UK cyberspace during COVID-19'
 description: 'A critical cybersecurity service for UK organizations achieving 96% faster registrations and an exceptional 83.7 SUS score'
 createdDate: 2020-09-01
 tags:
@@ -17,6 +17,10 @@ valueProposition: 'Designed and built a critical national infrastructure service
 ---
 
 import { Image } from 'astro:assets';
+
+{/* React Components */}
+import EWTabs from '@components/client/early-warning/EWTabs/EWTabs.tsx';
+import EWProgressBar from '@components/client/early-warning/EWProgressBar/EWProgressBar.tsx';
 
 {/* Hero Images */}
 import ewMockup from '../../assets/work/early-warning/ew3-backup.png';
@@ -98,24 +102,21 @@ The goal of the project was a new public service to play a critical and urgent r
 
 To understand the current strains of the sign-up process, I interviewed the support team who interact with the user most frequently. From this, I was able to identify the asynchronous events that occurred which lead to a complicated and slow registration process.
 
-<div class="journey-comparison">
-  <div class="journey-tabs">
-    <div class="tab-content">
-      <h4>Current Journey</h4>
-      <Image
-        src={asIs}
-        alt="The current sign-up process diagram which required 7 steps, 5 of which I identified as wasteful."
-      />
-    </div>
-    <div class="tab-content">
-      <h4>Designed Journey</h4>
-      <Image
-        src={toBe}
-        alt="The designed sign-up process diagram which required 4 steps, 0 of which I identified as wasteful."
-      />
-    </div>
-  </div>
-</div>
+<EWTabs
+  client:load
+  tabs={[
+    {
+      label: 'Current Journey',
+      image: asIs.src,
+      alt: 'The current sign-up process diagram which required 7 steps, 5 of which I identified as wasteful.',
+    },
+    {
+      label: 'Designed Journey',
+      image: toBe.src,
+      alt: 'The designed sign-up process diagram which required 4 steps, 0 of which I identified as wasteful.',
+    },
+  ]}
+/>
 
 <div class="insights-grid">
   <div class="insight-column">
@@ -464,33 +465,32 @@ To continue identifying and reducing the hurdles in registering with Early Warni
 With a sample size of 108, the overall SUS score was 83.7. SUS was used as it is a mature, non-bias, and quantitative questionnaire for validating usability, which has been [benchmarked by Lewis and Sauro's](https://uxpajournal.org/item-benchmarks-system-usability-scale-sus/) to compare the score against. Early Warning's score shows that the service is in the **top 90-95 percentile for usability**.
 
 <div class="metrics-section">
-  <h5>Metrics</h5>
+  <h5>/Metrics</h5>
   <p>Study Sample Size: 108</p>
 
-<div class="metric">
-  <h6>Early Warning System Usability Score: 83.7</h6>
-  <div class="progress-bar">
-    <div class="progress-fill" style="width: 83.7%;"></div>
-  </div>
-</div>
-
-  <div class="metric">
-    <h6>Net Promoter Score</h6>
-    <div class="nps-comparison">
-      <div>
-        <p>Early Warning: 70.73%</p>
-        <div class="progress-bar success">
-          <div class="progress-fill" style="width: 70.73%;"></div>
-        </div>
-      </div>
-      <div>
-        <p>UK Average: 22.4%</p>
-        <div class="progress-bar danger">
-          <div class="progress-fill" style="width: 22.4%;"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <EWProgressBar
+    client:load
+    label="Early Warning System Usability Score"
+    value={83.7}
+    max={100}
+    variant="success"
+  />
+  
+  <EWProgressBar
+    client:load
+    label="Net Promoter Score - Early Warning"
+    value={70.73}
+    max={100}
+    variant="success"
+  />
+  
+  <EWProgressBar
+    client:load
+    label="Net Promoter Score - UK Average"
+    value={22.4}
+    max={100}
+    variant="danger"
+  />
 </div>
 
 {/* Note: Original comments.gif and questionaire_open_question.png were commented out in original */}
@@ -598,25 +598,6 @@ Over the course of the COVID-19 pandemic, Early Warning has had 1000s of registr
     }
   }
 
-  .journey-comparison {
-    margin: var(--spacing-l) 0;
-  }
-
-  .journey-tabs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-m);
-  }
-
-  @media (max-width: 768px) {
-    .journey-tabs {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .tab-content h4 {
-    margin-bottom: var(--spacing-s);
-  }
 
   .insights-grid {
     display: grid;
@@ -716,33 +697,6 @@ Over the course of the COVID-19 pandemic, Early Warning has had 1000s of registr
     background: var(--color-background-secondary);
     border-radius: var(--border-radius-m);
     margin: var(--spacing-l) 0;
-  }
-
-  .metric {
-    margin: var(--spacing-m) 0;
-  }
-
-  .progress-bar {
-    width: 100%;
-    height: 24px;
-    background: var(--color-background);
-    border-radius: var(--border-radius-s);
-    overflow: hidden;
-    margin: var(--spacing-xs) 0;
-  }
-
-  .progress-fill {
-    height: 100%;
-    background: var(--color-success);
-    transition: width 1s ease-in-out;
-  }
-
-  .progress-bar.success .progress-fill {
-    background: var(--color-success);
-  }
-
-  .progress-bar.danger .progress-fill {
-    background: var(--color-error);
   }
 
   .btn-primary {
