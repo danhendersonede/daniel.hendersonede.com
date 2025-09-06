@@ -58,7 +58,8 @@ h1 + p {
   font-size: var(--font-size-s);
 }
 
-h2 {
+h2,
+h2 a {
   font-size: var(--font-size-xl);
   color: var(--color-text);
 }

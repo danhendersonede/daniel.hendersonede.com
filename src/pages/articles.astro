@@ -10,11 +10,11 @@ const recentArticles = articles.sort(
 ---
 
 <Layout
-  pageTitle={pageConfig.articles.pageTitle}
-  pageDescription={pageConfig.articles.description}
+  pageTitle={pageConfig.resources.articles.pageTitle}
+  pageDescription={pageConfig.resources.articles.description}
   ogType="website"
 >
-  <h1>{pageConfig.articles.pageTitle}</h1>
+  <h1>{pageConfig.resources.articles.pageTitle}</h1>
   <ul role="list">
     {
       recentArticles.map(article => (

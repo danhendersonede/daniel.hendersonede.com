@@ -1,36 +1,58 @@
 ---
 import { getCollection } from 'astro:content';
-import ResourceListItem from '@sections/shared/ResourceListItem.astro';
+import InfoHighlightLink from '@components/sections/home/InfoHighlightLink.astro';
+import { pageConfig } from '@config/navigation/rootPageConfig';
 const tools = await getCollection('tools');
 const featuredTools = tools
   .sort((a, b) => b.data.lastUpdated.getTime() - a.data.lastUpdated.getTime())
-  .filter(tool => tool.data.featured);
+  .filter(tool => tool.data.featured)
+  .slice(0, 4);
 ---
 
 <section>
-  <div class="heading-group">
-    <h2>Featured Tools</h2>
-    <a href="/tools">View all tools</a>
-  </div>
+  <InfoHighlightLink
+    variant="about"
+    href={`/${pageConfig.resources.tools.slug}`}
+    linkText={pageConfig.resources.tools.pageTitle}
+    isHeading={true}
+  >
+    <p>
+      {
+        `I've built ${tools.length} public tools ranging from Figma plugins, annotation libraries, as well as design system strategy tools`
+      }
+    </p>
+  </InfoHighlightLink>
   <ul role="list">
     {
       featuredTools.map(tool => (
-        <ResourceListItem
-          title={tool.data.toolName}
-          href={!tool.data.url ? `/tool/${tool.id}` : tool.data.url}
-          coverImageLightURL={tool.data.coverImageURL.src}
-        />
+        <img src={tool.data.coverImageURL.src} alt={tool.data.toolName} />
       ))
     }
   </ul>
 </section>
 
 <style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-m);
+    margin-top: var(--spacing-l);
+  }
+
+  @media (max-width: 960px) {
+    section {
+      grid-template-columns: 1fr;
+    }
+  }
+
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    gap: var(--spacing-s);
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: var(--border-radius-l);
+    overflow: hidden;
+    gap: 4px;
   }
 </style>

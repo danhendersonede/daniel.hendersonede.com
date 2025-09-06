@@ -19,6 +19,18 @@ export const pageConfig = {
     description: 'Resources for accessibility',
     featured: true,
     navOrder: 3,
+    articles: {
+      pageTitle: 'Articles',
+      slug: 'articles',
+      description: 'Articles about accessibility',
+      featured: false,
+    },
+    tools: {
+      pageTitle: 'Tools',
+      slug: 'tools',
+      description: 'Tools for accessibility',
+      featured: false,
+    },
   },
   about: {
     pageTitle: 'About',
@@ -26,17 +38,5 @@ export const pageConfig = {
     description: 'About me',
     featured: false,
     navOrder: 4,
-  },
-  articles: {
-    pageTitle: 'Articles',
-    slug: 'articles',
-    description: 'Articles about accessibility',
-    featured: false,
-  },
-  tools: {
-    pageTitle: 'Tools',
-    slug: 'tools',
-    description: 'Tools for accessibility',
-    featured: false,
   },
 };

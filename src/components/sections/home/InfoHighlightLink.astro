@@ -3,13 +3,22 @@ interface Props {
   href: string;
   linkText: string;
   variant: 'about' | 'cases' | 'speaking' | 'resources';
+  isHeading?: boolean;
 }
 
-const { href, linkText, variant } = Astro.props;
+const { href, linkText, variant, isHeading = false } = Astro.props;
 ---
 
 <div class={`floating-element info-highlight ${variant}-highlight`}>
-  <a href={href}>{linkText}</a>
+  {
+    isHeading ? (
+      <h2>
+        <a href={href}>{linkText}</a>
+      </h2>
+    ) : (
+      <a href={href}>{linkText}</a>
+    )
+  }
   <div class="highlight-content">
     <slot />
   </div>
@@ -46,6 +55,15 @@ const { href, linkText, variant } = Astro.props;
     color: var(--color-text);
     text-decoration: none;
     margin-bottom: var(--spacing-s);
+  }
+
+  .info-highlight h2 {
+    margin-top: 0;
+  }
+
+  .info-highlight h2 a {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-heading);
   }
 
   .info-highlight a:after {
