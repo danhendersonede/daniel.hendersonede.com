@@ -1,10 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
+import InfoHighlightLink from '@components/sections/home/InfoHighlightLink.astro';
 import ResourceListItem from '@sections/shared/ResourceListItem.astro';
+import { pageConfig } from '@config/navigation/rootPageConfig';
 const articles = await getCollection('articles');
 const recentArticles = articles
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
+---
+
+<!-- ---
+import { getCollection } from 'astro:content';
+
 ---
 
 <section>
@@ -32,5 +39,120 @@ const recentArticles = articles
   ul {
     list-style: none;
     padding: 0;
+  }
+</style>
+
+
+
+---
+import { getCollection } from 'astro:content';
+import InfoHighlightLink from '@components/sections/home/InfoHighlightLink.astro';
+import { pageConfig } from '@config/navigation/rootPageConfig';
+const tools = await getCollection('tools');
+const featuredTools = tools
+  .sort((a, b) => b.data.lastUpdated.getTime() - a.data.lastUpdated.getTime())
+  .filter(tool => tool.data.featured)
+  .slice(0, 4);
+---
+
+<section>
+  <InfoHighlightLink
+    variant="about"
+    href={`/${pageConfig.resources.tools.slug}`}
+    linkText={pageConfig.resources.tools.pageTitle}
+    isHeading={true}
+  >
+    <p>
+      {
+        `I've built ${tools.length} public tools ranging from Figma plugins, annotation libraries, as well as design system strategy tools`
+      }
+    </p>
+  </InfoHighlightLink>
+  <ul role="list">
+    {
+      featuredTools.map(tool => (
+        <img src={tool.data.coverImageURL.src} alt={tool.data.toolName} />
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-m);
+    margin-top: var(--spacing-l);
+  }
+
+  @media (max-width: 960px) {
+    section {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: var(--border-radius-l);
+    overflow: hidden;
+    gap: 4px;
+  }
+</style> -->
+<section>
+  <InfoHighlightLink
+    variant="about"
+    href={`/${pageConfig.resources.articles.slug}`}
+    linkText={pageConfig.resources.articles.pageTitle}
+    isHeading={true}
+  >
+    <p>
+      {
+        `I've built ${articles.length} public tools ranging from Figma plugins, annotation libraries, as well as design system strategy tools`
+      }
+    </p>
+  </InfoHighlightLink>
+  <ul role="list">
+    {
+      recentArticles.map(article => (
+        <ResourceListItem
+          isInVerticalList
+          date={article.data.date}
+          publisher={article.data.publicationName}
+          title={article.data.pageTitle}
+          href={!article.data.url ? `/article/${article.id}` : article.data.url}
+          coverImageLightURL={article.data.coverImageURL.src}
+        />
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-m);
+    margin-top: var(--spacing-l);
+  }
+
+  @media (max-width: 960px) {
+    section {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: var(--border-radius-l);
+    overflow: hidden;
+    gap: 4px;
   }
 </style>

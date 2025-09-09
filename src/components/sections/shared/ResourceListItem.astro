@@ -109,6 +109,8 @@ const {
   .resource.list.vertical {
     flex-wrap: wrap;
     padding: var(--spacing-xs) 0;
+    container-type: inline-size;
+    container-name: resource-item;
   }
 
   .resource.list:not(.vertical) {
@@ -116,7 +118,30 @@ const {
   }
 
   .resource.list.vertical .resource-cover {
-    flex: 0 0 250px;
+    flex: 1 1 100%;
+  }
+
+  a {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xs);
+  }
+
+  @container resource-item (min-width: 400px) {
+    .resource.list.vertical .resource-cover {
+      flex: 0 0 35%;
+      max-width: 200px;
+    }
+  }
+
+  @container resource-item (min-width: 600px) {
+    .resource.list.vertical .resource-cover {
+      flex: 0 0 250px;
+      max-width: none;
+    }
+
+    a {
+      font-size: var(--font-size-s);
+    }
   }
 
   .resource.list.vertical .content {
@@ -124,8 +149,7 @@ const {
   }
 
   @media (max-width: 520px) {
-    .resource.list .resource-cover,
-    .resource.list.vertical .resource-cover {
+    .resource.list .resource-cover {
       flex: 1 1 100%;
     }
 
@@ -159,11 +183,6 @@ const {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-  }
-
-  a {
-    font-size: var(--font-size-s);
-    font-weight: var(--font-weight-bold);
   }
 
   .meta {
